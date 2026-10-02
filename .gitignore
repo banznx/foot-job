@@ -1,0 +1,14 @@
+# 工作区数据与本地笔记，不入库
+.workbuddy/
+
+# 浏览器崩溃日志
+debug.log
+*.log
+
+# 重复克隆的副本（历史遗留的嵌套目录）
+foot-job/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
