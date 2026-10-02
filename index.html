@@ -156,7 +156,13 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
   font-size: 18px; font-weight: 600; letter-spacing: -0.02em;
   flex: 1; text-align: left;
   display: flex; align-items: center; gap: 7px;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: opacity var(--t-fast);
 }
+.topbar-logo:active { opacity: 0.6; }
+/* 点 logo 刷新时，让左上的小方块转一圈作为反馈 */
+.topbar-logo.spin .topbar-logo-mark { animation: logoSpin .5s ease; }
+@keyframes logoSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 .topbar-logo-mark {
   width: 24px; height: 24px; border-radius: 7px;
   background: var(--brand);
@@ -526,6 +532,30 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
 .tab svg { transition: transform var(--t-fast); }
 .tab:active svg { transform: scale(0.88); }
 
+/* 回到顶部：首页下滑后浮现，贴住居中的 app 列右缘、悬浮于 tabbar 之上 */
+.to-top {
+  position: fixed; z-index: 45;
+  left: 50%; transform: translateX(-50%);
+  width: min(100%, var(--app-w));
+  bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + var(--s5));
+  display: flex; justify-content: flex-end;
+  padding: 0 var(--s4);
+  pointer-events: none;            /* 容器不拦截点击，只有按钮本身可点 */
+}
+.to-top button {
+  pointer-events: none;            /* 隐藏时不可点，避免透明区域误触 */
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); color: var(--ink-1);
+  border: 1px solid var(--line-1);
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  display: grid; place-items: center;
+  opacity: 0; transform: translateY(14px) scale(.85);
+  transition: opacity var(--t-mid), transform var(--t-mid), background var(--t-fast);
+}
+.to-top.show button { opacity: 1; transform: none; pointer-events: auto; }
+.to-top button:active { transform: scale(.9); }
+[data-theme="dark"] .to-top button { background: var(--surface-2); }
+
 /* ---- 提示 ---- */
 .toast-wrap {
   position: fixed; left: 0; right: 0; z-index: 200;
@@ -584,7 +614,7 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
   <!-- ===== 首页 ===== -->
   <section class="view active" id="viewHome">
     <header class="topbar">
-      <div class="topbar-logo">
+      <div class="topbar-logo" id="topLogo" role="button" tabindex="0" aria-label="刷新信息流">
         <span class="topbar-logo-mark" aria-hidden="true">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 15l4-4 3 3 5-5"/>
@@ -695,6 +725,13 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
     </button>
   </nav>
 
+  <!-- 回到顶部：首页下滑后出现 -->
+  <div class="to-top" id="toTop" aria-hidden="true">
+    <button type="button" aria-label="回到顶部">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
   <!-- ===== 详情页 ===== -->
   <article class="detail" id="detail" role="dialog" aria-modal="true" aria-label="帖子详情">
     <header class="d-top">
@@ -771,7 +808,9 @@ const state = {
   liked: new Set(load(LS.liked, [])),
   fav: new Set(load(LS.fav, [])),
   seen: new Set(load(LS.seen, [])),
-  curPost: null
+  curPost: null,
+  view: 'viewHome',    // 当前所在视图，控制回到顶部按钮的显隐
+  seed: 0              // 伪算法刷新的随机种子，每次刷新自增，保证顺序不同
 };
 
 function load(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }
@@ -921,7 +960,11 @@ function greedyScatter(scored) {
 }
 
 function buildPool() {
-  const rnd = mulberry32((Date.now() ^ 0x9e3779b9) & 0xffffffff);
+  // 种子混入 state.seed：每次「伪算法刷新」自增，保证重新打分后顺序确实不同；
+  // 否则只靠 Date.now() 在极快连点下可能顺序几乎不变，用户感知不到"换了一批"。
+  const rnd = mulberry32(
+    ((Date.now() ^ 0x9e3779b9 ^ ((state.seed * 0x85ebca6b) >>> 0)) >>> 0)
+  );
   const scored = state.all
     .filter(p => !state.consumed.has(String(p.postID)))
     .map(p => ({ p, s: scoreOf(p, rnd) }));
@@ -1344,6 +1387,7 @@ function switchView(id) {
     state.discMode = 'random';
     loadDiscover();
   }
+  state.view = id;
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === id));
   document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.view === id)));
   window.scrollTo(0, 0);
@@ -1358,6 +1402,22 @@ function switchSort(sort) {
   resetFeed();
 }
 
+/* 点首页图标 → 伪算法刷新。
+   重新跑一遍推荐打分（换种子 → 顺序不同），并解除「已消费 / 已展示标题 /
+   近期作者」约束，让信息流从第一屏重新排起。用户感知就是"换了一批新推荐"。
+   最新 / 热门 模式顺序本就稳定，这里同样解除约束重新拉起，视觉上等同刷新。 */
+function refreshHome() {
+  state.seed = (state.seed || 0) + 1;
+  state.consumed.clear();
+  state.shownTitles = new Set();
+  state.recentAuthors = [];
+  const logo = $('topLogo');
+  if (logo) { logo.classList.remove('spin'); void logo.offsetWidth; logo.classList.add('spin'); }
+  window.scrollTo(0, 0);
+  resetFeed();
+  toast('已为你重新推荐');
+}
+
 /* ============================================================
    事件
    ============================================================ */
@@ -1368,13 +1428,41 @@ function findPost(id) {
 function bind() {
   // 底部 tab
   document.querySelectorAll('.tab').forEach(t =>
-    t.addEventListener('click', () => switchView(t.dataset.view)));
+    t.addEventListener('click', () => {
+      // 已在首页时再点「首页」图标 = 伪算法刷新信息流
+      if (t.dataset.view === 'viewHome' && state.view === 'viewHome') {
+        refreshHome();
+      } else {
+        switchView(t.dataset.view);
+      }
+    }));
 
   // 排序
   $('seg').addEventListener('click', e => {
     const b = e.target.closest('.seg-item');
     if (b) switchSort(b.dataset.sort);
   });
+
+  // 首页顶栏 logo：点一下（或回车/空格）重新推荐
+  const logo = $('topLogo');
+  logo.addEventListener('click', () => { if (state.view === 'viewHome') refreshHome(); });
+  logo.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && state.view === 'viewHome') {
+      e.preventDefault(); refreshHome();
+    }
+  });
+
+  // 回到顶部：首页下滑超过一屏后浮现，点击平滑回顶
+  const toTop = $('toTop');
+  const onScroll = () => {
+    const show = state.view === 'viewHome' && window.scrollY > 480;
+    toTop.classList.toggle('show', show);
+    toTop.setAttribute('aria-hidden', String(!show));
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  toTop.querySelector('button').addEventListener('click', () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' }));
+  onScroll();
 
   // 卡片交互（首页 + 发现页共用）
   function onFeedClick(e) {
