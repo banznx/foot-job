@@ -24,7 +24,7 @@ SITE = {
     'HOST': os.environ.get('SEO_SITE_HOST', 'https://banznx.github.io'),
     'BASE_PATH': '/foot-job',
     'LANG': 'zh-CN',
-    'BRAND': 'FootJob论坛',
+    'BRAND': '玉卒',
     #  twitter / og 用
     'OG_TYPE': 'website',
     'TWITTER_CARD': 'summary_large_image',
