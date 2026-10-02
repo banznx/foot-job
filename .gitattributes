@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# 二进制资源不做换行符转换
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pkl binary
