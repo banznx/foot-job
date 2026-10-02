@@ -230,7 +230,7 @@ img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
 
 .uigrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--s4);
   margin-bottom: var(--s10);
 }
@@ -481,8 +481,9 @@ footer {
       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.4 6.9.6-5.2 4.6 1.5 6.8L12 16.8 6.2 20.4l1.5-6.8L2.5 9l6.9-.6z"/></svg>
       2,340 篇帖子 · 566 位作者
     </div>
-    <h1>同一份数据，两种浏览方式</h1>
+    <h1>同一份数据，三种浏览方式</h1>
     <p>
+      从最初的单张卡片，到可以无限下滑的信息流，再到专注单帖的三栏工作台。
       都是纯静态页面，不依赖任何后端服务。数据以 <code style="font-family:var(--font-num);font-size:14px">posts-data.js</code> 内联，
       图片直接读取仓库内 <code style="font-family:var(--font-num);font-size:14px">images/</code> 目录，部署到 GitHub Pages 后开箱即用。
     </p>
@@ -497,12 +498,37 @@ footer {
 
   <div class="section-head">
     <h2 class="section-title">选择界面</h2>
-    <span class="section-note">两个页面共享收藏与浏览记录</span>
+    <span class="section-note">后两个页面共享收藏与浏览记录</span>
   </div>
 
   <div class="uigrid" id="uigrid">
 
-    <a class="ui-card" href="feed.html" style="animation-delay:0ms">
+    <a class="ui-card" href="card.html" style="animation-delay:0ms">
+      <div class="ui-preview" data-preview="card">
+        <span class="ui-tag">单张卡片</span>
+      </div>
+      <div class="ui-body">
+        <div class="ui-name">
+          经典卡片
+          <span class="feat" style="font-size:10px">原版</span>
+        </div>
+        <p class="ui-desc">
+          最初的单卡形态。420px 卡片居中，一次只显示一篇帖子，点「换一篇」随机切换。
+          轻量、无干扰，适合快速浏览。
+        </p>
+        <div class="ui-features">
+          <span class="feat feat--accent">最轻量</span>
+          <span class="feat">随机切换</span>
+          <span class="feat">图集轮播</span>
+        </div>
+        <span class="ui-enter">
+          进入卡片
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="ui-card" href="feed.html" style="animation-delay:80ms">
       <div class="ui-preview" data-preview="feed">
         <span class="ui-tag">信息流</span>
       </div>
@@ -529,7 +555,7 @@ footer {
       </div>
     </a>
 
-    <a class="ui-card" href="ui-v2.html" style="animation-delay:80ms">
+    <a class="ui-card" href="ui-v2.html" style="animation-delay:160ms">
       <div class="ui-preview" data-preview="focus">
         <span class="ui-tag">单帖聚焦</span>
       </div>
@@ -693,7 +719,7 @@ function pickPreview(kind) {
   const pool = fresh.length >= 4 ? fresh : posts;
 
   // 用确定性伪随机取图，保证每次打开预览稳定不闪烁
-  const seed = kind === 'feed' ? 20241002 : 20240711;
+  const seed = kind === 'feed' ? 20241002 : kind === 'card' ? 20240815 : 20240711;
   const idx = Math.abs(seed) % pool.length;
   return pool[idx];
 }
