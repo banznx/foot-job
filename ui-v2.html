@@ -1213,14 +1213,36 @@ kbd {
 
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
+<!-- 数据 bundle：2340 篇帖子打包在此，由 build_data.py 生成。
+     放在主脚本之前，保证 window.__POSTS__ 就绪。
+     用 <script> 而非 fetch，是为了绕开静态托管的跨域限制。 -->
+<script src="posts-data.js"></script>
+
 <script>
 'use strict';
 
 /* ============================================================
    常量与状态
    ============================================================ */
-const POSTS_DIR = 'posts2/';
-const IMAGES_DIR = 'images/downloaded_posts_images/';
+
+/* 数据来源：静态 bundle（由 build_data.py 生成）
+   为什么不用 fetch 读 posts2/*.json —— 静态托管（GitHub Pages / jsDelivr）
+   下跨域请求会被 CORS 拦截，页面只会显示「无法读取 index.json」。
+   <script src> 不受同源策略限制，是纯静态部署唯一可靠的方式。 */
+const DATA_FILE = 'posts-data.js';
+
+/* 图片源：留空则用同源相对路径（本地起服务时有效）。
+   部署到 GitHub Pages 时必须填 CDN 地址，否则图片 404。
+   可选值：
+     'https://cdn.jsdelivr.net/gh/banznx/foot-job@main/images/downloaded_posts_images/'
+     'https://raw.githubusercontent.com/banznx/foot-job/main/images/downloaded_posts_images/'
+   注意：仓库图片体积 1.2GB，已超出 GitHub 推荐的 1GB 上限，
+   CDN 可能限流或拒绝对超大仓库提供文件服务，务必实测后再定。 */
+const IMAGE_BASE = '';
+
+/* 若线上 CDN 拉不到图，可在此填一个可用的图床前缀（需允许跨域） */
+const IMAGE_FALLBACK_BASE = '';
+
 const LS = {
   fav: 'fj_favs',
   hist: 'fj_history',
@@ -1276,9 +1298,25 @@ function escapeHtml(s) {
   return String(s == null ? '' : s).replace(/[&<>"']/g, c =>
     ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 }
+/* 图片地址：文件名规则为 {postID}_{原文件名} */
+const LOCAL_IMAGES_DIR = 'images/downloaded_posts_images/';
 function localImagePath(url, postID) {
   const name = String(url).split('/').pop().split('?')[0];
-  return IMAGES_DIR + postID + '_' + name;
+  const file = postID + '_' + name;
+  if (IMAGE_BASE) return IMAGE_BASE + file;
+  if (IMAGE_FALLBACK_BASE) return IMAGE_FALLBACK_BASE + file;
+  return LOCAL_IMAGES_DIR + file;
+}
+
+/* 图片加载失败时尝试备用源，仍失败则交由调用方显示提示 */
+function withImageFallback(img, url, postID) {
+  let tried = false;
+  img.addEventListener('error', function () {
+    if (tried || !IMAGE_FALLBACK_BASE) return;
+    tried = true;
+    const file = String(url).split('/').pop().split('?')[0];
+    img.src = IMAGE_FALLBACK_BASE + postID + '_' + file;
+  });
 }
 function toast(msg) {
   const wrap = $('toastWrap');
@@ -1301,23 +1339,46 @@ function avatarColor(id) {
 
 /* ============================================================
    数据加载
+
+   数据来自 posts-data.js（build_data.py 生成），
+   通过 <script src> 注入到 window.__POSTS__，不涉及跨域请求，
+   因此在 GitHub Pages 等纯静态托管上可直接运行。
    ============================================================ */
-/* posts2/index.json 实际带 UTF-8 BOM（EF BB BF）。现代浏览器能容忍，
-   但旧版 Safari/部分环境会直接抛 Unexpected token，显式剥离更稳。 */
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(url + ' ' + res.status);
-  const text = await res.text();
-  return JSON.parse(text.replace(/^﻿/, ''));
+
+function loadBundle() {
+  const bundle = window.__POSTS__;
+  if (!bundle || !bundle.posts) {
+    throw new Error('posts-data.js 未加载');
+  }
+  state.index = bundle.order.map(String);
+  // 预先把精简元数据塞进缓存，避免排序时反复构造对象
+  for (const id of state.index) {
+    const p = bundle.posts[id];
+    if (p) {
+      state.cache.set(id, p);
+      state.favMeta.set(id, {
+        id,
+        title: p.title,
+        nick: (p.user && p.user.nick) || '匿名',
+        hit: p.hit || 0,
+        praise: p.praise || 0,
+        imgCount: (p.images || []).length,
+        createTime: p.createTime || 0
+      });
+    }
+  }
 }
 
 async function loadIndex() {
   try {
-    const list = await fetchJson(POSTS_DIR + 'index.json');
-    state.index = list.map(f => f.replace(/\.json$/, ''));
+    loadBundle();
   } catch (e) {
     state.index = [];
-    showFatal('无法读取 posts2/index.json<br><span style="font-size:12px">请通过本地服务器打开本页</span>');
+    showFatal(
+      '数据文件未加载<br>' +
+      '<span style="font-size:12px">请确认 posts-data.js 与本页在同一目录<br>' +
+      '若未生成，运行 <code>python build_data.py</code></span>'
+    );
     return;
   }
   $('topbarTitle').textContent = `共 ${state.index.length.toLocaleString()} 篇帖子`;
@@ -1325,30 +1386,16 @@ async function loadIndex() {
   updateStatLine();
 }
 
+/* 数据已全部预载进内存，这里直接命中缓存 */
 async function getPost(id) {
-  if (state.cache.has(id)) return state.cache.get(id);
-  const data = await fetchJson(POSTS_DIR + id + '.json');
-  state.cache.set(id, data);
-  return data;
+  const key = String(id);
+  if (state.cache.has(key)) return state.cache.get(key);
+  throw new Error('post not found: ' + key);
 }
 
-/* 拉取一个用于排序的轻量元数据（仅需要时读文件） */
+/* 取用于排序的轻量元数据 */
 async function peekMeta(id) {
-  if (state.favMeta.has(id)) return state.favMeta.get(id);
-  try {
-    const p = await getPost(id);
-    const meta = {
-      id: String(id),
-      title: p.title || '无标题',
-      nick: p.user?.nick || '匿名',
-      hit: p.hit || 0,
-      praise: p.praise || 0,
-      imgCount: (p.images || []).length,
-      createTime: p.createTime || 0
-    };
-    state.favMeta.set(id, meta);
-    return meta;
-  } catch { return null; }
+  return state.favMeta.get(String(id)) || null;
 }
 
 /* ============================================================
@@ -1363,30 +1410,21 @@ function shuffle(arr) {
   return a;
 }
 
-/* 排序需要元数据。index.json 只有文件名，所以先采样一批拉取元数据再排序。
-   采样而非全量的原因：2341 篇全量拉取会产生 2341 次请求，首屏不可接受。 */
-const SORT_SAMPLE = 400;
+/* 排序：数据已全量预载进内存，因此直接对全部 2340 篇真实排序，
+   不再需要采样（之前的采样是为了省掉 2340 次网络请求，现在没有请求了）。*/
 const sortCache = new Map(); // sortKey -> 已排序的 id 数组
-
-async function fetchMetaBatch(ids) {
-  const out = [];
-  const CONCURRENCY = 12;
-  for (let i = 0; i < ids.length; i += CONCURRENCY) {
-    const slice = ids.slice(i, i + CONCURRENCY);
-    const results = await Promise.all(slice.map(peekMeta));
-    for (const m of results) if (m) out.push(m);
-  }
-  return out;
-}
 
 async function buildSorted(sort) {
   if (sortCache.has(sort)) return sortCache.get(sort);
 
-  const sample = shuffle(state.index).slice(0, SORT_SAMPLE);
-  const metas = await fetchMetaBatch(sample);
   const minImg = Number($('minImgSel').value) || 0;
+  const all = [];
+  for (const id of state.index) {
+    const m = state.favMeta.get(id);
+    if (m) all.push(m);
+  }
 
-  let list = metas.filter(m => !minImg || m.imgCount >= minImg);
+  let list = all.filter(m => !minImg || m.imgCount >= minImg);
   if ($('unseenChk').checked) {
     const fresh = list.filter(m => !state.seen.has(m.id));
     if (fresh.length) list = fresh;
@@ -1417,7 +1455,17 @@ async function candidates() {
     return state.history.slice();
   }
   if (state.view === 'hot') {
-    return shuffle(state.index).slice(0, 60);
+    // 数据全量在内存，可按真实热度取前 200 篇，不足则回退随机
+    if (!sortCache.has('hot')) {
+      const ranked = [];
+      for (const id of state.index) {
+        const m = state.favMeta.get(id);
+        if (m) ranked.push(m);
+      }
+      ranked.sort((a, b) => b.hit - a.hit);
+      sortCache.set('hot', ranked.slice(0, 200).map(m => m.id));
+    }
+    return sortCache.get('hot');
   }
 
   if (sort !== 'random') {
@@ -1535,6 +1583,7 @@ function renderViewer() {
   // 加载完成前先显示骨架，避免浏览器默认的破损图图标闪现
   img.style.opacity = '0';
   img.addEventListener('load', () => { img.style.opacity = '1'; });
+  withImageFallback(img, imgs[state.imgIdx], p.postID);
   img.addEventListener('error', function () {
     this.replaceWith(Object.assign(document.createElement('div'), {
       className: 'viewer-empty',
@@ -2058,7 +2107,22 @@ function watchSystemTheme() {
   else if (mq.addListener) mq.addListener(onChange); // Safari < 14
 }
 
-init();
+/* 等待数据 bundle 就绪后再启动。
+   bundle 用 <script> 同步引入，理论上执行到这里时已就绪；
+   但若将来改为异步加载或走 CDN，需要等待 load 事件，故做双重兜底。 */
+function whenDataReady(cb) {
+  if (window.__POSTS__) { cb(); return; }
+  let waited = 0;
+  const timer = setInterval(() => {
+    if (window.__POSTS__ || waited > 100) {   // 最多等 10 秒
+      clearInterval(timer);
+      cb();
+    }
+    waited++;
+  }, 100);
+}
+
+whenDataReady(init);
 </script>
 </body>
 </html>
