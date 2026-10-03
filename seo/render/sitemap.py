@@ -28,8 +28,7 @@ def build_sitemap(pages, out_path=None, tag_pages=None):
     pages: [{'url','lastmod','priority','changefreq'}]
     tag_pages: [{'url','lastmod'}]
     """
-    out_path = out_path or os.path.join(
-        config.ROOT, config.PIPELINE['OUT_DIR'], 'sitemap.xml')
+    out_path = out_path or os.path.join(config.ROOT, 'sitemap.xml')
     _mkdir(os.path.dirname(out_path))
 
     urls = list(pages) + list(tag_pages or [])
@@ -77,15 +76,11 @@ def build_robots(out_path=None, extra_disallow=None):
         'Disallow: /seo/logs/',
         'Disallow: /*?v=',
         '',
-        '# 静态页集中在 /post/ 与 /kw/ 下，明确开放',
-        'Allow: /post/',
-        'Allow: /tag/',
-        'Allow: /kw/',
-        # 引流文章目录，每小时新增，必须放行
-        'Allow: /promo/',
+        '# 所有静态单页统一在 /pages/ 下（内容页/关键词页/分类页/引流文）',
+        'Allow: /%s/' % config.PIPELINE['OUT_DIR'],
         '',
         'Sitemap: %ssitemap.xml' % base,
-        'Sitemap: %spromo/sitemap.xml' % base,
+        'Sitemap: %ssitemap-promo.xml' % base,
     ]
     if extra_disallow:
         lines.extend(extra_disallow)
@@ -95,14 +90,21 @@ def build_robots(out_path=None, extra_disallow=None):
 
 
 def collect_pages(out_dir=None):
-    """扫描已生成的静态页，收集成 sitemap 条目。"""
-    out_dir = out_dir or os.path.join(config.ROOT, config.PIPELINE['OUT_DIR'])
+    """扫描已生成的静态页，收集成 sitemap 条目。
+
+    目录是**平铺**的：pages/<slug>/index.html。
+    页面类型靠 slug 前缀区分（tag- 开头是分类页），
+    所以这里不需要再按子目录遍历。
+    """
+    out_dir = out_dir or config.OUTPUT_DIR
     pages = []
     if not os.path.isdir(out_dir):
         return pages
-    for path in glob.glob(os.path.join(out_dir, 'post', '*', 'index.html')):
+    for path in glob.glob(os.path.join(out_dir, '*', 'index.html')):
         slug = os.path.basename(os.path.dirname(path))
-        data_path = os.path.join(out_dir, 'post', slug, 'content.json')
+        if slug.startswith('tag-'):
+            continue          # 分类页由 build_index_entries 单独登记
+        data_path = os.path.join(out_dir, slug, 'content.json')
         lastmod = None
         if os.path.exists(data_path):
             import json
@@ -113,7 +115,7 @@ def collect_pages(out_dir=None):
             except Exception:
                 pass
         pages.append({
-            'url': config.site_url('/post/%s/' % slug),
+            'url': config.page_url(slug),
             'lastmod': lastmod,
             'changefreq': 'weekly',
             # 详情页给0.6：比首页低但不能太低，太低会被判定为不重要
@@ -126,29 +128,28 @@ def build_index_entries():
     """首页 + 分类聚合页 + 关键词聚合页。
 
     三层入口结构：首页 → 分类页 → 关键词页 → 具体内容页。
-    每一层都在sitemap 里登记，爬虫才能顺着找到下层。
+    每一层都在 sitemap 里登记，爬虫才能顺着找到下层。
     """
-    site_url = config.site_url
     now = _today()
     entries = [{
-        'url': site_url('/'), 'lastmod': now,
+        'url': config.site_url('/'), 'lastmod': now,
         'changefreq': 'daily', 'priority': '1.0',
     }]
     for tag in config.TAG_SLUGS:
         entries.append({
-            'url': site_url('/tag/%s/' % config.TAG_SLUGS[tag]),
+            'url': config.tag_url(tag),
             'lastmod': now, 'changefreq': 'daily', 'priority': '0.8',
         })
 
     # 关键词页：priority 给 0.7，比分类页低一点但高于单篇详情页，
-    # 因为它是承接搜索流量的主要入口
-    import glob as _glob
-    kw_dir = os.path.join(config.ROOT, config.PIPELINE['OUT_DIR'], 'kw')
-    for d in _glob.glob(os.path.join(kw_dir, '*')):
-        if os.path.exists(os.path.join(d, 'index.html')):
-            slug = os.path.basename(d)
+    # 因为它是承接搜索流量的主要入口。
+    # 关键词页与内容页同目录，用 slug 前缀（topic-）区分。
+    for d in os.listdir(config.OUTPUT_DIR) \
+            if os.path.isdir(config.OUTPUT_DIR) else []:
+        if d.startswith('topic-') and os.path.exists(
+                os.path.join(config.OUTPUT_DIR, d, 'index.html')):
             entries.append({
-                'url': site_url('/kw/%s/' % slug),
+                'url': config.page_url(d),
                 'lastmod': now, 'changefreq': 'weekly', 'priority': '0.7',
             })
     return entries

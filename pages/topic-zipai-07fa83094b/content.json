@@ -1,0 +1,113 @@
+{
+  "seed_id": "kw::自拍姿势::mistake",
+  "post_id": null,
+  "slug": "topic-zipai-07fa83094b",
+  "tag": "自拍",
+  "tag_slug": "zipai",
+  "meta_title": "自拍姿势常见误区",
+  "meta_description": "围绕「自拍姿势」的误区盘点，用户本人拍摄的自拍照",
+  "tags": [
+    "自拍",
+    "自拍姿势"
+  ],
+  "body": "「自拍姿势」是自拍里常被提到的话题之一。这一页把这个主题的基本情况整理出来，方便第一次接触的人快速了解。\n\n自拍姿势属于自拍分类，站内有不少相关内容。这一分类的内容大多围绕日常记录与兴趣分享展开，看的人通常是想找同好或者找点参考。\n\n想看社区里的真实内容，可以从页面下方的入口进入，那里有更多同分类的帖子。",
+  "keyword": "自拍姿势",
+  "angle": "mistake",
+  "author": "玉卒",
+  "published": 1791014699392,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1791014710174,
+  "by_ai": false,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/"
+        },
+        "headline": "自拍姿势常见误区",
+        "description": "围绕「自拍姿势」的误区盘点，用户本人拍摄的自拍照",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/",
+        "about": {
+          "@type": "Thing",
+          "name": "自拍",
+          "description": "用户本人拍摄的自拍照"
+        },
+        "articleSection": "自拍",
+        "keywords": "自拍, 自拍姿势",
+        "wordCount": 137,
+        "datePublished": "2026-10-03T08:04:59Z",
+        "dateModified": "2026-10-03T08:04:59Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "自拍",
+            "item": "https://banznx.github.io/foot-job/pages/tag-zipai/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "自拍姿势常见误区",
+            "item": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "f806c08c4bfc52c1ba09cab5c3c6dc10",
+  "quality": {
+    "passed": true,
+    "score": 70,
+    "zh_len": 137,
+    "paragraphs": 3,
+    "by_ai": false
+  }
+}

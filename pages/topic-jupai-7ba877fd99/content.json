@@ -1,0 +1,115 @@
+{
+  "seed_id": "kw::举牌照片::story",
+  "post_id": null,
+  "slug": "topic-jupai-7ba877fd99",
+  "tag": "举牌",
+  "tag_slug": "jupai",
+  "meta_title": "举牌照片：个人态度的实体化表达",
+  "meta_description": "举牌照片是网络社区中常见的记录方式，通过手持定制标语来传达当下的情绪或观点。这类内容通常用于记录生活点滴、表达某种宣言或寻求特定帮助。",
+  "tags": [
+    "摄影技巧",
+    "生活记录",
+    "创意表达",
+    "视觉构图"
+  ],
+  "body": "举牌照片的核心在于“文字与画面的结合”。画面提供了场景背景，而文字则作为视觉焦点，直接点明了拍摄者的意图。这种形式在打卡、宣言、求助和情绪表达中非常常见。\n\n从内容分类来看，打卡类举牌照片通常配合知名地标或景点，用于记录行程；宣言类则多用于展示个人立场或趣味梗；求助类常带有特定符号，用于在社区内寻找帮助；而情绪表达类则更注重文字的情感色彩。\n\n在拍摄技巧上，举牌的字体应清晰易读，颜色与背景形成对比。构图时，通常建议将举牌置于画面中心或黄金分割点，确保文字不被遮挡。此外，保持举牌与面部表情的协调，能更好地传递照片的主题。",
+  "keyword": "举牌照片",
+  "angle": "story",
+  "author": "玉卒",
+  "published": 1791014353622,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1791014399905,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/"
+        },
+        "headline": "举牌照片：个人态度的实体化表达",
+        "description": "举牌照片是网络社区中常见的记录方式，通过手持定制标语来传达当下的情绪或观点。这类内容通常用于记录生活点滴、表达某种宣言或寻求特定帮助。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/",
+        "about": {
+          "@type": "Thing",
+          "name": "举牌",
+          "description": "网友举着自定义文字牌的照片，通常是打卡、宣言、求助、情绪表达"
+        },
+        "articleSection": "举牌",
+        "keywords": "摄影技巧, 生活记录, 创意表达, 视觉构图",
+        "wordCount": 233,
+        "datePublished": "2026-10-03T07:59:13Z",
+        "dateModified": "2026-10-03T07:59:13Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "举牌",
+            "item": "https://banznx.github.io/foot-job/pages/tag-jupai/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "举牌照片：个人态度的实体化表达",
+            "item": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "8ee6637e082449d9f1747a7f7fe15120",
+  "quality": {
+    "passed": true,
+    "score": 100,
+    "zh_len": 233,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

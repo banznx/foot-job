@@ -48,7 +48,7 @@ def build_schema(item, content, site_url):
     tags = _get(item, 'tags') or ['综合']
     meta = _get(item, 'meta') or {}
     tag = tags[0]
-    url = site_url('/post/%s/' % content['slug'])
+    url = config.page_url(content['slug'])
 
     graph = []
 
@@ -122,7 +122,7 @@ def build_schema(item, content, site_url):
             {'@type': 'ListItem', 'position': 1, 'name': '首页',
              'item': site_url('/')},
             {'@type': 'ListItem', 'position': 2, 'name': tag,
-             'item': site_url('/tag/%s/' % config.TAG_SLUGS.get(tag, 'zonghe'))},
+             'item': config.tag_url(tag)},
             {'@type': 'ListItem', 'position': 3, 'name': content['meta_title'][:40],
              'item': url},
         ],
@@ -206,7 +206,7 @@ def assemble(item, ai, keywords_for_tag=None, index=None, pool=None,
 
     # 阶段 5：结构化数据
     content['schema'] = build_schema(item, content, site_url)
-    content['url'] = site_url('/post/%s/' % slug)
+    content['url'] = config.page_url(slug)
     content['fingerprint'] = fingerprint(item, content)
 
     return content

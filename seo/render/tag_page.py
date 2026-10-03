@@ -35,7 +35,7 @@ def render_tag_page(tag, keyword_list, posts, site_url=None, out_path=None,
     title = '%s%s_%s' % (tag, intent, brand)
     desc = '%s%s 主题内容汇总：%s。在%s按推荐、最新、热门浏览全站内容。' % (
         brand, '的' + tag, intent, brand)
-    url = site_url('/tag/%s/' % tag_slug)
+    url = config.tag_url(tag)
 
     schema = {
         '@context': 'https://schema.org',
@@ -57,7 +57,7 @@ def render_tag_page(tag, keyword_list, posts, site_url=None, out_path=None,
             'numberOfItems': len(posts),
             'itemListElement': [
                 {'@type': 'ListItem', 'position': i + 1,
-                 'url': site_url('/post/%s/' % p['slug'])}
+                 'url': config.page_url(p['slug'])}
                 for i, p in enumerate(posts)
             ],
         },
@@ -79,7 +79,7 @@ def render_tag_page(tag, keyword_list, posts, site_url=None, out_path=None,
             if allowed_kw is not None and slug not in allowed_kw:
                 continue
             links.append('<a class="tag" href="%s">%s</a>'
-                         % (esc(site_url('/kw/%s/' % slug)), esc(k)))
+                         % (esc(config.page_url(slug)), esc(k)))
         if links:
             kw_html = ('<div class="tags" aria-label="相关关键词">%s</div>'
                        % ''.join(links))
@@ -99,7 +99,7 @@ def render_tag_page(tag, keyword_list, posts, site_url=None, out_path=None,
           <div style="color:var(--ink-3);font-size:12px">%(sum)s</div>
         </div>
       </a>""" % {
-            'url': esc(site_url('/post/%s/' % p['slug'])),
+            'url': esc(config.page_url(p['slug'])),
             'img': img,
             'title': esc(p['title']),
             'sum': esc(p.get('summary', '')[:60]),
@@ -149,7 +149,7 @@ def render_keyword_page(keyword, tag, pages, site_url=None):
     intent = config.TAG_INTENT.get(tag, '内容')
     from ..pipeline import rewrite as _rw
     kw_slug = _rw.topic_slug(keyword, 'index')
-    url = site_url('/kw/%s/' % kw_slug)
+    url = config.page_url(kw_slug)
 
     title = '%s大全 - %s' % (keyword, brand)
     desc = '%s相关内容的整理汇总：%s。%d 篇主题整理页，帮你快速了解这一类话题。' % (
@@ -171,7 +171,7 @@ def render_keyword_page(keyword, tag, pages, site_url=None):
             'itemListElement': [
                 {'@type': 'ListItem', 'position': i + 1,
                  'name': p.get('meta_title', ''),
-                 'url': site_url('/post/%s/' % p['slug'])}
+                 'url': config.page_url(p['slug'])}
                 for i, p in enumerate(pages)
             ],
         },
@@ -186,7 +186,7 @@ def render_keyword_page(keyword, tag, pages, site_url=None):
           <div style="color:var(--ink-3);font-size:12px">%(sum)s</div>
         </div>
       </a>""" % {
-            'url': esc(site_url('/post/%s/' % p['slug'])),
+            'url': esc(config.page_url(p['slug'])),
             'title': esc(p.get('meta_title', '')),
             'sum': esc(sum_txt),
         })
@@ -213,7 +213,7 @@ def render_keyword_page(keyword, tag, pages, site_url=None):
   </div>
 </main>""" % {
         'home': esc(site_url('/')),
-        'tagurl': esc(site_url('/tag/%s/' % config.TAG_SLUGS.get(tag, 'zonghe'))),
+        'tagurl': esc(config.tag_url(tag)),
         'tag': esc(tag), 'kw': esc(keyword), 'intent': esc(intent),
         'count': len(pages),
         'ads': render_ads(['top']),
@@ -279,7 +279,7 @@ def _shell(title, desc, url, brand, site_url, schema, body):
         'lang': config.SITE['LANG'],
         'title': esc(title), 'desc': esc(desc), 'url': esc(url),
         'brand': esc(brand), 'home': esc(site_url('/')),
-        'css': esc(site_url('/seo-assets/style.css')),
+        'css': esc(config.site_url('/%s/seo-assets/style.css' % config.PIPELINE['OUT_DIR'])),
         'schema': _jsonld(schema), 'body': body,
     }
 

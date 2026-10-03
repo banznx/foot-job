@@ -141,20 +141,23 @@ jobs:
           # 少任何一个 meta 都会让这一页的收录能力大打折扣，
           # 与其让这种页面上线，不如在这里就失败。
           #
-          # 两个目录都要校验：主题页在 seo-pages/，引流文在 promo/
+          # 目录已平铺，一次 glob 覆盖全部页面类型
           python - <<'PY'
           import glob, sys, json, re, os
-          pages = (glob.glob('seo-pages/post/*/index.html')
-                   + glob.glob('promo/post/*/index.html')
-                   + glob.glob('promo/index.html'))
+          # 目录已平铺：pages/<slug>/index.html
+          pages = glob.glob('pages/*/index.html')
           if not pages:
               print('没有生成任何页面'); sys.exit(1)
           need = ['<title>', 'name="description"', 'rel="canonical"',
                   'application/ld+json', 'og:title']
-          # articleBody 只在正文页有；索引/列表页是CollectionPage，
-          # 结构上就不该有正文，要求它存在会导致误判
+          # articleBody 只在**正文页**有。列表页（索引页/分类页/关键词页）
+          # 的 schema 类型是 CollectionPage，结构上就没有正文，
+          # 要求它们带 articleBody 会造成大批误判。
           body_need = 'itemprop="articleBody"'
-          is_list = p.endswith('promo/index.html')
+          name = p.split('/')[-2] if '/' in p else ''
+          is_list = (p.endswith('promo-index.html')
+                     or name.startswith('tag-')
+                     or name.startswith('topic-'))
           bad = []
           for p in pages:
               html = open(p, encoding='utf-8').read()
@@ -175,17 +178,13 @@ jobs:
 
           # 死链检查：内链指向的页面必须真实存在
           def exists(kind, slug):
-              return any(os.path.exists(t % slug) for t in (
-                  'seo-pages/post/%s/index.html',
-                  'seo-pages/kw/%s/index.html',
-                  'seo-pages/tag/%s/index.html',
-                  'promo/post/%s/index.html'))
+              return os.path.exists('pages/%s/index.html' % slug)
 
           dead = 0
           for p in pages:
               html = open(p, encoding='utf-8').read()
               for kind, slug in re.findall(
-                      r'href="[^"]*/(post|kw|tag)/([^/"]+)/"', html):
+                      r'href="[^"]*/pages/([^/"]+)/"', html):
                   if not exists(kind, slug):
                       dead += 1
                       if dead <= 5: print('  死链：%s → %s/%s' % (p, kind, slug))
@@ -208,7 +207,7 @@ jobs:
           # IndexNow 的密钥文件也要提交：爬虫靠它验证域名归属。
           # 这不是机密 —— 它的作用本来就是证明「这个域名是我的」，
           # 搜索引擎和其他站长都能看到。真正的机密是 API Key 本身。
-          git add -A seo-pages promo robots.txt seo/state/ledger.json .count
+          git add -A pages robots.txt sitemap.xml sitemap-promo.xml seo/state/ledger.json .count
           # 密钥文件名带 key 值，用通配带上
           if [ -n "${{ secrets.INDEXNOW_KEY }}" ]; then
             git add "${{ secrets.INDEXNOW_KEY }}.txt" || true

@@ -285,11 +285,11 @@ def assemble(promo_item, gen, site_url=None, cta_links=None):
         'cta_text': config.CONTENT_KIND['CTA_TEXT'],
         'source_post_id': None,
     }
-    content['url'] = site_url('/promo/%s/' % slug)
+    content['url'] = config.page_url(slug)
     content['schema'] = build_schema(promo_item, content, site_url)
     # schema 里的 URL 要跟实际路径一致
     for node in content['schema']['@graph']:
-        if node.get('@id', '').startswith(site_url('/post/')):
+        if node.get('@id', '').startswith(config.page_url('')):
             node['@id'] = content['url'] + '#article'
         if node.get('url'):
             node['url'] = content['url']

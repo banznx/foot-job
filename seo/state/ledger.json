@@ -1588,6 +1588,172 @@
       "simhash": "58f87778c01ca76f",
       "published_at": 1791001520783,
       "updated_at": 1791001526608
+    },
+    "kw::原创摄影::why": {
+      "status": "failed",
+      "reason": "name 'tag' is not defined",
+      "updated_at": 1791014312362
+    },
+    "kw::原创摄影::compare": {
+      "status": "failed",
+      "reason": "name 'tag' is not defined",
+      "updated_at": 1791014323482
+    },
+    "kw::举牌照片::story": {
+      "slug": "topic-jupai-7ba877fd99",
+      "url": "https://banznx.github.io/foot-job/pages/topic-jupai-7ba877fd99/",
+      "fingerprint": "8ee6637e082449d9f1747a7f7fe15120",
+      "status": "ok",
+      "score": 100,
+      "by_ai": true,
+      "zh_len": 233,
+      "meta_title": "举牌照片：个人态度的实体化表达",
+      "simhash": "eb4ada1885199894",
+      "published_at": 1791014353622,
+      "updated_at": 1791014399919
+    },
+    "kw::腿部特写::qa": {
+      "slug": "topic-meitui-edfd1289b8",
+      "url": "https://banznx.github.io/foot-job/pages/topic-meitui-edfd1289b8/",
+      "fingerprint": "a20bf7082ef09e6d925746ee82a1d156",
+      "status": "ok",
+      "score": 92,
+      "by_ai": true,
+      "zh_len": 197,
+      "meta_title": "腿部特写：常见疑问与选择依据",
+      "simhash": "7b420b493fd457f9",
+      "published_at": 1791014477002,
+      "updated_at": 1791014513115
+    },
+    "kw::腿部特写::beginner": {
+      "slug": "topic-meitui-2a12bf3eb6",
+      "url": "https://banznx.github.io/foot-job/pages/topic-meitui-2a12bf3eb6/",
+      "fingerprint": "c1bbb87ab466b1d10674b69b0dae2ef1",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "腿部特写入门指南",
+      "simhash": "6c38a47d1b829a6b",
+      "published_at": 1791014661632,
+      "updated_at": 1791014672280
+    },
+    "kw::腿部特写::tips": {
+      "slug": "topic-meitui-23a73bd40e",
+      "url": "https://banznx.github.io/foot-job/pages/topic-meitui-23a73bd40e/",
+      "fingerprint": "39383b599d316e1a2d24535284206d4f",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "腿部特写实用技巧",
+      "simhash": "6c38a47d1b829a6b",
+      "published_at": 1791014661632,
+      "updated_at": 1791014683020
+    },
+    "kw::自拍姿势::mistake": {
+      "slug": "topic-zipai-07fa83094b",
+      "url": "https://banznx.github.io/foot-job/pages/topic-zipai-07fa83094b/",
+      "fingerprint": "f806c08c4bfc52c1ba09cab5c3c6dc10",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "自拍姿势常见误区",
+      "simhash": "6c28a57d33421e29",
+      "published_at": 1791014699392,
+      "updated_at": 1791014710187
+    },
+    "kw::自拍姿势::why": {
+      "slug": "topic-zipai-6abc5c1a03",
+      "url": "https://banznx.github.io/foot-job/pages/topic-zipai-6abc5c1a03/",
+      "fingerprint": "3e6261fdcf538a02589a62a837d7c8a9",
+      "status": "ok",
+      "score": 80,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "自拍姿势为什么受欢迎",
+      "simhash": "6c28a57d33421e29",
+      "published_at": 1791014699393,
+      "updated_at": 1791014720792
+    },
+    "kw::图片社区::compare": {
+      "slug": "topic-zonghe-0649f204dc",
+      "url": "https://banznx.github.io/foot-job/pages/topic-zonghe-0649f204dc/",
+      "fingerprint": "4dbfd79099798cc153162ac08fb72458",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "图片社区风格对比",
+      "simhash": "6838a57d92d29829",
+      "published_at": 1791014931134,
+      "updated_at": 1791014941785
+    },
+    "kw::图片社区::story": {
+      "slug": "topic-zonghe-da67337b7d",
+      "url": "https://banznx.github.io/foot-job/pages/topic-zonghe-da67337b7d/",
+      "fingerprint": "ec03f42a11ed416f9e12f68d8b0d33e0",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "图片社区场景记录",
+      "simhash": "6838a57d92d29829",
+      "published_at": 1791014931134,
+      "updated_at": 1791014952637
+    },
+    "promo::rewrite::497504::jupai-548896ea": {
+      "slug": "p-540242a864",
+      "url": "https://banznx.github.io/foot-job/pages/p-540242a864/",
+      "fingerprint": "f6c75e0624047599ff2eecd74643a6a7",
+      "status": "ok",
+      "score": 80,
+      "by_ai": false,
+      "zh_len": 123,
+      "meta_title": "【举牌】有些人吃火锅吃到一半整理",
+      "simhash": "50d06b8d5bb25f47",
+      "published_at": 1791015038941,
+      "updated_at": 1791015105513
+    },
+    "kw::举牌照片::beginner": {
+      "slug": "topic-jupai-27bf1adec4",
+      "url": "https://banznx.github.io/foot-job/pages/topic-jupai-27bf1adec4/",
+      "fingerprint": "651eee002bea954bc2a4f2e2e77a1fc0",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "举牌照片入门指南",
+      "simhash": "6c0aa57d3b021b29",
+      "published_at": 1791015174304,
+      "updated_at": 1791015185029
+    },
+    "kw::生活记录::tips": {
+      "slug": "topic-richang-9abc591ca6",
+      "url": "https://banznx.github.io/foot-job/pages/topic-richang-9abc591ca6/",
+      "fingerprint": "ae45bdd5f7edfaec9ff806f2a2da3bee",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "生活记录实用技巧",
+      "simhash": "6c3aa56d91029e29",
+      "published_at": 1791015293625,
+      "updated_at": 1791015365394
+    },
+    "kw::腿部特写::mistake": {
+      "slug": "topic-meitui-d16fbbc8b4",
+      "url": "https://banznx.github.io/foot-job/pages/topic-meitui-d16fbbc8b4/",
+      "fingerprint": "88b0f5d7b155761bcca58961d7a6b8f5",
+      "status": "ok",
+      "score": 70,
+      "by_ai": false,
+      "zh_len": 137,
+      "meta_title": "腿部特写常见误区",
+      "simhash": "6c38a47d1b829a6b",
+      "published_at": 1791015459836,
+      "updated_at": 1791015470509
     }
   },
   "runs": [
@@ -2129,6 +2295,144 @@
       },
       "new_pages": 0,
       "quality": {}
+    },
+    {
+      "ts": 1791014684,
+      "mode": "topic",
+      "duration_s": 94.1,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 3,
+        "retry": 6,
+        "rate_limited": 8,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 2,
+      "quality": {
+        "total": 2,
+        "passed": 2,
+        "rejected": 0,
+        "avg_score": 70.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791014742,
+      "mode": "topic",
+      "duration_s": 56.6,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 3,
+        "retry": 6,
+        "rate_limited": 9,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 2,
+      "quality": {
+        "total": 2,
+        "passed": 2,
+        "rejected": 0,
+        "avg_score": 75.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791014953,
+      "mode": "topic",
+      "duration_s": 92.0,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 3,
+        "retry": 6,
+        "rate_limited": 8,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 2,
+      "quality": {
+        "total": 2,
+        "passed": 2,
+        "rejected": 0,
+        "avg_score": 70.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791015185,
+      "mode": "topic",
+      "duration_s": 24.4,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 6,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791015366,
+      "mode": "topic",
+      "duration_s": 110.5,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 1,
+        "fail": 1,
+        "retry": 2,
+        "rate_limited": 2,
+        "token_in": 570,
+        "token_out": 254
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 70.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791015471,
+      "mode": "topic",
+      "duration_s": 84.8,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 5,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 70.0,
+        "reasons": {}
+      }
     }
   ]
 }

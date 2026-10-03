@@ -37,7 +37,6 @@ from .render import tag_page as tag_render
 from .sources import AiClient, LocalPostSource
 
 OUT_DIR = os.path.join(config.ROOT, config.PIPELINE['OUT_DIR'])
-PROMO_DIR = config.PROMO_OUT_DIR
 
 
 def log(msg):
@@ -222,7 +221,7 @@ def main(argv=None):
                 continue
 
             if not opts.dry_run:
-                d = os.path.join(OUT_DIR, 'post', content['slug'])
+                d = config.page_dir(content['slug'])
                 tag_render.write_file(
                     os.path.join(d, 'index.html'),
                     page_render.render_post(content, config.site_url))
@@ -350,7 +349,7 @@ def run_promo_mode(opts, ai, keywords, items):
                    for t in sorted(config.TAG_SLUGS.keys())[:5]]
             html = page_render.render_promo(
                 content, config.site_url, cta_extra=cta)
-            d = os.path.join(PROMO_DIR, 'post', content['slug'])
+            d = config.page_dir(content['slug'])
             tag_render.write_file(os.path.join(d, 'index.html'), html)
             tag_render.write_file(
                 os.path.join(d, 'content.json'),
@@ -380,7 +379,7 @@ def build_promo_index(results):
     让爬虫有一个固定的入口可以顺着找到所有最新文章。
     """
     items = []
-    base = os.path.join(PROMO_DIR, 'post')
+    base = OUT_DIR
     if os.path.isdir(base):
         for name in os.listdir(base):
             f = os.path.join(base, name, 'content.json')
@@ -394,7 +393,7 @@ def build_promo_index(results):
     items = items[:60]
 
     brand = config.SITE['BRAND']
-    url = config.site_url('/promo/')
+    url = config.page_url('promo-index')
     title = '%s · 内容精选' % brand
     desc = '围绕图片分享社区话题整理的原创内容合集，每篇都附带进站入口。'
     cards = []
@@ -404,7 +403,7 @@ def build_promo_index(results):
             '<div style="font-weight:600;margin-bottom:3px">%s</div>'
             '<div style="color:var(--ink-3);font-size:12px">%s</div>'
             '</div></a>' % (
-                page_render.esc(config.site_url('/promo/post/%s/' % c['slug'])),
+                page_render.esc(config.page_url(c['slug'])),
                 page_render.esc(c.get('meta_title', '')),
                 page_render.esc((c.get('meta_description') or '')[:70])))
     body = """
@@ -439,7 +438,7 @@ def build_promo_index(results):
         'mainEntity': {'@type': 'ItemList', 'numberOfItems': len(items)},
     }
     tag_render.write_file(
-        os.path.join(PROMO_DIR, 'index.html'),
+        os.path.join(OUT_DIR, 'promo-index.html'),
         tag_render._shell(title, desc, url, brand, config.site_url,
                           schema, body))
     return len(items)
@@ -451,13 +450,13 @@ def build_all_sitemaps():
     分开的好处：引流文更新频率高（每小时），
     和主题页混在一个 sitemap 里会让主题页的更新信号被稀释。
     """
-    main_path = os.path.join(OUT_DIR, 'sitemap.xml')
+    main_path = os.path.join(config.ROOT, 'sitemap.xml')
     pages = sitemap_render.collect_pages()
     idx = sitemap_render.build_index_entries()
     sp, n = sitemap_render.build_sitemap(pages, tag_pages=idx)
 
     promo_pages = []
-    pbase = os.path.join(PROMO_DIR, 'post')
+    pbase = OUT_DIR
     if os.path.isdir(pbase):
         for name in os.listdir(pbase):
             f = os.path.join(pbase, name, 'content.json')
@@ -468,21 +467,23 @@ def build_all_sitemaps():
                     c = json.load(fh)
             except Exception:
                 continue
+            if not name.startswith(config.PIPELINE['PROMO_SLUG_PREFIX']):
+                continue
             promo_pages.append({
-                'url': config.site_url('/promo/post/%s/' % name),
+                'url': config.page_url(name),
                 'lastmod': sitemap_render._lastmod(
                     None, c.get('generated_at')),
                 'changefreq': 'monthly', 'priority': '0.6',
             })
-    if os.path.exists(os.path.join(PROMO_DIR, 'index.html')):
+    if os.path.exists(os.path.join(OUT_DIR, 'promo-index.html')):
         promo_pages.insert(0, {
-            'url': config.site_url('/promo/'),
+            'url': config.page_url('promo-index'),
             'lastmod': sitemap_render._today(),
             'changefreq': 'hourly', 'priority': '0.7',
         })
     sitemap_render.build_sitemap(promo_pages,
-                                 out_path=os.path.join(PROMO_DIR,
-                                                       'sitemap.xml'))
+                                 out_path=os.path.join(
+                                     config.ROOT, 'sitemap-promo.xml'))
     return sp, n + len(promo_pages)
 
 
@@ -492,16 +493,18 @@ def _ensure_css():
         tag_render.write_file(path, page_render.CSS)
 
 
-def kind_of_dir(path):
-    """从目录路径反推页面类型：'post' / 'kw' / 'tag'。
+def _kind_of_slug(slug):
+    """按 slug 前缀判断页面类型。目录已平铺，没有子目录可依据。"""
+    if slug.startswith('tag-'):
+        return 'tag'
+    if slug.startswith('topic-'):
+        return 'kw'
+    return 'post'
 
-    用于自引用排除——判断「某页面是否链向了自己」。
-    """
-    p = os.path.abspath(path)
-    for kind in ('post', 'kw', 'tag'):
-        if os.sep + kind + os.sep in p:
-            return kind
-    return ''
+
+def kind_of_dir(path):
+    """兼容旧签名：目录已平铺，类型由目录名（slug）决定。"""
+    return _kind_of_slug(os.path.basename(os.path.abspath(path)))
 
 
 def prune_orphans():
@@ -538,33 +541,46 @@ def prune_orphans():
                     h = f.read()
             except Exception:
                 continue
-            for kind, slug in re.findall(
-                    r'href="[^"]*/(post|kw|tag)/([^"/]+)/"', h):
-                target = '%s/%s' % (kind, slug)
+            # 匹配统一后的链接形式：/pages/<slug>/
+            # 早期版本匹配 '/(post|kw|tag)/<slug>/'，目录平铺后
+            # 这个正则一条都匹配不到，导致 linked 永远为空、
+            # 所有页面都被当成孤儿删掉。
+            me = os.path.basename(root)
+            for slug in re.findall(
+                    r'href="[^"]*/%s/([^"/]+)/"'
+                    % re.escape(config.PIPELINE['PAGE_PREFIX'].strip('/')), h):
                 # 排除自引用：陈旧页面常常在自己的关键词列表里链到自己，
                 # 不排除的话它会永远"有引用"，prune 永远删不掉它
-                # （实测卡在这里：一张旧 kw 页自锁，清理逻辑失效）
-                if target == '%s/%s' % (kind_of_dir(root), os.path.basename(root)):
+                if slug == me:
                     continue
-                linked.add(target)
+                linked.add(slug)
+
+    # ===== 安全闸：解析不到任何链接时绝不删除 =====
+    # 这个闸门是被真实事故逼出来的：目录从 seo-pages/post 改成
+    # pages/ 之后，链接正则还是旧格式，一条都匹配不到，
+    # linked 恒为空 → 所有页面都被判为孤儿 → 一次删掉 259 个。
+    # 「删不掉」只是留垃圾文件；「删错」是直接毁数据。
+    if not linked:
+        log('未解析到任何站内链接，跳过清理（防误删）')
+        return 0
 
     removed = 0
     # 单次删除数量上限。本地开发环境有批量删除保护，
     # 一次删太多会被拦下；CI 环境不受此限制。
     cap = int(os.environ.get('SEO_PRUNE_CAP', '40'))
     skipped = 0
-    for kind in ('post', 'kw', 'tag'):
-        base = os.path.join(OUT_DIR, kind)
-        if not os.path.isdir(base):
-            continue
-        for name in list(os.listdir(base)):
+    for name in list(os.listdir(OUT_DIR)) \
+            if os.path.isdir(OUT_DIR) else []:
+        base = OUT_DIR
+        kind = _kind_of_slug(name)
+        if True:
             if removed >= cap:
                 skipped += 1
                 continue
-            key = '%s/%s' % (kind, name)
+            key = name
             if key in linked:
                 continue                      # 有人链它，不能删
-            if kind == 'post' and name in published:
+            if name in published:
                 continue                      # 账本记为已发布，不能删
             cj = os.path.join(base, name, 'content.json')
             if os.path.exists(cj):
@@ -602,10 +618,10 @@ def existing_kw_slugs():
     账本算出来的和磁盘上实际存在的不一定一致，只有磁盘是准的。
     """
     out = set()
-    d = os.path.join(OUT_DIR, 'kw')
-    if os.path.isdir(d):
-        for name in os.listdir(d):
-            if os.path.exists(os.path.join(d, name, 'index.html')):
+    if os.path.isdir(OUT_DIR):
+        for name in os.listdir(OUT_DIR):
+            if name.startswith('topic-') and os.path.exists(
+                    os.path.join(OUT_DIR, name, 'index.html')):
                 out.add(name)
     return out
 
@@ -647,8 +663,8 @@ def build_tag_pages(items, results, keywords, published):
         # 早期版本在这里 `if not posts: continue`，
         # 结果某些分类页不生成，而其他页面仍在链它 —— 死链。
         # 空分类照样渲染，条目区显示占位说明。
-        path = os.path.join(OUT_DIR, 'tag',
-                            config.TAG_SLUGS.get(tag, 'zonghe'), 'index.html')
+        path = os.path.join(config.page_dir(config.tag_slug(tag)),
+                            'index.html')
         tag_render.write_file(path, tag_render.render_tag_page(
             tag, kws, posts, config.site_url,
             allowed_kw=existing_kw_slugs()))
@@ -739,7 +755,7 @@ def run_topic_mode(opts, ai, keywords):
                 continue
 
             if not opts.dry_run:
-                d = os.path.join(OUT_DIR, 'post', content['slug'])
+                d = config.page_dir(content['slug'])
                 tag_render.write_file(
                     os.path.join(d, 'index.html'),
                     page_render.render_post(content, config.site_url))
@@ -790,8 +806,7 @@ def build_keyword_pages(keywords, made, results, published):
     for kw in sorted(all_kws):
         pages = by_kw.get(kw) or []
         tag = topic_mod.rw.item_tags_or_default(kw)[0]
-        path = os.path.join(OUT_DIR, 'kw',
-                            topic_mod.rw.topic_slug(kw, 'index'), 'index.html')
+        path = os.path.join(config.page_dir(config.kw_slug(kw)), 'index.html')
         html = tag_render.render_keyword_page(
             kw, tag, pages, config.site_url)
         tag_render.write_file(path, html)

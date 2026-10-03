@@ -165,7 +165,7 @@ def assemble_topic(topic, gen, site_url=None):
         'cta_text': config.CONTENT_KIND['CTA_TEXT'],
         'source_post_id': None,       # 明确没有来源帖子
     }
-    content['url'] = site_url('/post/%s/' % slug)
+    content['url'] = config.page_url(slug)
     content['schema'] = build_schema(topic, content, site_url)
     content['fingerprint'] = fingerprint(topic, content)
     return content

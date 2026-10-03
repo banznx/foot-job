@@ -81,17 +81,33 @@ PIPELINE = {
     # 关键词数量
     'KEYWORDS_PER_TAG': 8,
     'MIN_KEYWORD_LEN': 2,
-    # 产物目录名（相对仓库根）
-    'OUT_DIR': 'seo-pages',
+    # ========================================================
+    # 静态页输出路径 —— 全站唯一来源，勿在别处硬编码
+    # ========================================================
+    # 所有静态单页统一放在这一个目录下，URL 形如
+    #   https://站点/pages/<slug>/
+    #
+    # 为什么必须统一到一个路径（踩过坑）：
+    # 早期版本分四套目录（seo-pages/post、seo-pages/kw、seo-pages/tag、
+    # promo/post），而 sitemap 里写的是 /post/xxx/，磁盘实际在
+    # /seo-pages/post/xxx/ —— **URL 与路径全对不上，sitemap 变成纯死链**，
+    # 搜索引擎一张页面都发现不了。
+    # 目录名会成为 URL 的一部分，所以所有路径必须从这个常量派生。
+    'OUT_DIR': 'pages',
+    # 单页 URL 前缀，必须与 OUT_DIR 保持一致
+    'PAGE_PREFIX': '/pages/',
+    # 站点自身已占用的顶层路径，静态页不能与之冲突
+    'RESERVED_PATHS': ['index.html', 'robots.txt', 'sitemap.xml',
+                       'posts-data.js', 'page', 'pages', 'post', 'tag',
+                       'kw', 'promo'],
     # 每篇最多带几张图进静态页。图片是本站最大的流量来源，
     # 但也最容易把页面拖慢，所以只放前几张 + 懒加载。
     'MAX_IMG_PER_PAGE': 8,
     # 单篇最多几个站内链接（引导进站）
     'MAX_CTA_LINKS': 6,
-    # 引流文章单独放一个文件夹，与主题页物理隔离。
-    # 理由：引流文是「拉新」用的，主题页是「沉淀」用的，
-    # 两者的更新频率、生命周期、变现方式都不同，混在一起不好管理。
-    'PROMO_DIR': 'promo',
+    # 引流文章的 slug 前缀。**目录与其他单页相同**，
+    # 靠 slug 前缀区分类型，这样 URL 保持统一的 /pages/<slug>/ 形式。
+    'PROMO_SLUG_PREFIX': 'p-',
     # 每小时产出的引流文章篇数（需求：每小时一篇）
     'PROMO_PER_RUN': int(os.environ.get('SEO_PROMO_PER_RUN', '1')),
     # 引流文章的字数目标。比主题页短——引流文要的是快速成文，
@@ -268,6 +284,45 @@ def site_url(path=''):
     return SITE['HOST'].rstrip('/') + SITE['BASE_PATH'] + p
 
 
+def page_url(slug):
+    """静态单页的线上 URL —— 全站唯一入口函数。
+
+    所有页面（主题内容页/ 关键词页 / 分类页 / 引流文章）都走这里，
+    磁盘路径与线上 URL 保证一致。
+
+    早期版本在各处硬编码 '/post/'、'/kw/'，而磁盘实际在
+    'seo-pages/post/'，导致 sitemap 里的 URL 全部指向不存在的地址。
+    **不要再绕过这个函数拼路径。**
+    """
+    return site_url('%s%s/' % (PIPELINE['PAGE_PREFIX'], slug))
+
+
+def page_dir(slug):
+    """静态单页的磁盘目录。与 page_url 一一对应。"""
+    return os.path.join(OUTPUT_DIR, slug)
+
+
+def tag_slug(tag):
+    """分类页的 slug。与内容页同处一个目录，靠前缀区分。"""
+    return 'tag-%s' % TAG_SLUGS.get(tag, 'zonghe')
+
+
+def tag_url(tag):
+    """分类页 URL。"""
+    return page_url(tag_slug(tag))
+
+
+def kw_slug(keyword):
+    """关键词入口页 slug。"""
+    from .pipeline import rewrite as _rw
+    return _rw.topic_slug(keyword, 'index')
+
+
+def kw_url(keyword):
+    """关键词入口页 URL。"""
+    return page_url(kw_slug(keyword))
+
+
 def load_json(path, default=None):
     if not os.path.exists(path):
         return default
@@ -291,8 +346,7 @@ def dump_json(path, obj):
 
 STATE_DIR = os.path.join(HERE, 'state')
 CONTENT_DIR = os.path.join(ROOT, 'content')
-OUTPUT_DIR = os.path.join(ROOT, 'seo-pages')
-PROMO_OUT_DIR = os.path.join(ROOT, PIPELINE['PROMO_DIR'])
+OUTPUT_DIR = os.path.join(ROOT, PIPELINE['OUT_DIR'])
 # IndexNow 要求把密钥以明文文件放在站点根目录（/<key>.txt），
 # 爬虫访问该文件校验归属。文件内容就是密钥本身。
 INDEXNOW_KEY_FILE = (os.path.join(ROOT, '%s.txt' % SUBMIT['INDEXNOW_KEY'])

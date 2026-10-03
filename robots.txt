@@ -7,11 +7,8 @@ Disallow: /seo/state/
 Disallow: /seo/logs/
 Disallow: /*?v=
 
-# 静态页集中在 /post/ 与 /kw/ 下，明确开放
-Allow: /post/
-Allow: /tag/
-Allow: /kw/
-Allow: /promo/
+# 所有静态单页统一在 /pages/ 下（内容页/关键词页/分类页/引流文）
+Allow: /pages/
 
 Sitemap: https://banznx.github.io/foot-job/sitemap.xml
-Sitemap: https://banznx.github.io/foot-job/promo/sitemap.xml
+Sitemap: https://banznx.github.io/foot-job/sitemap-promo.xml

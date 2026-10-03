@@ -124,7 +124,10 @@ def render_post(content, site_url=None, ads=True):
     """渲染单篇帖子的静态页。"""
     site_url = site_url or config.site_url
     brand = config.SITE['BRAND']
-    url = content['url']
+    # URL 从 slug 实时计算，不读存档里的 url 字段——
+    # 目录结构改过之后存档里存的是旧路径，直接用会导致
+    # canonical 指向不存在的地址（收录硬伤）。
+    url = config.page_url(content['slug'])
     title = content['meta_title']
     desc = content['meta_description']
     tag = content['tag']
@@ -137,7 +140,7 @@ def render_post(content, site_url=None, ads=True):
     rel_html = _related_html(content, site_url)
     tags_html = ''.join(
         '<a class="tag" href="%s">%s</a>' % (
-            esc(site_url('/tag/%s/' % content['tag_slug'])), esc(t))
+            esc(config.tag_url(content['tag'])), esc(t))
         for t in content.get('tags', []))
     notice_html = _notice_html(content, site_url)
     cta_html = _cta_html(content, site_url)
@@ -246,10 +249,10 @@ def render_post(content, site_url=None, ads=True):
         'tags': esc('、'.join(content.get('tags', []))),
         'url': esc(url), 'brand': esc(brand), 'ogt': esc(ogt),
         'ogimg': og_img,
-        'css': esc(site_url('/seo-assets/style.css')),
+        'css': esc(config.site_url('/%s/seo-assets/style.css' % config.PIPELINE['OUT_DIR'])),
         'schema': _jsonld(content['schema']),
         'home': esc(site_url('/')),
-        'tagurl': esc(site_url('/tag/%s/' % tag_slug)),
+        'tagurl': esc(config.tag_url(tag)),
         'tag': esc(tag),
         'iso': esc(_iso(content.get('published'))),
         'date': esc(_fmt(content.get('published'))),
@@ -279,7 +282,10 @@ def render_promo(content, site_url=None, ads=True, cta_extra=None):
     """
     site_url = site_url or config.site_url
     brand = config.SITE['BRAND']
-    url = content['url']
+    # URL 从 slug 实时计算，不读存档里的 url 字段——
+    # 目录结构改过之后存档里存的是旧路径，直接用会导致
+    # canonical 指向不存在的地址（收录硬伤）。
+    url = config.page_url(content['slug'])
     title = content['meta_title']
     desc = content['meta_description']
     tag = content['tag']
@@ -288,7 +294,7 @@ def render_promo(content, site_url=None, ads=True, cta_extra=None):
     paras = _body_html(content['body'])
     tags_html = ''.join(
         '<a class="tag" href="%s">%s</a>' % (
-            esc(site_url('/tag/%s/' % tag_slug)), esc(t))
+            esc(config.tag_url(tag)), esc(t))
         for t in content.get('tags', []))
     notice_html = _notice_html(content, site_url)
     cta_html = _cta_html(content, site_url, extra=cta_extra)
@@ -416,9 +422,9 @@ def _document(content, ctx, site_url):
         'tags': esc('、'.join(content.get('tags', []))),
         'url': esc(ctx['url']), 'brand': esc(ctx['brand']),
         'tag': esc(ctx['tag']),
-        'tagurl': esc(site_url('/tag/%s/' % ctx['tag_slug'])),
+        'tagurl': esc(config.tag_url(ctx['tag'])),
         'ogimg': og_img,
-        'css': esc(site_url('/seo-assets/style.css')),
+        'css': esc(config.site_url('/%s/seo-assets/style.css' % config.PIPELINE['OUT_DIR'])),
         'schema': _jsonld(ctx['schema']),
         'home': esc(site_url('/')),
         'iso': esc(_iso(content.get('published'))),
@@ -455,7 +461,7 @@ def _cta_html(content, site_url, extra=None):
     """
     if not content.get('is_seo_page'):
         return ''
-    tag_slug = content.get('tag_slug', '')
+    tag = content.get('tag', '')
     html = ['<nav class="cta" aria-label="进入社区">',
             '<a class="cta-main" href="%s">%s</a>'
             % (esc(site_url('/')),
@@ -464,12 +470,11 @@ def _cta_html(content, site_url, extra=None):
         chips = []
         for t in extra[:6]:
             chips.append('<a class="cta-chip" href="%s">%s</a>'
-                         % (esc(site_url('/tag/%s/' % t[1])), esc(t[0])))
+                         % (esc(config.tag_url(t[0])), esc(t[0])))
         if chips:
             html.append('<div class="cta-chips">%s</div>' % ''.join(chips))
     html.append('<a class="cta-sub" href="%s">看更多「%s」内容</a>'
-                % (esc(site_url('/tag/%s/' % tag_slug)),
-                   esc(content.get('tag', ''))))
+                % (esc(config.tag_url(tag)), esc(tag)))
     html.append('</nav>')
     return ''.join(html)
 
@@ -522,7 +527,7 @@ def _links_html(content, site_url):
     items = []
     for l in links:
         items.append('<li><a href="%s">%s</a></li>'
-                     % (esc(site_url('/post/%s/' % l['slug'])), esc(l['title'])))
+                     % (esc(config.page_url(l['slug'])), esc(l['title'])))
     return ('<nav class="links" aria-label="相关推荐">'
             '<h2>继续看看</h2><ul>%s</ul></nav>' % ''.join(items))
 
@@ -535,7 +540,7 @@ def _related_html(content, site_url):
     for r in rel:
         cells.append(
             '<a href="%s"><span class="tg">%s</span><span>%s</span></a>'
-            % (esc(site_url('/post/%s/' % r['slug'])), esc(r['tag']),
+            % (esc(config.page_url(r['slug'])), esc(r['tag']),
                esc(r['title'])))
     return ('<nav class="links" aria-label="同类内容">'
             '<h2>同类内容</h2><div class="rel">%s</div></nav>'

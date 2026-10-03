@@ -272,16 +272,22 @@ def make_slug(item):
 
 
 def topic_slug(keyword, angle=''):
-    """关键词页 slug：主题 + 关键词哈希（角度参与哈希）。
+    """关键词页 slug：固定 topic- 前缀 + 分类 + 关键词哈希。
 
-    角度进哈希的意义：同一关键词的不同角度能落到不同 URL，
-    互不覆盖——这是「SEO 页越多越好」的实现基础。
+    为什么必须加 topic- 前缀（真实踩过）：
+      内容页 slug 形如 <分类>-<哈希>（如 jupai-cf228c9fa5），
+      而这个函数早期返回**完全相同的格式**，两者会互相覆盖。
+      目录平铺后重名就是灾难——一个页面被另一个顶掉。
+      前缀是唯一可靠的类型标识，_kind_of_slug() 也靠它判类型。
+
+    角度进哈希的意义：同一关键词的不同角度落到不同 URL，互不覆盖
+    ——这是「SEO 页越多越好」的实现基础。
     """
     tag = (item_tags_or_default(keyword) or ['综合'])[0]
     tag_slug = config.TAG_SLUGS.get(tag, 'topic')
     h = hashlib.md5(('%s|%s' % (keyword, angle or '')).encode('utf-8')
                     ).hexdigest()[:10]
-    return '%s-%s' % (tag_slug, h)
+    return 'topic-%s-%s' % (tag_slug, h)
 
 
 def item_tags_or_default(keyword):
