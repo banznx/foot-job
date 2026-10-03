@@ -1300,7 +1300,9 @@ function loadDiscover() {
   }
 
   if (state.discMode === 'history') {
-    const list = state.all.filter(p => state.seen.has(String(p.postID)));
+    // 按浏览时间倒序：state.seen 是插入顺序（先看的在前），reverse 后最新在前。
+    const byId = Object.fromEntries(state.all.map(p => [String(p.postID), p]));
+    const list = [...state.seen].map(id => byId[id]).filter(Boolean).reverse();
     box.innerHTML = list.length
       ? list.map(cardHtml).join('')
       : '<div class="empty">还没有浏览记录</div>';
@@ -1387,6 +1389,15 @@ function openDetail(p) {
   $('dScroll').scrollTop = 0;
   $('detail').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // 记录浏览历史：只要点开看过就记入，便于「我的 → 浏览历史」回看。
+  // 首页信息流滚过也会在 loadMore 里计入，这里补上从发现页 / 详情打开的帖子。
+  const pid = String(p.postID);
+  if (!state.seen.has(pid)) {
+    state.seen.add(pid);
+    save(LS.seen, [...state.seen].slice(-3000));
+    updateMe();
+  }
 }
 
 function closeDetail() {
@@ -1462,11 +1473,6 @@ function updateMe() {
    视图切换
    ============================================================ */
 function switchView(id) {
-  // 从收藏/历史切换回发现页时，恢复随机单篇模式
-  if (id === 'viewDiscover' && state.discMode !== 'random') {
-    state.discMode = 'random';
-    loadDiscover();
-  }
   state.view = id;
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === id));
   document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.view === id)));
@@ -1513,6 +1519,13 @@ function bind() {
       if (t.dataset.view === 'viewHome' && state.view === 'viewHome') {
         refreshHome();
       } else {
+        // 点「发现」Tab：若当前在收藏/历史列表里，回到随机单篇模式。
+        // 注意：从「我的」页点「我的收藏 / 浏览历史」进入发现页时，
+        // 不应触发这里（rowFav/rowHistory 直接走 switchView），否则会把列表覆盖成随机帖。
+        if (t.dataset.view === 'viewDiscover' && state.discMode !== 'random') {
+          state.discMode = 'random';
+          loadDiscover();
+        }
         switchView(t.dataset.view);
       }
     }));
