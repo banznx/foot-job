@@ -1,0 +1,76 @@
+name: SEO Blog
+
+# 每天北京 03:17 跑一批；改动脚本或手动触发也会跑
+on:
+  schedule:
+    - cron: '17 19 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'seo/**'
+      - '.github/workflows/seo-blog.yml'
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: '本次生成篇数'
+        default: '20'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # 脚本自身被 bot 提交时不必再跑一遍，否则会无限循环
+      - name: 防循环
+        id: check
+        run: |
+          if [[ "${{ github.event_name }}" != "push" ]]; then
+            echo "skip=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          if [[ "$(git log -1 --pretty='%ae')" == "github-actions[bot]@users.noreply.github.com" ]]; then
+            echo "上一次是 bot 提交，跳过"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 生成文章
+        if: steps.check.outputs.skip != 'true'
+        env:
+          BIGMODEL_API_KEY: ${{ secrets.BIGMODEL_API_KEY }}
+        run: |
+          BATCH="${{ github.event.inputs.batch }}"
+          python seo/run.py --batch "${BATCH:-20}"
+
+      - name: 推送搜索引擎
+        if: success() && steps.check.outputs.skip != 'true'
+        env:
+          BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        run: python seo/push.py
+
+      - name: 提交
+        if: success() && steps.check.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/ sitemap.xml seo/ledger.json seo/push-log.json
+          if git diff --staged --quiet; then
+            echo "没有变更，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore(seo): 新增分享内容 $(date -u '+%Y-%m-%d')"
+          git pull --rebase origin main
+          git push
