@@ -265,6 +265,7 @@ def main():
 
     used_files = set(ledger['used_files'])
     made = 0
+    degraded = 0
     for i in range(args.batch):
         group = imglib.pick_group(groups, used_files, rng=rng)
         if not group:
@@ -290,13 +291,21 @@ def main():
         used_files.update(post['files'])
         save_ledger(ledger)
         made += 1
+        degraded += 1 if post['degraded'] else 0
         print('   -> %s（%d 字%s）' % (post['slug'], post['words'], '，降级' if post['degraded'] else ''))
         if glm.has_key():
             time.sleep(2)  # 免费模型只有 1 并发，慢一点更稳
 
-    if made:
-        pages = rebuild_index(ledger)
-        print('索引已重建，共 %d 页，累计 %d 篇' % (pages, len(ledger['posts'])))
+    if not made:
+        return
+
+    # 配了 key 却一篇都没写成，说明接口有问题。这时候提交上去的会是一批
+    # 模板拼出来的薄内容，宁可让任务失败让人看见，也别静默污染站点。
+    if glm.has_key() and degraded == made:
+        sys.exit('配了 BIGMODEL_API_KEY 但全部走了降级，接口不可用，本次不提交')
+
+    pages = rebuild_index(ledger)
+    print('索引已重建，共 %d 页，累计 %d 篇' % (pages, len(ledger['posts'])))
 
 
 if __name__ == '__main__':
