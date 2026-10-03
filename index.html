@@ -458,18 +458,6 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
   font-size: 11px; color: var(--ink-4); line-height: 1.8; text-align: center;
 }
 
-/* 分类入口：可被爬虫沿着发现各分类内容，样式与「我的」列表保持一致 */
-.me-cats {
-  display: flex; flex-wrap: wrap; gap: var(--s2);
-  padding: 0 var(--s4) var(--s8);
-}
-.me-cats a {
-  font-size: 12px; padding: 6px 12px; border-radius: var(--r-full);
-  background: var(--surface-2); color: var(--ink-2);
-  border: 1px solid var(--line-1);
-}
-.me-cats a:active { background: var(--surface-3); }
-
 /* ---- 详情页（全屏覆盖） ---- */
 .detail {
   position: fixed; inset: 0; z-index: 60;
@@ -775,18 +763,6 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
     </div>
 
     <p class="me-note" id="meNote"></p>
-
-    <!-- 分类导航：既是给人看的入口，也是让搜索引擎发现各分类内容的路径 -->
-    <nav class="me-cats" aria-label="内容分类">
-      <a href="pages/promo-index.html">内容精选</a>
-      <a href="pages/tag-yuanchuang/">原创</a>
-      <a href="pages/tag-jupai/">举牌</a>
-      <a href="pages/tag-zipai/">自拍</a>
-      <a href="pages/tag-sankeng/">三坑</a>
-      <a href="pages/tag-meitui/">美腿</a>
-      <a href="pages/tag-shipin/">视频</a>
-      <a href="pages/tag-richang/">日常</a>
-    </nav>
   </section>
 
   <!-- ===== 底部 Tab ===== -->
