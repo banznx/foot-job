@@ -1,0 +1,28 @@
+{
+  "ts": 1790966516,
+  "duration_s": 3.6,
+  "ai": {
+    "available": false,
+    "model": "glm-4-flash",
+    "call": 0,
+    "fail": 0,
+    "retry": 0,
+    "token_in": 0,
+    "token_out": 0,
+    "cached": 0
+  },
+  "candidates": 30,
+  "new_pages": 27,
+  "quality": {
+    "total": 30,
+    "passed": 27,
+    "rejected": 3,
+    "avg_score": 91.2,
+    "reasons": {
+      "正文与已发布内容《yuanchuang-bdaf》近似重复": 1,
+      "标题与已发布内容高度相似": 2
+    }
+  },
+  "tag": "all",
+  "force": false
+}

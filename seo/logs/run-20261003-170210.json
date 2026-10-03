@@ -1,0 +1,25 @@
+{
+  "ts": 1791018130,
+  "mode": "promo",
+  "duration_s": 84.0,
+  "ai": {
+    "available": true,
+    "model": "glm-4.7-flash",
+    "call": 2,
+    "fail": 0,
+    "retry": 3,
+    "rate_limited": 3,
+    "token_in": 1120,
+    "token_out": 654
+  },
+  "new_pages": 0,
+  "quality": {
+    "total": 1,
+    "passed": 0,
+    "rejected": 1,
+    "avg_score": 83.0,
+    "reasons": {
+      "用词重复度过高，内容单薄": 1
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ts": 1791015366,
+  "mode": "topic",
+  "duration_s": 110.5,
+  "ai": {
+    "available": true,
+    "model": "glm-4.7-flash",
+    "call": 1,
+    "fail": 1,
+    "retry": 2,
+    "rate_limited": 2,
+    "token_in": 570,
+    "token_out": 254
+  },
+  "new_pages": 1,
+  "quality": {
+    "total": 1,
+    "passed": 1,
+    "rejected": 0,
+    "avg_score": 70.0,
+    "reasons": {}
+  }
+}

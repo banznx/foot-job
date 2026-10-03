@@ -1,0 +1,25 @@
+{
+  "ts": 1790966423,
+  "duration_s": 3.7,
+  "ai": {
+    "available": false,
+    "model": "glm-4-flash",
+    "call": 0,
+    "fail": 0,
+    "retry": 0,
+    "token_in": 0,
+    "token_out": 0,
+    "cached": 0
+  },
+  "candidates": 10,
+  "new_pages": 9,
+  "quality": {
+    "total": 9,
+    "passed": 9,
+    "rejected": 0,
+    "avg_score": 97.9,
+    "reasons": {}
+  },
+  "tag": "all",
+  "force": false
+}

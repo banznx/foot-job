@@ -1,0 +1,25 @@
+{
+  "ts": 1790990000,
+  "mode": "topic",
+  "duration_s": 12.2,
+  "ai": {
+    "available": true,
+    "model": "glm-4.7-flash",
+    "call": 3,
+    "fail": 0,
+    "retry": 0,
+    "rate_limited": 0,
+    "token_in": 1245,
+    "token_out": 724
+  },
+  "new_pages": 1,
+  "quality": {
+    "total": 2,
+    "passed": 1,
+    "rejected": 1,
+    "avg_score": 73.5,
+    "reasons": {
+      "含技术词：构建": 1
+    }
+  }
+}
