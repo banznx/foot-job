@@ -1,0 +1,115 @@
+{
+  "seed_id": "kw::生活随手拍::tips",
+  "post_id": null,
+  "slug": "richang-75457f83d8",
+  "tag": "日常",
+  "tag_slug": "richang",
+  "meta_title": "生活随手拍：日常记录实用指南",
+  "meta_description": "分享日常照片的构图、光线与主题选择技巧，帮助提升随手拍的质量。",
+  "tags": [
+    "摄影技巧",
+    "生活记录",
+    "构图",
+    "光线"
+  ],
+  "body": "想要拍出有质感的生活照片，光线是首要元素。尽量利用自然光，清晨或傍晚的柔和光线能自然地照亮画面。在室内，尝试将主体靠近窗户，利用侧逆光勾勒轮廓，避免正午顶光造成的生硬阴影。\n\n构图上，遵循三分法原则通常能获得平衡的视觉效果。将画面中的主要景物安排在三分线上，而不是死板地置于正中央。此外，留白也是一种高级技巧，适当减少画面元素，能让主题更加突出，避免杂乱。\n\n在主题选择上，聚焦于日常生活中的细节往往比宏大叙事更具感染力。一张早餐桌上的咖啡、街角的一束花，或是窗外掠过的云彩，这些微小瞬间的捕捉更能引起共鸣。保持观察的习惯，记录下那些触动心灵的平凡时刻。",
+  "keyword": "生活随手拍",
+  "angle": "tips",
+  "author": "玉卒",
+  "published": 1790989682669,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989706142,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/richang-75457f83d8/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/richang-75457f83d8/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/richang-75457f83d8/"
+        },
+        "headline": "生活随手拍：日常记录实用指南",
+        "description": "分享日常照片的构图、光线与主题选择技巧，帮助提升随手拍的质量。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/richang-75457f83d8/",
+        "about": {
+          "@type": "Thing",
+          "name": "日常",
+          "description": "日常生活分享"
+        },
+        "articleSection": "日常",
+        "keywords": "摄影技巧, 生活记录, 构图, 光线",
+        "wordCount": 248,
+        "datePublished": "2026-10-03T01:08:02Z",
+        "dateModified": "2026-10-03T01:08:02Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/richang-75457f83d8/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "日常",
+            "item": "https://banznx.github.io/foot-job/tag/richang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "生活随手拍：日常记录实用指南",
+            "item": "https://banznx.github.io/foot-job/post/richang-75457f83d8/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "f698a0e7023981f888c6e26eebdd8541",
+  "quality": {
+    "passed": true,
+    "score": 92,
+    "zh_len": 248,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

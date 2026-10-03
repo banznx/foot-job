@@ -1,0 +1,114 @@
+{
+  "seed_id": "kw::风景摄影::beginner",
+  "post_id": null,
+  "slug": "yuanchuang-78e7e4adab",
+  "tag": "原创",
+  "tag_slug": "yuanchuang",
+  "meta_title": "风景摄影入门指南",
+  "meta_description": "本主题整理旨在帮助新手理解风景摄影的核心要素，从构图到光影，提供实用的拍摄与审美建议。",
+  "tags": [
+    "风景摄影",
+    "摄影技巧",
+    "入门指南"
+  ],
+  "body": "风景摄影是捕捉自然与城市宏大之美的重要方式。对于新手而言，理解“光影”与“构图”是入门的第一步。通常来说，清晨或傍晚的“黄金时刻”光线柔和，能赋予画面温暖质感；而正午的硬光则适合表现清晰的轮廓或强烈的明暗对比。\n\n在拍摄时，建议多尝试不同的视角。除了平视，低角度仰拍能展现树木或建筑的高耸，而高角度俯拍则适合表现地面的纹理与线条。此外，寻找画面中的“引导线”或“框架式构图”，能帮助观者视线自然聚焦于主体，增加照片的纵深感。\n\n后期处理方面，一般建议遵循“还原真实”的原则。适当调整曝光、对比度与色彩饱和度，修正白平衡即可，不必过度追求夸张的效果。保持画面的自然与通透，往往比堆砌滤镜更能打动人心。",
+  "keyword": "风景摄影",
+  "angle": "beginner",
+  "author": "玉卒",
+  "published": 1790989682669,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989687988,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/"
+        },
+        "headline": "风景摄影入门指南",
+        "description": "本主题整理旨在帮助新手理解风景摄影的核心要素，从构图到光影，提供实用的拍摄与审美建议。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
+        "articleSection": "原创",
+        "keywords": "风景摄影, 摄影技巧, 入门指南",
+        "wordCount": 259,
+        "datePublished": "2026-10-03T01:08:02Z",
+        "dateModified": "2026-10-03T01:08:02Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "原创",
+            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "风景摄影入门指南",
+            "item": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "129b57cc31019a3b565bb33a766c6c01",
+  "quality": {
+    "passed": true,
+    "score": 90,
+    "zh_len": 259,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

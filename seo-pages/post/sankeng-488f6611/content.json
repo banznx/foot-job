@@ -1,0 +1,141 @@
+{
+  "seed_id": "post-50852963",
+  "post_id": 50852963,
+  "slug": "sankeng-488f6611",
+  "tag": "三坑",
+  "tag_slug": "sankeng",
+  "meta_title": "三坑｜啊",
+  "meta_description": "这篇三坑由M梓沫发布，包含 1 张图片，已有 1273 次浏览，内容围绕「啊」展开。",
+  "tags": [
+    "三坑",
+    "制服穿搭",
+    "水手服"
+  ],
+  "body": "这篇正装JK、水手服、汉服等制服类穿搭发布在玉卒，标题写的是「啊」。作者附了 1 张图片，在三坑里，带图的帖子通常比纯文字更容易被翻到和收藏。\n\n发布者是M梓沫，社区等级 Lv.3，发布时间在2022年07月。目前有 16 条回复，4 个赞。\n\n如果你对三坑这类内容更感兴趣，可以在玉卒里按分类浏览，也可以先看看相关的制服穿搭、水手服。",
+  "author": "M梓沫",
+  "published": 1657699350000,
+  "images": [
+    "images/downloaded_posts_images/50852963_rBAAdmLOfBaAe8MqAAE_Es5LU9Y937.jpg"
+  ],
+  "image_total": 1,
+  "metrics": {
+    "hit": 1273,
+    "comment": 16,
+    "praise": 4
+  },
+  "generated_at": 1790966516683,
+  "by_ai": false,
+  "internal_links": [
+    {
+      "slug": "sankeng-fb1b1107",
+      "post_id": 50781281,
+      "title": "【三坑】伊藤奈奈亚",
+      "score": 0.373,
+      "reason": "same-tag"
+    }
+  ],
+  "related": [
+    {
+      "slug": "sankeng-fb1b1107",
+      "post_id": 50781281,
+      "title": "【三坑】伊藤奈奈亚",
+      "tag": "三坑",
+      "score": 0.343
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/#post",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/"
+        },
+        "headline": "三坑｜啊",
+        "description": "这篇三坑由M梓沫发布，包含 1 张图片，已有 1273 次浏览，内容围绕「啊」展开。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/sankeng-488f6611/",
+        "articleSection": "三坑",
+        "keywords": "三坑, 制服穿搭, 水手服",
+        "wordCount": 126,
+        "datePublished": "2022-07-13T08:02:30Z",
+        "dateModified": "2022-07-13T08:02:30Z"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50852963_rBAAdmLOfBaAe8MqAAE_Es5LU9Y937.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50852963_rBAAdmLOfBaAe8MqAAE_Es5LU9Y937.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "三坑｜啊",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "M梓沫",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50852963_rBAAdmLOfBaAe8MqAAE_Es5LU9Y937.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "三坑",
+            "item": "https://banznx.github.io/foot-job/tag/sankeng/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "三坑｜啊",
+            "item": "https://banznx.github.io/foot-job/post/sankeng-488f6611/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "url": "https://banznx.github.io/foot-job/post/sankeng-488f6611/",
+  "fingerprint": "0d0b81226585eaad67d19fcf49cd2a41",
+  "quality": {
+    "passed": true,
+    "score": 95,
+    "zh_len": 123,
+    "paragraphs": 3,
+    "by_ai": false
+  }
+}

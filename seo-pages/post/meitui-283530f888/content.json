@@ -1,0 +1,114 @@
+{
+  "seed_id": "kw::美腿特写::mistake",
+  "post_id": null,
+  "slug": "meitui-283530f888",
+  "tag": "美腿",
+  "tag_slug": "meitui",
+  "meta_title": "美腿特写：新手避坑指南",
+  "meta_description": "分享美腿特写照片时，新手常犯构图与光线运用错误，本文提供实用建议，助你拍出自然健康的腿部影像。",
+  "tags": [
+    "摄影技巧",
+    "美腿特写",
+    "构图建议"
+  ],
+  "body": "拍摄腿部特写时，光线选择至关重要。通常应避免正午顶光，以免产生生硬阴影。侧逆光能勾勒腿部线条，显得更有立体感，但需注意面部补光，避免阴阳脸。\n\n构图方面，需警惕“头重脚轻”。新手常把镜头贴近脸部，导致腿部比例失衡。建议保持背景干净，利用广角镜头略微拉远，或通过前景遮挡处理，突出腿部主体，避免画面杂乱。\n\n最后，角度决定成败。平视容易显腿短，仰拍能拉长腿部线条。大多时候，采用略微向上的45度角，配合自然舒展的站姿，能呈现最协调的比例，避免刻意摆拍带来的僵硬感。",
+  "keyword": "美腿特写",
+  "angle": "mistake",
+  "author": "玉卒",
+  "published": 1790989831637,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989837740,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/meitui-283530f888/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/meitui-283530f888/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/meitui-283530f888/"
+        },
+        "headline": "美腿特写：新手避坑指南",
+        "description": "分享美腿特写照片时，新手常犯构图与光线运用错误，本文提供实用建议，助你拍出自然健康的腿部影像。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/meitui-283530f888/",
+        "about": {
+          "@type": "Thing",
+          "name": "美腿",
+          "description": "以腿部特写为主题的照片"
+        },
+        "articleSection": "美腿",
+        "keywords": "摄影技巧, 美腿特写, 构图建议",
+        "wordCount": 197,
+        "datePublished": "2026-10-03T01:10:31Z",
+        "dateModified": "2026-10-03T01:10:31Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/meitui-283530f888/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "美腿",
+            "item": "https://banznx.github.io/foot-job/tag/meitui/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "美腿特写：新手避坑指南",
+            "item": "https://banznx.github.io/foot-job/post/meitui-283530f888/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "3ec88d59e134141e1c02eab3fe8c2998",
+  "quality": {
+    "passed": true,
+    "score": 100,
+    "zh_len": 197,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

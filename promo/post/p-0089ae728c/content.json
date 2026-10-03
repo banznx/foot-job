@@ -1,0 +1,115 @@
+{
+  "seed_id": "promo::rewrite::497500::yuanchuang-89e086bb",
+  "post_id": null,
+  "slug": "p-0089ae728c",
+  "tag": "原创",
+  "tag_slug": "yuanchuang",
+  "meta_title": "图片社区里的原创魅力",
+  "meta_description": "探索图片社区中用户自发分享的原创内容，感受真实生活带来的视觉愉悦。",
+  "tags": [
+    "原创",
+    "生活",
+    "分享"
+  ],
+  "body": "在图片社区中，原创内容往往比精心修饰的商业摄影更具感染力。这类帖子通常记录了作者生活中的某个瞬间，无论是旅行中的风景、日常的美食，还是与朋友的聚会，都充满了真实感。\n\n读者浏览这些内容时，往往会被其中的生活气息所吸引。与其追逐复杂的拍摄技巧，不如关注图片背后所传达的情感和故事。许多用户喜欢在评论区分享自己的类似经历，这种互动让社区氛围变得更加紧密和温暖。\n\n选择浏览原创内容时，建议保持开放的心态，欣赏不同风格的展示。如果你有想要分享的生活片段，也可以尝试上传自己的作品，与更多人交流心得，共同丰富这个多彩的视觉空间。",
+  "promo_mode": "rewrite",
+  "source_slug": "yuanchuang-89e086bb",
+  "author": "玉卒",
+  "published": 1791001520783,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1791001526584,
+  "by_ai": true,
+  "is_seo_page": true,
+  "is_promo": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/promo/p-0089ae728c/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/p-0089ae728c/"
+        },
+        "headline": "图片社区里的原创魅力",
+        "description": "探索图片社区中用户自发分享的原创内容，感受真实生活带来的视觉愉悦。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
+        "articleSection": "原创",
+        "keywords": "原创, 生活, 分享",
+        "wordCount": 236,
+        "datePublished": "2026-10-03T04:25:20Z",
+        "dateModified": "2026-10-03T04:25:20Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/promo/p-0089ae728c/#article",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "原创",
+            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "图片社区里的原创魅力",
+            "item": "https://banznx.github.io/foot-job/post/p-0089ae728c/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/"
+      }
+    ]
+  },
+  "fingerprint": "4212bfe72260315126fd4f543199608b",
+  "quality": {
+    "passed": true,
+    "score": 92,
+    "zh_len": 236,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

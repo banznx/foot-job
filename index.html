@@ -7,6 +7,62 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>玉卒</title>
+
+<!-- ===== SEO =====
+     这一页是单页应用，帖子详情由脚本渲染，爬虫抓不到单篇内容。
+     所以每篇帖子另有独立静态页（/post/<slug>/）供收录，
+     这里的 canonical 指向首页，避免两者争夺同一批关键词。
+-->
+<meta name="description" content="玉卒是一个图片分享社区，按推荐、最新、热门三种方式浏览内容，原创、举牌、自拍等分类随时可看。">
+<link rel="canonical" href="https://banznx.github.io/foot-job/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="玉卒">
+<meta property="og:title" content="玉卒 · 图片分享社区">
+<meta property="og:description" content="按推荐、最新、热门浏览社区内容，原创、举牌、自拍等分类随时可看。">
+<meta property="og:url" content="https://banznx.github.io/foot-job/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="玉卒 · 图片分享社区">
+<meta name="twitter:description" content="按推荐、最新、热门浏览社区内容。">
+
+<!-- 结构化数据：让搜索引擎知道这是什么站点、有哪些栏目 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://banznx.github.io/foot-job/#website",
+      "url": "https://banznx.github.io/foot-job/",
+      "name": "玉卒",
+      "description": "图片分享社区，按推荐、最新、热门浏览内容",
+      "inLanguage": "zh-CN",
+      "publisher": { "@id": "https://banznx.github.io/foot-job/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://banznx.github.io/foot-job/#org",
+      "name": "玉卒",
+      "url": "https://banznx.github.io/foot-job/"
+    },
+    {
+      "@type": "ItemList",
+      "name": "内容分类",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "内容精选", "url": "https://banznx.github.io/foot-job/promo/" },
+        { "@type": "ListItem", "position": 2, "name": "原创", "url": "https://banznx.github.io/foot-job/tag/yuanchuang/" },
+        { "@type": "ListItem", "position": 3, "name": "举牌", "url": "https://banznx.github.io/foot-job/tag/jupai/" },
+        { "@type": "ListItem", "position": 4, "name": "自拍", "url": "https://banznx.github.io/foot-job/tag/zipai/" },
+        { "@type": "ListItem", "position": 5, "name": "三坑", "url": "https://banznx.github.io/foot-job/tag/sankeng/" },
+        { "@type": "ListItem", "position": 6, "name": "美腿", "url": "https://banznx.github.io/foot-job/tag/meitui/" },
+        { "@type": "ListItem", "position": 7, "name": "视频", "url": "https://banznx.github.io/foot-job/tag/shipin/" },
+        { "@type": "ListItem", "position": 8, "name": "日常", "url": "https://banznx.github.io/foot-job/tag/richang/" }
+      ]
+    }
+  ]
+}
+</script>
 <style>
 /* ============================================================
    设计令牌
@@ -402,6 +458,18 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
   font-size: 11px; color: var(--ink-4); line-height: 1.8; text-align: center;
 }
 
+/* 分类入口：可被爬虫沿着发现各分类内容，样式与「我的」列表保持一致 */
+.me-cats {
+  display: flex; flex-wrap: wrap; gap: var(--s2);
+  padding: 0 var(--s4) var(--s8);
+}
+.me-cats a {
+  font-size: 12px; padding: 6px 12px; border-radius: var(--r-full);
+  background: var(--surface-2); color: var(--ink-2);
+  border: 1px solid var(--line-1);
+}
+.me-cats a:active { background: var(--surface-3); }
+
 /* ---- 详情页（全屏覆盖） ---- */
 .detail {
   position: fixed; inset: 0; z-index: 60;
@@ -707,6 +775,18 @@ img { display: block; -webkit-user-select: none; user-select: none; -webkit-touc
     </div>
 
     <p class="me-note" id="meNote"></p>
+
+    <!-- 分类导航：既是给人看的入口，也是让搜索引擎发现各分类内容的路径 -->
+    <nav class="me-cats" aria-label="内容分类">
+      <a href="promo/">内容精选</a>
+      <a href="tag/yuanchuang/">原创</a>
+      <a href="tag/jupai/">举牌</a>
+      <a href="tag/zipai/">自拍</a>
+      <a href="tag/sankeng/">三坑</a>
+      <a href="tag/meitui/">美腿</a>
+      <a href="tag/shipin/">视频</a>
+      <a href="tag/richang/">日常</a>
+    </nav>
   </section>
 
   <!-- ===== 底部 Tab ===== -->

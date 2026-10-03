@@ -1,0 +1,115 @@
+{
+  "seed_id": "kw::原创摄影::beginner",
+  "post_id": null,
+  "slug": "yuanchuang-368806be07",
+  "tag": "原创",
+  "tag_slug": "yuanchuang",
+  "meta_title": "原创摄影入门指南",
+  "meta_description": "本指南面向摄影新手，解析原创内容的核心定义，介绍如何辨别优质作品，并分享实用的拍摄与整理思路。",
+  "tags": [
+    "摄影",
+    "原创",
+    "新手指南",
+    "视觉艺术"
+  ],
+  "body": "原创摄影是指用户亲自拍摄或独立整理的视觉作品，强调创作者的个人视角与审美表达。对于初学者而言，原创不仅是版权的体现，更是积累个人视觉语言的过程。通常，优秀的原创作品能清晰传达拍摄意图，或在构图、光影上展现出独特的观察角度。\n\n在筛选原创内容时，建议关注作品背后的叙事性或情感传递。新手可以从模仿大师的经典构图入手，逐渐形成自己的风格。同时，保持对生活的细致观察是提升原创能力的基础。无论是风光还是人像，真诚的表达往往比单纯的技术堆砌更具感染力。\n\n在整理和分享原创作品时，合理运用标签和分类有助于建立个人档案。大多数社区支持按题材、色调或光影风格进行二次分类。这种整理方式不仅能方便日后回顾，也能帮助其他爱好者快速定位感兴趣的内容。坚持记录生活点滴，是成为优秀原创摄影者的必经之路。",
+  "keyword": "原创摄影",
+  "angle": "beginner",
+  "author": "玉卒",
+  "published": 1790989950065,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989954212,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/yuanchuang-368806be07/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-368806be07/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-368806be07/"
+        },
+        "headline": "原创摄影入门指南",
+        "description": "本指南面向摄影新手，解析原创内容的核心定义，介绍如何辨别优质作品，并分享实用的拍摄与整理思路。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/yuanchuang-368806be07/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
+        "articleSection": "原创",
+        "keywords": "摄影, 原创, 新手指南, 视觉艺术",
+        "wordCount": 312,
+        "datePublished": "2026-10-03T01:12:30Z",
+        "dateModified": "2026-10-03T01:12:30Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-368806be07/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "原创",
+            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "原创摄影入门指南",
+            "item": "https://banznx.github.io/foot-job/post/yuanchuang-368806be07/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "aaaa5b6d87fd11ab2964b2da9bb0854a",
+  "quality": {
+    "passed": true,
+    "score": 90,
+    "zh_len": 312,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

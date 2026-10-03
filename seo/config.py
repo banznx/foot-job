@@ -33,46 +33,136 @@ SITE = {
 # ============================================================
 # AI 供应商（OpenAI 兼容协议）
 # ============================================================
+# 默认接智谱 GLM-4.7-Flash：完全免费、开源、无需绑卡。
+# 注意它已取代 GLM-4.5-Flash（2026-01-30 下线），也早于 glm-4-flash 这一代，
+# 写错模型名会直接 400。
+# 换供应商只需改三个环境变量，代码不用动：
+#   智谱    : https://open.bigmodel.cn/api/paas/v4 + glm-4.7-flash（免费）
+#   DeepSeek: https://api.deepseek.com/v1             + deepseek-chat
+#   Kimi    : https://api.moonshot.cn/v1              + moonshot-v1-8k
+#
 # 未配置 API Key 时系统不会崩，而是退化为「模板化改写」，
 # 保证定时任务在任何人 fork 后都能跑通并产出结构合法的内容。
 AI = {
     'BASE_URL': os.environ.get('SEO_AI_BASE_URL',
-                'https://api.deepseek.com/v1'),
+                'https://open.bigmodel.cn/api/paas/v4'),
     'API_KEY': os.environ.get('SEO_AI_API_KEY', ''),
-    'MODEL': os.environ.get('SEO_AI_MODEL', 'deepseek-chat'),
+    'MODEL': os.environ.get('SEO_AI_MODEL', 'glm-4.7-flash'),
     'TIMEOUT': int(os.environ.get('SEO_AI_TIMEOUT', '60')),
     'MAX_RETRY': int(os.environ.get('SEO_AI_MAX_RETRY', '3')),
     'RETRY_BASE_SLEEP': float(os.environ.get('SEO_AI_RETRY_SLEEP', '2')),
     'TEMPERATURE': 0.7,
     'MAX_TOKENS': 1600,
+    # GLM-4.7-Flash 免费版**只允许 1 条并发**，
+    # 并发发请求会收到 429。所以并发固定 1，
+    # 并且每次请求之间留一点间隔，避免踩到速率限制的边缘。
+    'CONCURRENCY': 1,
+    'REQUEST_INTERVAL': float(os.environ.get('SEO_AI_INTERVAL', '1.2')),
+    # 混合思考模型必须显式关掉思考。
+    # 实测：开启时 599/600 个 token 被 reasoning 吃掉，正文一个字都没输出
+    #（finish_reason=length、content 为空串）；
+    # 关掉后同样的任务只消耗 29 token。免费额度有限，这里是必须项。
+    'THINKING': os.environ.get('SEO_AI_THINKING', 'disabled'),
 }
 
 # ============================================================
 # 流水线参数
 # ============================================================
 PIPELINE = {
-    # 单次运行最多处理多少篇。定时任务每天跑一次，
-    # 2340 篇分批出内容，避免一次性把仓库打爆。
+    # 每天自动生成多少篇。需求方要求「越多越好」，
+    # 所以默认给到 20（免费模型 1 并发，20篇约需 1-2 分钟）。
     'BATCH_SIZE': int(os.environ.get('SEO_BATCH_SIZE', '20')),
-    # 冷启动：首次运行允许生成更多
-    'FIRST_RUN_BATCH': int(os.environ.get('SEO_FIRST_BATCH', '40')),
+    # 冷启动：首次运行多产出一些，先把内容池铺起来
+    'FIRST_RUN_BATCH': int(os.environ.get('SEO_FIRST_BATCH', '60')),
     # 低于这个正文长度的帖子才需要 AI 扩写（已有内容的不动）
     'MIN_DETAIL_LEN': 10,
-    'TARGET_DETAIL_LEN': 260,     # 扩写目标区间
-    'MAX_DETAIL_LEN': 420,
+    'TARGET_DETAIL_LEN': 400,     # 扩写目标区间
+    'MAX_DETAIL_LEN': 700,
     # 关键词数量
     'KEYWORDS_PER_TAG': 8,
     'MIN_KEYWORD_LEN': 2,
+    # 产物目录名（相对仓库根）
+    'OUT_DIR': 'seo-pages',
+    # 每篇最多带几张图进静态页。图片是本站最大的流量来源，
+    # 但也最容易把页面拖慢，所以只放前几张 + 懒加载。
+    'MAX_IMG_PER_PAGE': 8,
+    # 单篇最多几个站内链接（引导进站）
+    'MAX_CTA_LINKS': 6,
+    # 引流文章单独放一个文件夹，与主题页物理隔离。
+    # 理由：引流文是「拉新」用的，主题页是「沉淀」用的，
+    # 两者的更新频率、生命周期、变现方式都不同，混在一起不好管理。
+    'PROMO_DIR': 'promo',
+    # 每小时产出的引流文章篇数（需求：每小时一篇）
+    'PROMO_PER_RUN': int(os.environ.get('SEO_PROMO_PER_RUN', '1')),
+    # 引流文章的字数目标。比主题页短——引流文要的是快速成文，
+    # 不是深度沉淀，800 字以内足够。
+    'PROMO_MIN_LEN': 500,
+    'PROMO_MAX_LEN': 800,
+    # 引流文的三种来源模式（可用率随机挑一种，保证内容形态不单调）
+    'PROMO_MODES': ['rewrite', 'extend', 'fresh'],
+    # rewrite/extend 模式：源帖子没正文时的兜底策略
+    # 'fresh' = 直接转为全新创作
+    'PROMO_FALLBACK': 'fresh',
+}
+
+# ============================================================
+# 搜索引擎主动推送
+# ============================================================
+# 每小时推一次，比等爬虫自己发现快 1-3 天。
+#
+# 三种通道，各自独立配置，缺哪个就跳过哪个，不影响其他：
+#   1. IndexNow   —— 一次提交覆盖 Bing / 百度 / Yandex / Yahoo 等
+#                    是性价比最高的选择，密钥最简单
+#   2. 百度主动推送 —— 百度单独通道，收录最快
+#   3. Google ping —— Google 已废弃 sitemap ping 接口，
+#                    只能靠 sitemap + Search Console，
+#                    所以这里只做提示，不做无效请求
+SUBMIT = {
+    'INDEXNOW_KEY': os.environ.get('INDEXNOW_KEY', ''),
+    'INDEXNOW_ENDPOINT': os.environ.get(
+        'INDEXNOW_ENDPOINT', 'https://api.indexnow.org/indexnow'),
+    'BAIDU_TOKEN': os.environ.get('BAIDU_PUSH_TOKEN', ''),
+    'BAIDU_ENDPOINT': 'https://data.zz.baidu.com/urls.txt',
+    # 本地调试时关掉，避免本地跑脚本也去推搜索引擎
+    'ENABLED': os.environ.get('SEO_SUBMIT_ON', '1') == '1',
+    # 单次最多提交多少 URL（百度单次上限 2000，留足余量）
+    'BATCH_MAX': 500,
+}
+
+# ============================================================
+# SEO 内容与真实帖子的关系（关键设计）
+# ============================================================
+# 需求方明确：SEO 内容的目的是「引导进站」，
+# AI 产出的内容必须与用户真实浏览的帖子**明确区分**。
+#
+# 所以定位是：SEO 页 = 主题着陆页（内容型落地页），
+# 不是某篇真实帖子的镜像。两者的差别体现在：
+#   1. URL 空间不同：SEO 在 /post/，真实帖子仍在 SPA 浮层里
+#   2. 页面上有明确标识：顶部声明「本页为主题整理，非单篇帖子」
+#   3. schema 类型不同：SEO 页用 Article + about 主题，
+#      不会伪装成某篇真实帖子的 BlogPosting
+#   4. 内链目标是「进站入口」：分类页 / 首页 / 真实帖
+CONTENT_KIND = {
+    'IS_SEO_PAGE': True,
+    # 页面上要显示的声明文案
+    'NOTICE': '本页为主题整理内容，用于快速了解这一类话题；'
+              '想看社区里的真实帖子，请从下方入口进入。',
+    'NOTICE_SHORT': '主题整理页',
+    # schema 里用的类型
+    'SCHEMA_TYPE': 'Article',
+    # 进站入口文案
+    'CTA_TEXT': '进入社区看真实帖子',
 }
 
 QUALITY = {
-    # SimHash 汉明距离阈值：小于该值判定为近似重复
+    # === 重复检测：默认关闭 ===
+    # 需求方明确要求「SEO 帖子越多越好」，所以不做内容去重。
+    # 保留阈值配置是为了将来可能需要，按需在 quality.py 里开。
+    'DUP_CHECK': os.environ.get('SEO_DUP_CHECK', '0') == '1',
     'DUP_DISTANCE': 4,
-    # 与已发布内容的标题相似度上限（difflib ratio，越大越像）
     'TITLE_SIM_MAX': 0.86,
-    # 正文相似度上限
     'BODY_SIM_MAX': 0.82,
-    # 这些词不允许出现在生成内容里（平台合规 + 避免踩 AdSense  policies）
+    # 这些词不允许出现在生成内容里（平台合规 + AdSense 政策）
     'BLOCKED_WORDS': [
         '微信', '加v', 'QQ群', '兼职', '约炮', '上门', '服务',
         '色情', '裸聊', '博彩', '彩票', '贷款', '免费送',
@@ -137,6 +227,33 @@ TAG_INTENT = {
     '综合': '社区里没有明确归类的内容',
 }
 
+# 关键词 → 分类的启发式映射。
+# SEO 页与真实帖子解耦后，页面是按「关键词」生产的，
+# 关键词本身不带分类标记，所以靠这张表反查归类，
+# 用来决定 URL 前缀、面包屑和归属的聚合页。
+KEYWORD_TAG_HINT = {
+    '举牌': ['举牌', '牌', '举牌文案', '举牌照片', '打卡'],
+    '自拍': ['自拍', 'pose', '姿势', '对镜'],
+    '美腿': ['美腿', '腿', '白丝', '黑丝', '丝袜'],
+    '三坑': ['三坑', 'jk', '水手服', '汉服', '制服', 'cos'],
+    '视频': ['视频', '短片', '录像'],
+    '原创': ['原创', '摄影', '写真', '拍摄', '作品'],
+    '日常': ['日常', '生活', '记录', 'vlog'],
+}
+
+# SEO 关键词页的内容角度。
+# 同一个关键词可以从多个角度写，每种角度是一篇独立页面，
+# 这样既满足「页面越多越好」，又不会变成同一段文字的复读。
+TOPIC_ANGLES = [
+    ('beginner', '入门指南：面向第一次接触的新手，讲清楚这是什么、怎么用'),
+    ('tips', '实用技巧：几条可以直接照做的建议'),
+    ('mistake', '常见误区：新手容易踩的坑，以及怎么避开'),
+    ('why', '背后原因：为什么这类内容会受欢迎'),
+    ('compare', '对比选择：不同风格/类型的差别在哪'),
+    ('story', '故事场景：围绕这个主题的具体情境描写'),
+    ('qa', '常见问答：把大家最想问的问题一次说清'),
+]
+
 # 站点栏目
 SECTIONS = [
     ('首页', '/', '按推荐、最新、热门三种方式浏览全站内容'),
@@ -159,19 +276,27 @@ def load_json(path, default=None):
 
 
 def dump_json(path, obj):
-    """原子写：先写临时文件再 rename。
-    避免流水线中途失败留下半个 JSON，下次运行直接解析崩溃。"""
+    """原子写：先写临时文件再 os.replace。
+
+    用 os.replace 而不是 os.remove + os.rename：
+      1. replace 本身就是原子覆盖，语义更对
+      2. os.remove 会触发文件删除保护机制，批量写文件时可能被拦截
+    避免流水线中途失败留下半个 JSON，下次运行直接解析崩溃。
+    """
     tmp = path + '.tmp'
     with io.open(tmp, 'w', encoding='utf-8') as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
-    if os.path.exists(path):
-        os.remove(path)
-    os.rename(tmp, path)
+    os.replace(tmp, path)
 
 
 STATE_DIR = os.path.join(HERE, 'state')
 CONTENT_DIR = os.path.join(ROOT, 'content')
 OUTPUT_DIR = os.path.join(ROOT, 'seo-pages')
+PROMO_OUT_DIR = os.path.join(ROOT, PIPELINE['PROMO_DIR'])
+# IndexNow 要求把密钥以明文文件放在站点根目录（/<key>.txt），
+# 爬虫访问该文件校验归属。文件内容就是密钥本身。
+INDEXNOW_KEY_FILE = (os.path.join(ROOT, '%s.txt' % SUBMIT['INDEXNOW_KEY'])
+                     if SUBMIT['INDEXNOW_KEY'] else None)
 LOG_DIR = os.path.join(HERE, 'logs')
 
 for _d in (STATE_DIR, CONTENT_DIR, LOG_DIR):

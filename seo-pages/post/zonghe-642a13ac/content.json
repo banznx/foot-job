@@ -1,0 +1,152 @@
+{
+  "seed_id": "post-50781121",
+  "post_id": 50781121,
+  "slug": "zonghe-642a13ac",
+  "tag": "综合",
+  "tag_slug": "zonghe",
+  "meta_title": "综合｜白袜体育生",
+  "meta_description": "这篇综合由肥皂快乐水i发布，包含 3 张图片，已有 1079 次浏览。",
+  "tags": [
+    "综合",
+    "图片社区",
+    "兴趣社区"
+  ],
+  "body": "这篇社区里没有明确归类的内容发布在玉卒，标题写的是「白袜体育生」。作者附了 3 张图片，在综合里，带图的帖子通常比纯文字更容易被翻到和收藏。\n\n发布者是肥皂快乐水i，社区等级 Lv.2，发布时间在2022年06月。目前有 13 条回复，3 个赞。\n\n如果你对综合这类内容更感兴趣，可以在玉卒里按分类浏览，也可以先看看相关的图片社区、兴趣社区。",
+  "author": "肥皂快乐水i",
+  "published": 1656552201000,
+  "images": [
+    "images/downloaded_posts_images/50781121_rBAAdmK8-weAffH4AAHZPpzzJ9g940.jpg",
+    "images/downloaded_posts_images/50781121_rBAAdmK8-wiAI_4fAAFcem1TRLE998.jpg",
+    "images/downloaded_posts_images/50781121_rBAAdmK8-wmAHX1dAAEvz9e9wrE419.jpg"
+  ],
+  "image_total": 3,
+  "metrics": {
+    "hit": 1079,
+    "comment": 13,
+    "praise": 3
+  },
+  "generated_at": 1790966520183,
+  "by_ai": false,
+  "internal_links": [
+    {
+      "slug": "zonghe-40acaba7",
+      "post_id": 50775340,
+      "title": "年年有风 风吹年年 慢慢即漫",
+      "score": 0.211,
+      "reason": "same-tag"
+    },
+    {
+      "slug": "yuanchuang-7b3101bd",
+      "post_id": 50805863,
+      "title": "【原创】周一快乐",
+      "score": 0.024,
+      "reason": "hot"
+    }
+  ],
+  "related": [],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/#post",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/"
+        },
+        "headline": "综合｜白袜体育生",
+        "description": "这篇综合由肥皂快乐水i发布，包含 3 张图片，已有 1079 次浏览。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/",
+        "articleSection": "综合",
+        "keywords": "综合, 图片社区, 兴趣社区",
+        "wordCount": 132,
+        "datePublished": "2022-06-30T01:23:21Z",
+        "dateModified": "2022-06-30T01:23:21Z"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-weAffH4AAHZPpzzJ9g940.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-weAffH4AAHZPpzzJ9g940.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "综合｜白袜体育生",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "肥皂快乐水i",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-weAffH4AAHZPpzzJ9g940.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-wiAI_4fAAFcem1TRLE998.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-wmAHX1dAAEvz9e9wrE419.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "综合",
+            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "综合｜白袜体育生",
+            "item": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "url": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/",
+  "fingerprint": "e7d7e3496000b84935bd1c1dc8ec5ee7",
+  "quality": {
+    "passed": true,
+    "score": 83,
+    "zh_len": 130,
+    "paragraphs": 3,
+    "by_ai": false
+  }
+}

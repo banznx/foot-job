@@ -1,0 +1,125 @@
+{
+  "seed_id": "post-50864557",
+  "post_id": 50864557,
+  "slug": "zonghe-8cc97c3e",
+  "tag": "综合",
+  "tag_slug": "zonghe",
+  "meta_title": "综合｜7.15",
+  "meta_description": "这篇综合由尤一ഒ发布，包含 1 张图片，已有 1205 次浏览，内容围绕「7.15」展开。",
+  "tags": [
+    "综合",
+    "图片社区",
+    "兴趣社区"
+  ],
+  "body": "这篇社区里没有明确归类的内容发布在玉卒，标题写的是「7.15」。作者附了 1 张图片，在综合里，带图的帖子通常比纯文字更容易被翻到和收藏。\n\n发布者是尤一ഒ，社区等级 Lv.6，社区称号「温香软玉」，发布时间在2022年07月。目前有 25 条回复，20 个赞。\n\n如果你对综合这类内容更感兴趣，可以在玉卒里按分类浏览，也可以先看看相关的图片社区、兴趣社区。",
+  "author": "尤一ഒ",
+  "published": 1657860728000,
+  "images": [
+    "images/downloaded_posts_images/50864557_rBAAdmLQ8guAV8kNAARm3-LLqFc331.jpg"
+  ],
+  "image_total": 1,
+  "metrics": {
+    "hit": 1205,
+    "comment": 25,
+    "praise": 20
+  },
+  "generated_at": 1790966516740,
+  "by_ai": false,
+  "internal_links": [],
+  "related": [],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/#post",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/"
+        },
+        "headline": "综合｜7.15",
+        "description": "这篇综合由尤一ഒ发布，包含 1 张图片，已有 1205 次浏览，内容围绕「7.15」展开。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/",
+        "articleSection": "综合",
+        "keywords": "综合, 图片社区, 兴趣社区",
+        "wordCount": 131,
+        "datePublished": "2022-07-15T04:52:08Z",
+        "dateModified": "2022-07-15T04:52:08Z"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50864557_rBAAdmLQ8guAV8kNAARm3-LLqFc331.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50864557_rBAAdmLQ8guAV8kNAARm3-LLqFc331.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "综合｜7.15",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "尤一ഒ",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50864557_rBAAdmLQ8guAV8kNAARm3-LLqFc331.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "综合",
+            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "综合｜7.15",
+            "item": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "url": "https://banznx.github.io/foot-job/post/zonghe-8cc97c3e/",
+  "fingerprint": "1c10fbaf8b64e45d51f46e2fb791a58d",
+  "quality": {
+    "passed": true,
+    "score": 86,
+    "zh_len": 130,
+    "paragraphs": 3,
+    "by_ai": false
+  }
+}

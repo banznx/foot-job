@@ -1,0 +1,114 @@
+{
+  "seed_id": "kw::风景图片::compare",
+  "post_id": null,
+  "slug": "zonghe-6fa4753bf0",
+  "tag": "综合",
+  "tag_slug": "zonghe",
+  "meta_title": "自然风光的四种常见风格",
+  "meta_description": "自然风光摄影中，写实、极简、暗调与高饱和是四种主流风格，它们在光影运用和构图意图上存在明显差异。",
+  "tags": [
+    "风景摄影",
+    "风格分类",
+    "自然风光"
+  ],
+  "body": "写实风格侧重于还原场景的真实面貌，强调色彩还原和细节表现，适合用于记录旅行见闻或作为设计素材。\n\n极简风格则通过简化元素来突出主体，利用留白营造宁静感，适合追求内心平静或作为背景图使用。\n\n暗调风格通过压低环境亮度来突出主体轮廓，常用于表现神秘感或戏剧性效果，能带来较强的视觉冲击力。\n\n高饱和风格通过增强色彩对比度来传递活力与热情，画面通常色彩浓郁，给人明亮欢快的感觉。",
+  "keyword": "风景图片",
+  "angle": "compare",
+  "author": "玉卒",
+  "published": 1790989991755,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989999637,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/"
+        },
+        "headline": "自然风光的四种常见风格",
+        "description": "自然风光摄影中，写实、极简、暗调与高饱和是四种主流风格，它们在光影运用和构图意图上存在明显差异。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/",
+        "about": {
+          "@type": "Thing",
+          "name": "综合",
+          "description": "社区里没有明确归类的内容"
+        },
+        "articleSection": "综合",
+        "keywords": "风景摄影, 风格分类, 自然风光",
+        "wordCount": 168,
+        "datePublished": "2026-10-03T01:13:11Z",
+        "dateModified": "2026-10-03T01:13:11Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "综合",
+            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "自然风光的四种常见风格",
+            "item": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "a06eaf0d46180762bf1a401dcee55592",
+  "quality": {
+    "passed": true,
+    "score": 100,
+    "zh_len": 168,
+    "paragraphs": 4,
+    "by_ai": true
+  }
+}

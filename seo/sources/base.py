@@ -23,7 +23,7 @@ class SeedItem(object):
                  meta=None, images=None, metrics=None, published=None):
         self.seed_id = seed_id     # 唯一且稳定，用于幂等去重
         self.kind = kind           # 'post' | 'keyword' | 'topic'
-        self.title = title
+        self.name = title
         self.body = body
         self.tags = tags or []
         self.meta = meta or {}     # 附加信息（作者、浏览量…）
@@ -34,13 +34,13 @@ class SeedItem(object):
     def to_dict(self):
         return {
             'seed_id': self.seed_id, 'kind': self.kind,
-            'title': self.title, 'body': self.body, 'tags': self.tags,
+            'title': self.name, 'body': self.body, 'tags': self.tags,
             'meta': self.meta, 'images': self.images,
             'metrics': self.metrics, 'published': self.published,
         }
 
     def __repr__(self):
-        return '<SeedItem %s %r>' % (self.kind, self.title[:20])
+        return '<SeedItem %s %r>' % (self.kind, self.name[:20])
 
 
 class Source(object):

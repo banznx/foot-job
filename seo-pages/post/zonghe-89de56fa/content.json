@@ -1,0 +1,151 @@
+{
+  "seed_id": "post-50945952",
+  "post_id": 50945952,
+  "slug": "zonghe-89de56fa",
+  "tag": "综合",
+  "tag_slug": "zonghe",
+  "meta_title": "综合｜大家好呀 嘻嘻",
+  "meta_description": "这篇综合由昵称364076发布，包含 4 张图片，已有 1490 次浏览。",
+  "tags": [
+    "综合",
+    "图片社区",
+    "兴趣社区"
+  ],
+  "body": "这篇社区里没有明确归类的内容发布在玉卒，标题写的是「大家好呀 嘻嘻」。作者附了 4 张图片，在综合里，带图的帖子通常比纯文字更容易被翻到和收藏。\n\n发布者是昵称364076，社区等级 Lv.2，发布时间在2022年07月。目前有 7 条回复，5 个赞。\n\n如果你对综合这类内容更感兴趣，可以在玉卒里按分类浏览，也可以先看看相关的图片社区、兴趣社区。",
+  "author": "昵称364076",
+  "published": 1658851283000,
+  "images": [
+    "images/downloaded_posts_images/50945952_rBAAdmLgD9GAHH9-AAQUvN3EPu8891.jpg",
+    "images/downloaded_posts_images/50945952_rBAAdmLgD9KARbzwAAPy9pp4skw880.jpg",
+    "images/downloaded_posts_images/50945952_rBAAdmLgD9KAKuMdAAOVdrNi9cI385.jpg",
+    "images/downloaded_posts_images/50945952_rBAAdmLgD9OAK6TaAAIcqm75nbA328.jpg"
+  ],
+  "image_total": 4,
+  "metrics": {
+    "hit": 1490,
+    "comment": 7,
+    "praise": 5
+  },
+  "generated_at": 1790966516500,
+  "by_ai": false,
+  "internal_links": [
+    {
+      "slug": "yuanchuang-39e03cf4",
+      "post_id": 51255274,
+      "title": "【原创】可以喊我那个吗？两个字的那个",
+      "score": 0.051,
+      "reason": "hot"
+    }
+  ],
+  "related": [],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/#post",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/"
+        },
+        "headline": "综合｜大家好呀 嘻嘻",
+        "description": "这篇综合由昵称364076发布，包含 4 张图片，已有 1490 次浏览。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/",
+        "articleSection": "综合",
+        "keywords": "综合, 图片社区, 兴趣社区",
+        "wordCount": 129,
+        "datePublished": "2022-07-26T16:01:23Z",
+        "dateModified": "2022-07-26T16:01:23Z"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945952_rBAAdmLgD9GAHH9-AAQUvN3EPu8891.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945952_rBAAdmLgD9GAHH9-AAQUvN3EPu8891.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "综合｜大家好呀 嘻嘻",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "昵称364076",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945952_rBAAdmLgD9GAHH9-AAQUvN3EPu8891.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945952_rBAAdmLgD9KARbzwAAPy9pp4skw880.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945952_rBAAdmLgD9KAKuMdAAOVdrNi9cI385.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945952_rBAAdmLgD9OAK6TaAAIcqm75nbA328.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "综合",
+            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "综合｜大家好呀 嘻嘻",
+            "item": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "url": "https://banznx.github.io/foot-job/post/zonghe-89de56fa/",
+  "fingerprint": "7a1622ed60955e3c92ee59447eba2228",
+  "quality": {
+    "passed": true,
+    "score": 93,
+    "zh_len": 128,
+    "paragraphs": 3,
+    "by_ai": false
+  }
+}

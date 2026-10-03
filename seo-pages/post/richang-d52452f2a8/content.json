@@ -1,0 +1,115 @@
+{
+  "seed_id": "kw::生活随手拍::beginner",
+  "post_id": null,
+  "slug": "richang-d52452f2a8",
+  "tag": "日常",
+  "tag_slug": "richang",
+  "meta_title": "生活随手拍主题指南",
+  "meta_description": "生活随手拍聚焦于记录日常中的美好瞬间，适合新手快速上手，捕捉生活点滴。",
+  "tags": [
+    "生活随手拍",
+    "摄影入门",
+    "日常记录",
+    "生活美学"
+  ],
+  "body": "生活随手拍通常指对日常生活场景的即时记录与分享。对于初次接触该主题的用户，这往往意味着跳出刻意构图的束缚，转而追求画面的真实感与生活气息。此类内容多涵盖通勤、美食、家居布置等日常片段。\n\n在使用该主题时，建议关注光线与构图的自然过渡。通常手机直出的色彩更能还原现场氛围。选择这类主题时，更看重创作者对生活细节的观察力，而非器材的专业程度。\n\n对于内容整理，建议按场景细分。如「通勤路上」「居家时刻」或「自然风光」。这种分类方式有助于观看者快速定位感兴趣的生活切片。保持内容积极向上，展现生活的真实面貌。",
+  "keyword": "生活随手拍",
+  "angle": "beginner",
+  "author": "玉卒",
+  "published": 1790989682669,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989700152,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/"
+        },
+        "headline": "生活随手拍主题指南",
+        "description": "生活随手拍聚焦于记录日常中的美好瞬间，适合新手快速上手，捕捉生活点滴。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/",
+        "about": {
+          "@type": "Thing",
+          "name": "日常",
+          "description": "日常生活分享"
+        },
+        "articleSection": "日常",
+        "keywords": "生活随手拍, 摄影入门, 日常记录, 生活美学",
+        "wordCount": 222,
+        "datePublished": "2026-10-03T01:08:02Z",
+        "dateModified": "2026-10-03T01:08:02Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "日常",
+            "item": "https://banznx.github.io/foot-job/tag/richang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "生活随手拍主题指南",
+            "item": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "176cd1481c214ae6371a965aff1c9a93",
+  "quality": {
+    "passed": true,
+    "score": 82,
+    "zh_len": 222,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

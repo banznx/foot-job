@@ -1,0 +1,114 @@
+{
+  "seed_id": "kw::原创摄影::story",
+  "post_id": null,
+  "slug": "yuanchuang-c74d0c8c57",
+  "tag": "原创",
+  "tag_slug": "yuanchuang",
+  "meta_title": "原创摄影：记录真实视角",
+  "meta_description": "原创摄影强调创作者独立的观察与表达，通过个人视角捕捉生活瞬间，传递真实的情感与氛围。",
+  "tags": [
+    "原创摄影",
+    "摄影技巧",
+    "生活记录"
+  ],
+  "body": "原创摄影的核心在于“第一视角”的真实性。不同于商业摄影的标准化构图，原创作品往往带有强烈的个人印记。创作者通过镜头捕捉日常生活中的细微变化，或是独特的光影效果，以此表达对世界的理解。\n\n对于这类题材，保持记录的习惯尤为重要。通常建议从身边熟悉的环境入手，例如街角的市井气息、光影下的建筑纹理，或是家庭聚会的温馨时刻。在拍摄时，不必过度追求器材的昂贵，更多的是对拍摄瞬间的感受与取舍。\n\n后期处理应以还原真实为主。过度的滤镜或合成可能会削弱照片的感染力。保持画面的自然感，注重内容的叙事性，往往比单纯的技术堆砌更能打动观众。选择那些能够引发共鸣的瞬间，是原创摄影最本质的价值所在。",
+  "keyword": "原创摄影",
+  "angle": "story",
+  "author": "玉卒",
+  "published": 1790990064712,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790990068903,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/yuanchuang-c74d0c8c57/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-c74d0c8c57/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-c74d0c8c57/"
+        },
+        "headline": "原创摄影：记录真实视角",
+        "description": "原创摄影强调创作者独立的观察与表达，通过个人视角捕捉生活瞬间，传递真实的情感与氛围。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/yuanchuang-c74d0c8c57/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
+        "articleSection": "原创",
+        "keywords": "原创摄影, 摄影技巧, 生活记录",
+        "wordCount": 261,
+        "datePublished": "2026-10-03T01:14:24Z",
+        "dateModified": "2026-10-03T01:14:24Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-c74d0c8c57/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "原创",
+            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "原创摄影：记录真实视角",
+            "item": "https://banznx.github.io/foot-job/post/yuanchuang-c74d0c8c57/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "b6f6c44c157e8ebea1a204763538d022",
+  "quality": {
+    "passed": true,
+    "score": 100,
+    "zh_len": 261,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

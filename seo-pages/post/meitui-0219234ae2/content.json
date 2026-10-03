@@ -1,0 +1,114 @@
+{
+  "seed_id": "kw::美腿特写::why",
+  "post_id": null,
+  "slug": "meitui-0219234ae2",
+  "tag": "美腿",
+  "tag_slug": "meitui",
+  "meta_title": "美腿特写：为什么这类内容受欢迎",
+  "meta_description": "这类图片通常通过光影和构图突出腿部线条的流畅感。人们关注此类内容，多源于对肢体美学或健康体态的欣赏。",
+  "tags": [
+    "审美",
+    "摄影",
+    "健康"
+  ],
+  "body": "在视觉艺术中，腿部是表现人体比例和动态的关键部位。特写镜头能剥离环境干扰，将观者注意力集中在肌肉的起伏与皮肤的质感上。\n\n这类图片的流行，往往源于对健康体态的向往。画面中常见的直线条与几何感，能带来一种简洁、利落的视觉愉悦，这符合大众对自然之美的审美偏好。\n\n在筛选此类图片时，应关注光线是否柔和，背景是否干净。优秀的作品通常注重光影的层次，通过明暗对比来增强腿部的立体感，而非单纯的视觉刺激。",
+  "keyword": "美腿特写",
+  "angle": "why",
+  "author": "玉卒",
+  "published": 1790989831637,
+  "images": [],
+  "image_total": 0,
+  "metrics": {},
+  "generated_at": 1790989841192,
+  "by_ai": true,
+  "is_seo_page": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/"
+        },
+        "headline": "美腿特写：为什么这类内容受欢迎",
+        "description": "这类图片通常通过光影和构图突出腿部线条的流畅感。人们关注此类内容，多源于对肢体美学或健康体态的欣赏。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/",
+        "about": {
+          "@type": "Thing",
+          "name": "美腿",
+          "description": "以腿部特写为主题的照片"
+        },
+        "articleSection": "美腿",
+        "keywords": "审美, 摄影, 健康",
+        "wordCount": 177,
+        "datePublished": "2026-10-03T01:10:31Z",
+        "dateModified": "2026-10-03T01:10:31Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "美腿",
+            "item": "https://banznx.github.io/foot-job/tag/meitui/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "美腿特写：为什么这类内容受欢迎",
+            "item": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/"
+      }
+    ]
+  },
+  "fingerprint": "d17a756248728d3a15c964836fbcd328",
+  "quality": {
+    "passed": true,
+    "score": 100,
+    "zh_len": 177,
+    "paragraphs": 3,
+    "by_ai": true
+  }
+}

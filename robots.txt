@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /posts-data.js
+Disallow: /post1/
+Disallow: /posts2/
+Disallow: /seo/state/
+Disallow: /seo/logs/
+Disallow: /*?v=
+
+# 静态页集中在 /post/ 与 /kw/ 下，明确开放
+Allow: /post/
+Allow: /tag/
+Allow: /kw/
+Allow: /promo/
+
+Sitemap: https://banznx.github.io/foot-job/sitemap.xml
+Sitemap: https://banznx.github.io/foot-job/promo/sitemap.xml
