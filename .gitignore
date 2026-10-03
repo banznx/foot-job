@@ -16,3 +16,7 @@ desktop.ini
 # Python 缓存
 __pycache__/
 *.pyc
+
+# SEO 产物已移除，磁盘残留不纳入版本管理
+pages/
+seo/
