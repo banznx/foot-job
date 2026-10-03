@@ -35,6 +35,7 @@ import re
 import time
 
 from .. import config
+from . import imgpool
 from . import rewrite as rw
 from .keywords import strip_tag
 
@@ -42,53 +43,66 @@ from .keywords import strip_tag
 # 提示词
 # ============================================================
 
-REWRITE_PROMPT = """你为一个图片社区写一篇「主题文章」，用于吸引读者进站浏览。
+REWRITE_PROMPT = """你为一个图片社区写一篇「主题文章」，用于吸引读者进站。
 
 参考素材（来自社区真实内容）：
 - 原帖标题：{title}
 - 原帖正文：{body}
 - 分类：{tag}（{intent}）
 - 互动数据：{hit} 次浏览、{comment} 条评论
-- 社区里有 {image_count} 张相关图片
 
-要求：
+写作要求：
 1. **换视角重写**，不要逐句翻译或复述原帖。原帖信息很少，
-   你要做的是围绕这个主题写一篇有信息量的原创文章
+   你要做的是围绕「{tag}」这个主题写一篇有信息量的原创文章
 2. 可以写的内容：这类内容的常见主题、读者的关注点、
    选择建议、常见疑问、生活场景描写
 3. **绝对不要编造画面细节**。这是最容易出错的地方：
-   源帖几乎只有一行标题，你并不知道照片里具体有什么、
-   人物长什么样、发生了什么事。所以
-   **不要写"照片里出现了…""可以看到…""画面中…"** 这类描述。
+   源帖几乎只有一行标题，你并不知道照片里具体有什么。
+   所以**不要写"照片里出现了…""可以看到…""画面中…"** 这类描述，
    要写就写「这类内容通常…」「大多数情况下…」这类
-   针对主题本身的通用讨论，而不是针对这一篇的具体描述。
+   针对主题本身的通用讨论
 4. 用词中性、健康。不得出现低俗、暧昧、擦边或任何违规暗示的词
-5. 段落 3-5 段，每段不超过 3 句，段间空行
-6. 总长度 {lo}-{hi} 个汉字
-7. 不要出现这些词：json、api、github、部署、缓存、脚本、接口、
+5. 不要出现这些词：json、api、github、部署、缓存、脚本、接口、
    构建、仓库、服务器、数据库、算法
 
-只输出 JSON：{{"title":"22字以内的标题","description":"70-110字的摘要","body":"正文，段落用\\n\\n分隔","tags":["标签1","标签2","标签3"]}}"""
+**篇幅是硬要求**：
+- 正文必须达到 {lo}-{hi} 个汉字，至少 5 段
+- 每段 3-4 句，不要只写两三句就收尾
+- 内容要展开讲透，不要写成简短的片段
+
+**结尾必须有 2-3 组问答**，用这两种写法之一：
+- 设问句独立成段，例：「想知道更多细节？」（以问号结尾）
+- 显式问答，例：「问：xxx  答：yyy」
+问答是为了进搜索结果的「其他人还问了」，不能省
+
+只输出 JSON：{{"title":"20字以内的标题，含关键词","description":"70-110字的摘要","body":"正文，段落用\\n\\n分隔","tags":["标签1","标签2","标签3"]}}"""
 
 FRESH_PROMPT = """你为一个图片社区写一篇全新的原创文章，用于吸引读者进站。
 
 主题方向：{keyword}
 所属分类：{tag}（{intent}）
-可参考的站内内容倾向：{samples}
+站内内容倾向：{samples}
 
-要求：
+写作要求：
 1. **完全原创**，不要假设你在改写任何已有内容
-2. 围绕这个主题写一篇有信息量的文章：可以是指南、经验分享、
-   场景描写、常见疑问的解答，读者读完能学到点东西
+2. 围绕这个主题写一篇有信息量的文章：指南、经验分享、
+   场景描写、常见疑问的解答，读者读完能学到东西
 3. **不要编造事实**。不确定的用"通常""大多""一般"这类说法
 4. 用词中性、健康。不得出现低俗、暧昧、擦边或任何违规暗示的词
-5. 段落 3-5 段，每段不超过 3 句，段间空行
-6. 总长度 {lo}-{hi} 个汉字
-7. 不要出现这些词：json、api、github、部署、缓存、脚本、接口、
+5. 不要出现这些词：json、api、github、部署、缓存、脚本、接口、
    构建、仓库、服务器、数据库、算法
-8. 结尾不要写"快来浏览""点击查看"这类召唤语
+6. 结尾不要写"快来浏览""点击查看"这类召唤语
 
-只输出 JSON：{{"title":"22字以内的标题","description":"70-110字的摘要","body":"正文，段落用\\n\\n分隔","tags":["标签1","标签2","标签3"]}}"""
+**篇幅是硬要求**：
+- 正文必须达到 {lo}-{hi} 个汉字，至少 5 段
+- 每段 3-4 句，不要只写两三句就收尾
+
+**结尾必须有 2-3 组问答**，用这两种写法之一：
+- 设问句独立成段，例：「新手最关心的问题？」（以问号结尾）
+- 显式问答，例：「问：xxx  答：yyy」
+问答是为了进搜索结果的「其他人还问了」，不能省
+
+只输出 JSON：{{"title":"20字以内的标题，含关键词","description":"70-110字的摘要","body":"正文，段落用\\n\\n分隔","tags":["标签1","标签2","标签3"]}}"""
 
 
 # ============================================================
@@ -155,10 +169,24 @@ def build_promo_item(mode, src_item=None, keyword=None, angle=''):
     elif keyword:
         tag = rw.item_tags_or_default(keyword)[0]
 
+    # 主题词（用于 title / 正文 prompt）：
+    # rewrite/extend 模式下**不能直接用源帖标题** ——
+    # 实测源帖标题是「怎么？我的腿不能见人吗」这类口语，
+    # 搜索里没有这种词，而且常带【原创】前缀，
+    # 直接拿来当 title 会产出「【原创】怎么？我的腿不能见人吗整理」
+    # 这种既难看又搜不到的标题。
+    # 改为按分类取一个真实的搜索词。
+    if keyword:
+        name = keyword
+    elif src_item is not None:
+        name = _search_term_for(src_item, tag)
+    else:
+        name = '内容'
+
     return {
         'seed_id': seed,
         'mode': mode,
-        'name': (keyword or (src_item.name if src_item else '内容')),
+        'name': name,
         'keyword': keyword,
         'src': src_item,
         'angle': angle,
@@ -175,6 +203,29 @@ def build_promo_item(mode, src_item=None, keyword=None, angle=''):
         'metrics': {},
         'published': int(time.time() * 1000),
     }
+
+
+def _search_term_for(src_item, tag):
+    """按分类给一个可搜索的主题词。
+
+    站内标题普遍不可搜索（口语化、含表情、带分类前缀），
+    所以这里用「分类 + 通用搜索修饰词」组合，
+    保证 title 里有真正有人搜的词。
+    """
+    intent = config.TAG_INTENT.get(tag, '内容')
+    # 从分类意图里提一个稳定的搜索词，比用源帖标题可靠得多
+    base = {
+        '举牌': '举牌文案', '原创': '原创摄影', '自拍': '自拍姿势',
+        '美腿': '美腿拍照', '三坑': '三坑穿搭', '视频': '短视频剪辑',
+        '日常': '日常记录', '综合': '生活记录',
+    }.get(tag)
+    if base:
+        return base
+    # 兜底：截取源帖标题里较长的中文片段，去掉表情与分类前缀
+    import re as _re
+    t = _re.sub(r'【[^】]*】', '', src_item.name or '')
+    t = _re.sub(r'[^\u4e00-\u9fa5]', '', t)
+    return t[:6] or intent[:6]
 
 
 def _promo_slug(seed):
@@ -235,7 +286,10 @@ def generate(promo_item, ai, keywords=None, samples=None):
 
     body = rw._clean_body(data.get('body', ''))
     result.update({
-        'meta_title': rw._clip(data.get('title') or result['meta_title'], 30),
+        # 引流文的 AI 标题最容易跑偏（实测「偶遇电梯里的心动瞬间」），
+        # 强制补上主题词，否则搜索流量进不来
+        'meta_title': rw.ensure_keyword(
+            data.get('title'), promo_item['name'], max_len=30),
         'meta_description': rw._clip(
             data.get('description') or result['meta_description'], 120),
         'tags': [rw._clip(t, 8) for t in (data.get('tags') or [])][:4]
@@ -246,7 +300,7 @@ def generate(promo_item, ai, keywords=None, samples=None):
     return result
 
 
-def assemble(promo_item, gen, site_url=None, cta_links=None):
+def assemble(promo_item, gen, site_url=None, cta_links=None, faq=None):
     """组装成结构化内容。
 
     与主题页的区别：引流文的主 CTA 更强——
@@ -273,8 +327,11 @@ def assemble(promo_item, gen, site_url=None, cta_links=None):
                         if promo_item['src'] else None),
         'author': config.SITE['BRAND'],
         'published': promo_item['published'],
-        'images': [],
-        'image_total': 0,
+        # 社区图片池随机取图。引流文需要图来吸引点击，
+        # 空图版的引流效果明显更差。
+        'images': imgpool.pick(config.PIPELINE['PROMO_IMG_COUNT'],
+                               seed=promo_item['meta']['slug']),
+        'image_total': config.PIPELINE['PROMO_IMG_COUNT'],
         'metrics': {},
         'generated_at': int(time.time() * 1000),
         'by_ai': gen.get('by_ai', False),
@@ -286,7 +343,8 @@ def assemble(promo_item, gen, site_url=None, cta_links=None):
         'source_post_id': None,
     }
     content['url'] = config.page_url(slug)
-    content['schema'] = build_schema(promo_item, content, site_url)
+    content['faq'] = faq or []
+    content['schema'] = build_schema(promo_item, content, site_url, faq)
     # schema 里的 URL 要跟实际路径一致
     for node in content['schema']['@graph']:
         if node.get('@id', '').startswith(config.page_url('')):

@@ -113,28 +113,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-975c0205/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-975c0205/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-975c0205/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-975c0205/"
         },
         "headline": "原创｜黑色皮裤",
         "description": "这篇原创由寅宕宝贝发布，包含 4 张图片，已有 2691 次浏览，内容围绕「黑色皮裤」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-975c0205/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-975c0205/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
         "articleSection": "原创",
         "keywords": "原创, 原创摄影, 原创写真",
         "wordCount": 135,
         "datePublished": "2022-08-26T09:46:14Z",
-        "dateModified": "2022-08-26T09:46:14Z"
+        "dateModified": "2022-08-26T09:46:14Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-975c0205/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-975c0205/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51152970_rBAAdmMIlmOAKlVYAAGKNJKU4oo235.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51152970_rBAAdmMIlmOAKlVYAAGKNJKU4oo235.jpg",
         "encodingFormat": "image/jpeg",
@@ -142,7 +152,7 @@
         "height": 1440,
         "caption": "原创｜黑色皮裤",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "寅宕宝贝",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -169,7 +179,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-975c0205/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-975c0205/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -181,13 +191,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创｜黑色皮裤",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-975c0205/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-975c0205/"
           }
         ]
       },

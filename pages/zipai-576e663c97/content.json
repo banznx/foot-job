@@ -17,8 +17,13 @@
   "angle": "mistake",
   "author": "玉卒",
   "published": 1790989831637,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50936668_rBAAdmLekcCAW0GyAADcNbV8NOk666.jpg",
+    "images/downloaded_posts_images/51227861_rBAAdmMYIWCAJljPAAFxmy2Fv_o344.jpg",
+    "images/downloaded_posts_images/50790792_rBAAdmK_E0mAMUoRAAFe69XxFvU184.jpg",
+    "images/downloaded_posts_images/50873594_rBAAdmLSr6mADHz6AAIqJrRb-eU632.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989845280,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/zipai-576e663c97/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/zipai-576e663c97/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/zipai-576e663c97/"
+          "@id": "https://banznx.github.io/foot-job/pages/zipai-576e663c97/"
         },
         "headline": "长腿自拍常见误区与技巧",
         "description": "分享长腿自拍中常见的构图与光线误区，提供实用的拍摄建议。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/zipai-576e663c97/",
+        "url": "https://banznx.github.io/foot-job/pages/zipai-576e663c97/",
         "about": {
           "@type": "Thing",
           "name": "自拍",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/zipai-576e663c97/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50936668_rBAAdmLekcCAW0GyAADcNbV8NOk666.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50936668_rBAAdmLekcCAW0GyAADcNbV8NOk666.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "长腿自拍常见误区与技巧",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50936668_rBAAdmLekcCAW0GyAADcNbV8NOk666.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51227861_rBAAdmMYIWCAJljPAAFxmy2Fv_o344.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50790792_rBAAdmK_E0mAMUoRAAFe69XxFvU184.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50873594_rBAAdmLSr6mADHz6AAIqJrRb-eU632.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/zipai-576e663c97/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/zipai-576e663c97/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,13 +115,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "自拍",
-            "item": "https://banznx.github.io/foot-job/tag/zipai/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-zipai/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "长腿自拍常见误区与技巧",
-            "item": "https://banznx.github.io/foot-job/post/zipai-576e663c97/"
+            "item": "https://banznx.github.io/foot-job/pages/zipai-576e663c97/"
           }
         ]
       },

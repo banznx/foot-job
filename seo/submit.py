@@ -184,24 +184,31 @@ def collect_urls(since_ms=None):
     since_ms: 只收集这个时间点之后修改过的页面。
     每小时只推新增/更新的那几个 URL，而不是全量——
     全量推会被限流，而且没有意义（没变的页面不需要重新提交）。
+
+    所有静态单页都在同一个目录下（v4 起），
+    URL 一律用 config.page_url() 生成，不自己拼路径。
     """
     urls = []
-    base = config.site_url('/')
-    promo_dir = config.PROMO_OUT_DIR
-    seo_dir = os.path.join(config.ROOT, config.PIPELINE['OUT_DIR'])
+    base_dir = config.OUTPUT_DIR
+    if not os.path.isdir(base_dir):
+        return urls
 
-    for root_dir, prefix in ((promo_dir, 'promo'),
-                             (seo_dir, '')):
-        if not os.path.isdir(root_dir):
+    # 总索引页：pages/index.html 对应 URL /pages/，不是 /pages/index/
+    idx = os.path.join(base_dir, 'index.html')
+    if os.path.exists(idx) and (not since_ms or _mtime(idx) >= since_ms):
+        urls.append(config.site_url(
+            '/%s/' % config.PIPELINE['OUT_DIR']))
+
+    for name in sorted(os.listdir(base_dir)):
+        d = os.path.join(base_dir, name)
+        if not os.path.isdir(d):
             continue
-        for root, _dirs, files in os.walk(root_dir):
-            if 'index.html' not in files:
-                continue
-            path = os.path.join(root, 'index.html')
-            if since_ms and _mtime(path) < since_ms:
-                continue
-            rel = os.path.relpath(root, config.ROOT).replace('\\', '/')
-            urls.append(base + rel + '/')
+        path = os.path.join(d, 'index.html')
+        if not os.path.exists(path):
+            continue
+        if since_ms and _mtime(path) < since_ms:
+            continue
+        urls.append(config.page_url(name))
     return urls
 
 

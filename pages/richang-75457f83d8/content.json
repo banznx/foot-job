@@ -17,8 +17,13 @@
   "angle": "tips",
   "author": "玉卒",
   "published": 1790989682669,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51010767_rBAAdmLsgIuAYPThAAC9rP2y7-g735.jpg",
+    "images/downloaded_posts_images/50790659_rBAAdmK_C6-AIsJZAAEhq2xoqKw296.jpg",
+    "images/downloaded_posts_images/50956768_rBAAdmLiMzCAdRlbAADV0tEG1c4608.jpg",
+    "images/downloaded_posts_images/50843459_rBAAdmLMKYuANS6VAAG57ByyOr4833.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989706142,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/richang-75457f83d8/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-75457f83d8/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/richang-75457f83d8/"
+          "@id": "https://banznx.github.io/foot-job/pages/richang-75457f83d8/"
         },
         "headline": "生活随手拍：日常记录实用指南",
         "description": "分享日常照片的构图、光线与主题选择技巧，帮助提升随手拍的质量。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/richang-75457f83d8/",
+        "url": "https://banznx.github.io/foot-job/pages/richang-75457f83d8/",
         "about": {
           "@type": "Thing",
           "name": "日常",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-75457f83d8/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51010767_rBAAdmLsgIuAYPThAAC9rP2y7-g735.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51010767_rBAAdmLsgIuAYPThAAC9rP2y7-g735.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "生活随手拍：日常记录实用指南",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51010767_rBAAdmLsgIuAYPThAAC9rP2y7-g735.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50790659_rBAAdmK_C6-AIsJZAAEhq2xoqKw296.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50956768_rBAAdmLiMzCAdRlbAADV0tEG1c4608.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50843459_rBAAdmLMKYuANS6VAAG57ByyOr4833.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/richang-75457f83d8/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-75457f83d8/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,13 +115,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "日常",
-            "item": "https://banznx.github.io/foot-job/tag/richang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-richang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "生活随手拍：日常记录实用指南",
-            "item": "https://banznx.github.io/foot-job/post/richang-75457f83d8/"
+            "item": "https://banznx.github.io/foot-job/pages/richang-75457f83d8/"
           }
         ]
       },

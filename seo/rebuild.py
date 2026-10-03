@@ -55,6 +55,26 @@ def needs_rebuild(html_path):
     for old in ('/post/', '/kw/', '/tag/', '/promo/', '/seo-pages/'):
         if ('href="%s%s' % (config.site_url('/'), old)) in h:
             return True
+    cj = html_path.replace('index.html', 'content.json')
+    if os.path.exists(cj):
+        c = _load(cj) or {}
+        # 补了图但页面还没渲染出来：content.json 有 images 而 HTML 没有 img。
+        if (c.get('images') and '<img src=' not in h):
+            return True
+        # title 变了但页面还是旧 title
+        t = c.get('meta_title')
+        if t and ('<title>%s</title>' % t) not in h:
+            return True
+        # schema 节点数变了（新增 FAQPage / ImageObject 后必须重渲染，
+        # 否则页面里的 JSON-LD 与 content.json 不一致）
+        sch = c.get('schema') or {}
+        try:
+            n_nodes = len(sch.get('@graph') or [])
+        except Exception:
+            n_nodes = 0
+        if n_nodes and ('"@graph": [\n    {\n      "@type": "Article"' in h
+                                   or h.count('"@type": "') < n_nodes):
+            return True
     return False
 
 

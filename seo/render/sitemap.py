@@ -135,6 +135,15 @@ def build_index_entries():
         'url': config.site_url('/'), 'lastmod': now,
         'changefreq': 'daily', 'priority': '1.0',
     }]
+    # 全部内容页的总索引。它是爬虫拿到全部静态页的起点，
+    # priority 给 0.9（仅低于首页）—— 没有它爬虫要靠 sitemap
+    # 一条条发现，效率差很多。
+    if os.path.exists(os.path.join(config.OUTPUT_DIR, 'index.html')):
+        entries.append({
+            'url': config.site_url('/%s/' % config.PIPELINE['OUT_DIR']),
+            'lastmod': now, 'changefreq': 'daily', 'priority': '0.9',
+        })
+
     for tag in config.TAG_SLUGS:
         entries.append({
             'url': config.tag_url(tag),

@@ -48,28 +48,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-642a13ac/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/"
+          "@id": "https://banznx.github.io/foot-job/pages/zonghe-642a13ac/"
         },
         "headline": "综合｜白袜体育生",
         "description": "这篇综合由肥皂快乐水i发布，包含 3 张图片，已有 1079 次浏览。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/",
+        "url": "https://banznx.github.io/foot-job/pages/zonghe-642a13ac/",
+        "about": {
+          "@type": "Thing",
+          "name": "综合",
+          "description": "社区里没有明确归类的内容"
+        },
         "articleSection": "综合",
         "keywords": "综合, 图片社区, 兴趣社区",
         "wordCount": 132,
         "datePublished": "2022-06-30T01:23:21Z",
-        "dateModified": "2022-06-30T01:23:21Z"
+        "dateModified": "2022-06-30T01:23:21Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-642a13ac/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-weAffH4AAHZPpzzJ9g940.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781121_rBAAdmK8-weAffH4AAHZPpzzJ9g940.jpg",
         "encodingFormat": "image/jpeg",
@@ -77,7 +87,7 @@
         "height": 1440,
         "caption": "综合｜白袜体育生",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "肥皂快乐水i",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -99,7 +109,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-642a13ac/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -111,13 +121,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "综合",
-            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-zonghe/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "综合｜白袜体育生",
-            "item": "https://banznx.github.io/foot-job/post/zonghe-642a13ac/"
+            "item": "https://banznx.github.io/foot-job/pages/zonghe-642a13ac/"
           }
         ]
       },

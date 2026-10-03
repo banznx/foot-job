@@ -67,28 +67,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-b3d94a2f/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-b3d94a2f/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-b3d94a2f/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-b3d94a2f/"
         },
         "headline": "原创｜我一句话都不敢跟你说",
         "description": "这篇原创由阿 來¶发布，包含 7 张图片，已有 5333 次浏览，内容围绕「我一句话都不敢跟你说」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-b3d94a2f/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-b3d94a2f/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
         "articleSection": "原创",
         "keywords": "原创, 原创摄影, 原创写真",
         "wordCount": 147,
         "datePublished": "2022-07-27T08:32:50Z",
-        "dateModified": "2022-07-27T08:32:50Z"
+        "dateModified": "2022-07-27T08:32:50Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-b3d94a2f/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-b3d94a2f/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50949952_rBAAdmLg-C2AYT9BAAIh57fasx4324.png",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50949952_rBAAdmLg-C2AYT9BAAIh57fasx4324.png",
         "encodingFormat": "image/jpeg",
@@ -96,7 +106,7 @@
         "height": 1440,
         "caption": "原创｜我一句话都不敢跟你说",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "阿 來¶",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -138,7 +148,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-b3d94a2f/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-b3d94a2f/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -150,13 +160,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创｜我一句话都不敢跟你说",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-b3d94a2f/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-b3d94a2f/"
           }
         ]
       },

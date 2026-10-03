@@ -4,7 +4,7 @@
   "slug": "zonghe-6fa4753bf0",
   "tag": "综合",
   "tag_slug": "zonghe",
-  "meta_title": "自然风光的四种常见风格",
+  "meta_title": "风景图片 · 自然风光的四种常见风格",
   "meta_description": "自然风光摄影中，写实、极简、暗调与高饱和是四种主流风格，它们在光影运用和构图意图上存在明显差异。",
   "tags": [
     "风景摄影",
@@ -16,8 +16,13 @@
   "angle": "compare",
   "author": "玉卒",
   "published": 1790989991755,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51018737_rBAAdmLuNAmACfs3AAFClqiTgao237.jpg",
+    "images/downloaded_posts_images/51118097_rBAAdmMDE3qAfgd5AADBY-CWhb4149.jpg",
+    "images/downloaded_posts_images/51170189_rBAAdmMLscKABfggAADrTjA-hIU586.jpg",
+    "images/downloaded_posts_images/51201526_rBAAdmMSHqOAD6_eAAKa0qWAYg4428.png"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989999637,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-6fa4753bf0/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/"
+          "@id": "https://banznx.github.io/foot-job/pages/zonghe-6fa4753bf0/"
         },
-        "headline": "自然风光的四种常见风格",
+        "headline": "风景图片 · 自然风光的四种常见风格",
         "description": "自然风光摄影中，写实、极简、暗调与高饱和是四种主流风格，它们在光影运用和构图意图上存在明显差异。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/",
+        "url": "https://banznx.github.io/foot-job/pages/zonghe-6fa4753bf0/",
         "about": {
           "@type": "Thing",
           "name": "综合",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-6fa4753bf0/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51018737_rBAAdmLuNAmACfs3AAFClqiTgao237.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51018737_rBAAdmLuNAmACfs3AAFClqiTgao237.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "风景图片 · 自然风光的四种常见风格",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51018737_rBAAdmLuNAmACfs3AAFClqiTgao237.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51118097_rBAAdmMDE3qAfgd5AADBY-CWhb4149.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51170189_rBAAdmMLscKABfggAADrTjA-hIU586.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51201526_rBAAdmMSHqOAD6_eAAKa0qWAYg4428.png",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-6fa4753bf0/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "综合",
-            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-zonghe/"
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "自然风光的四种常见风格",
-            "item": "https://banznx.github.io/foot-job/post/zonghe-6fa4753bf0/"
+            "name": "风景图片 · 自然风光的四种常见风格",
+            "item": "https://banznx.github.io/foot-job/pages/zonghe-6fa4753bf0/"
           }
         ]
       },

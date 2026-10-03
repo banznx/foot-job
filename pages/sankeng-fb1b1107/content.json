@@ -33,28 +33,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/sankeng-fb1b1107/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/sankeng-fb1b1107/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/sankeng-fb1b1107/"
+          "@id": "https://banznx.github.io/foot-job/pages/sankeng-fb1b1107/"
         },
         "headline": "三坑｜伊藤奈奈亚",
         "description": "这篇三坑由伊藤奈奈亚✧发布，包含 3 张图片，已有 2488 次浏览，内容围绕「伊藤奈奈亚」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/sankeng-fb1b1107/",
+        "url": "https://banznx.github.io/foot-job/pages/sankeng-fb1b1107/",
+        "about": {
+          "@type": "Thing",
+          "name": "三坑",
+          "description": "正装JK、水手服、汉服等制服类穿搭"
+        },
         "articleSection": "三坑",
         "keywords": "三坑, 制服穿搭, 水手服",
         "wordCount": 132,
         "datePublished": "2022-06-30T02:02:32Z",
-        "dateModified": "2022-06-30T02:02:32Z"
+        "dateModified": "2022-06-30T02:02:32Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/sankeng-fb1b1107/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/sankeng-fb1b1107/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781281_rBAAdmK9BDSAE6DaAAFozyLwNRY689.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50781281_rBAAdmK9BDSAE6DaAAFozyLwNRY689.jpg",
         "encodingFormat": "image/jpeg",
@@ -62,7 +72,7 @@
         "height": 1440,
         "caption": "三坑｜伊藤奈奈亚",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "伊藤奈奈亚✧",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -84,7 +94,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/sankeng-fb1b1107/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/sankeng-fb1b1107/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -96,13 +106,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "三坑",
-            "item": "https://banznx.github.io/foot-job/tag/sankeng/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-sankeng/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "三坑｜伊藤奈奈亚",
-            "item": "https://banznx.github.io/foot-job/post/sankeng-fb1b1107/"
+            "item": "https://banznx.github.io/foot-job/pages/sankeng-fb1b1107/"
           }
         ]
       },

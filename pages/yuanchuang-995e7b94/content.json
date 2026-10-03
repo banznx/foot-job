@@ -145,28 +145,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-995e7b94/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-995e7b94/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-995e7b94/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-995e7b94/"
         },
         "headline": "原创｜是黑丝呀",
         "description": "这篇原创由哈哈蛤发布，包含 1 张图片，已有 1153 次浏览，内容围绕「是黑丝呀」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-995e7b94/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-995e7b94/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
         "articleSection": "原创",
         "keywords": "原创, 原创摄影, 原创写真",
         "wordCount": 134,
         "datePublished": "2022-08-12T01:17:03Z",
-        "dateModified": "2022-08-12T01:17:03Z"
+        "dateModified": "2022-08-12T01:17:03Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-995e7b94/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-995e7b94/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51053188_rBAAdmL1qg-ANMR9AAWpPZV08TY143.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51053188_rBAAdmL1qg-ANMR9AAWpPZV08TY143.jpg",
         "encodingFormat": "image/jpeg",
@@ -174,7 +184,7 @@
         "height": 1440,
         "caption": "原创｜是黑丝呀",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "哈哈蛤",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -186,7 +196,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-995e7b94/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-995e7b94/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -198,13 +208,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创｜是黑丝呀",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-995e7b94/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-995e7b94/"
           }
         ]
       },

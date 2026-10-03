@@ -16,8 +16,13 @@
   "angle": "beginner",
   "author": "玉卒",
   "published": 1790989682669,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50847384_rBAAdmLNPDiANnXcAAEpNLXQFac088.jpg",
+    "images/downloaded_posts_images/50860441_rBAAdmLP_wCAKq-4AAMUeTHVDeQ688.png",
+    "images/downloaded_posts_images/51009606_rBAAdmLr8XOARyAyAAFYfNLWV9U659.jpg",
+    "images/downloaded_posts_images/51049741_rBAAdmL04JCAWXTmAAG0huDgAhw570.png"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989687988,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-78e7e4adab/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-78e7e4adab/"
         },
         "headline": "风景摄影入门指南",
         "description": "本主题整理旨在帮助新手理解风景摄影的核心要素，从构图到光影，提供实用的拍摄与审美建议。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-78e7e4adab/",
         "about": {
           "@type": "Thing",
           "name": "原创",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-78e7e4adab/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50847384_rBAAdmLNPDiANnXcAAEpNLXQFac088.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50847384_rBAAdmLNPDiANnXcAAEpNLXQFac088.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "风景摄影入门指南",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50847384_rBAAdmLNPDiANnXcAAEpNLXQFac088.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50860441_rBAAdmLP_wCAKq-4AAMUeTHVDeQ688.png",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51009606_rBAAdmLr8XOARyAyAAFYfNLWV9U659.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51049741_rBAAdmL04JCAWXTmAAG0huDgAhw570.png",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-78e7e4adab/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "风景摄影入门指南",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-78e7e4adab/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-78e7e4adab/"
           }
         ]
       },

@@ -20,6 +20,7 @@
 import time
 
 from .. import config
+from . import imgpool
 from . import rewrite as rw
 from .keywords import strip_tag
 
@@ -44,6 +45,11 @@ TOPIC_PROMPT = """你为一个图片分享社区的「主题整理页」写内�
 5. 不要出现这些词：json、api、github、部署、缓存、脚本、接口、
    构建、仓库、服务器、数据库、算法
 6. 结尾不要写「快来浏览」「点击查看」这类召唤语
+
+8. **正文最后加 2-3 组问答**，用这两种写法之一：
+   - 设问句独立成段：「想知道更多细节？」（以问号结尾）
+   - 显式问答：「问：xxx  答：yyy」
+   问答是给搜索结果用的，能显著提高进「其他人还问了」的概率
 
 只输出 JSON：{{"title":"20字以内的标题","description":"60-110字的摘要","body":"正文，段落用\\n\\n分隔","tags":["标签1","标签2"]}}"""
 
@@ -120,7 +126,9 @@ def generate_topic(topic, ai, site_url=None):
 
     body = rw._clean_body(data.get('body', ''))
     result.update({
-        'meta_title': rw._clip(data.get('title') or result['meta_title'], 30),
+        # 标题必须含关键词：AI 写标题偏文艺，搜索里没关键词等于隐身
+        'meta_title': rw.ensure_keyword(
+            data.get('title'), keyword, max_len=30),
         'meta_description': rw._clip(
             data.get('description') or result['meta_description'], 120),
         'tags': [rw._clip(t, 8) for t in (data.get('tags') or [])][:5]
@@ -131,7 +139,7 @@ def generate_topic(topic, ai, site_url=None):
     return result
 
 
-def assemble_topic(topic, gen, site_url=None):
+def assemble_topic(topic, gen, site_url=None, faq=None):
     """把关键词页的生成结果组装成完整结构化内容。"""
     from .assemble import build_schema, fingerprint
 
@@ -153,8 +161,11 @@ def assemble_topic(topic, gen, site_url=None):
         'angle': topic['angle'],
         'author': config.SITE['BRAND'],
         'published': topic['published'],
-        'images': [],
-        'image_total': 0,
+        # 从社区图片池随机取图。关键词页与真实帖子解耦，
+        # 所以图是全站通用素材，不指向任何一篇具体帖子。
+        'images': imgpool.pick(config.PIPELINE['PROMO_IMG_COUNT'],
+                               seed=topic['meta']['slug']),
+        'image_total': config.PIPELINE['PROMO_IMG_COUNT'],
         'metrics': {},
         'generated_at': int(time.time() * 1000),
         'by_ai': gen.get('by_ai', False),
@@ -166,7 +177,8 @@ def assemble_topic(topic, gen, site_url=None):
         'source_post_id': None,       # 明确没有来源帖子
     }
     content['url'] = config.page_url(slug)
-    content['schema'] = build_schema(topic, content, site_url)
+    content['faq'] = faq or []
+    content['schema'] = build_schema(topic, content, site_url, faq)
     content['fingerprint'] = fingerprint(topic, content)
     return content
 

@@ -16,8 +16,13 @@
   "angle": "beginner",
   "author": "玉卒",
   "published": 1790989950065,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50895884_rBAAdmLXlvqAB5diAAHt02YqAR4276.jpg",
+    "images/downloaded_posts_images/51330878_rBAAdmMyhCyASCkVAAB1qG7RCeI019.jpg",
+    "images/downloaded_posts_images/51218714_rBAAdmMWCBuAcMniAAIqiqVIlgA768.jpg",
+    "images/downloaded_posts_images/51033487_rBAAdmLxrkSANYOuAAEBVZQJCME629.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989964016,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-20353e9e35/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-20353e9e35/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-20353e9e35/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-20353e9e35/"
         },
         "headline": "原创图片入门指南",
         "description": "原创图片指由用户拍摄或独立创作的视觉内容。本指南介绍其特点与分类，帮助新手快速了解并找到感兴趣的作品。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-20353e9e35/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-20353e9e35/",
         "about": {
           "@type": "Thing",
           "name": "原创",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-20353e9e35/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50895884_rBAAdmLXlvqAB5diAAHt02YqAR4276.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50895884_rBAAdmLXlvqAB5diAAHt02YqAR4276.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "原创图片入门指南",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50895884_rBAAdmLXlvqAB5diAAHt02YqAR4276.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51330878_rBAAdmMyhCyASCkVAAB1qG7RCeI019.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51218714_rBAAdmMWCBuAcMniAAIqiqVIlgA768.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51033487_rBAAdmLxrkSANYOuAAEBVZQJCME629.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-20353e9e35/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-20353e9e35/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创图片入门指南",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-20353e9e35/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-20353e9e35/"
           }
         ]
       },

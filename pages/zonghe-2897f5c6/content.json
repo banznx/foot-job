@@ -43,28 +43,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-2897f5c6/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-2897f5c6/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/zonghe-2897f5c6/"
+          "@id": "https://banznx.github.io/foot-job/pages/zonghe-2897f5c6/"
         },
         "headline": "综合｜拍照片不是很好看其实",
         "description": "这篇综合由静等缘分喔发布，包含 5 张图片，已有 1249 次浏览。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/zonghe-2897f5c6/",
+        "url": "https://banznx.github.io/foot-job/pages/zonghe-2897f5c6/",
+        "about": {
+          "@type": "Thing",
+          "name": "综合",
+          "description": "社区里没有明确归类的内容"
+        },
         "articleSection": "综合",
         "keywords": "综合, 图片社区, 兴趣社区",
         "wordCount": 136,
         "datePublished": "2022-07-01T02:55:15Z",
-        "dateModified": "2022-07-01T02:55:15Z"
+        "dateModified": "2022-07-01T02:55:15Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-2897f5c6/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-2897f5c6/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50786913_rBAAdmK-YhCAa2eXAABoEGN6rqQ962.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50786913_rBAAdmK-YhCAa2eXAABoEGN6rqQ962.jpg",
         "encodingFormat": "image/jpeg",
@@ -72,7 +82,7 @@
         "height": 1440,
         "caption": "综合｜拍照片不是很好看其实",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "静等缘分喔",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -104,7 +114,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-2897f5c6/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-2897f5c6/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -116,13 +126,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "综合",
-            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-zonghe/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "综合｜拍照片不是很好看其实",
-            "item": "https://banznx.github.io/foot-job/post/zonghe-2897f5c6/"
+            "item": "https://banznx.github.io/foot-job/pages/zonghe-2897f5c6/"
           }
         ]
       },

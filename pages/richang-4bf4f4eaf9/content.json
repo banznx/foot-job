@@ -17,8 +17,13 @@
   "angle": "mistake",
   "author": "玉卒",
   "published": 1790990130903,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51276638_rBAAdmMkDh-AMH4jAAJks1nARc4279.png",
+    "images/downloaded_posts_images/51225590_rBAAdmMXa-SABkdLAAFxr2-SbYo785.jpg",
+    "images/downloaded_posts_images/51192504_rBAAdmMQedOAMLA3AAFjse21Cd4733.jpg",
+    "images/downloaded_posts_images/50823796_rBAAdmLHI7yAOEh3AAHIW8XyCtI300.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790990135333,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/richang-4bf4f4eaf9/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-4bf4f4eaf9/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/richang-4bf4f4eaf9/"
+          "@id": "https://banznx.github.io/foot-job/pages/richang-4bf4f4eaf9/"
         },
         "headline": "生活记录：避开常见的构图误区",
         "description": "分享生活记录时，常见的误区是过度追求画面的精致度，导致内容显得生硬。保持生活气息，用平实的视角记录真实瞬间，往往比精心修饰更有感染力。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/richang-4bf4f4eaf9/",
+        "url": "https://banznx.github.io/foot-job/pages/richang-4bf4f4eaf9/",
         "about": {
           "@type": "Thing",
           "name": "日常",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-4bf4f4eaf9/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51276638_rBAAdmMkDh-AMH4jAAJks1nARc4279.png",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51276638_rBAAdmMkDh-AMH4jAAJks1nARc4279.png",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "生活记录：避开常见的构图误区",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51276638_rBAAdmMkDh-AMH4jAAJks1nARc4279.png",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51225590_rBAAdmMXa-SABkdLAAFxr2-SbYo785.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51192504_rBAAdmMQedOAMLA3AAFjse21Cd4733.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50823796_rBAAdmLHI7yAOEh3AAHIW8XyCtI300.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/richang-4bf4f4eaf9/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-4bf4f4eaf9/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,13 +115,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "日常",
-            "item": "https://banznx.github.io/foot-job/tag/richang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-richang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "生活记录：避开常见的构图误区",
-            "item": "https://banznx.github.io/foot-job/post/richang-4bf4f4eaf9/"
+            "item": "https://banznx.github.io/foot-job/pages/richang-4bf4f4eaf9/"
           }
         ]
       },

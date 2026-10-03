@@ -63,6 +63,14 @@ h1{font-size:24px;line-height:1.4;font-weight:700;letter-spacing:-.01em;margin-b
   color:#fff;font-size:15px;font-weight:600}
 .cta-main:active{background:var(--brand-2)}
 .cta-sub{display:block;margin-top:11px;font-size:13px;color:var(--ink-3)}
+/* 常见问题：内容可见才能支撑 FAQPage 结构化数据 */
+.faq{background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:16px 18px;margin:22px 0}
+.faq h2{font-size:15px;margin-bottom:12px;color:var(--ink-2)}
+.faq dl{margin:0}
+.faq dt{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.6}
+.faq dd{margin:0 0 14px;font-size:13px;color:var(--ink-2);line-height:1.75}
+.faq dd:last-child{margin-bottom:0}
 /* 引流页的多入口：给读者多个点击去处，转化率高于单一入口 */
 .cta-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:13px}
 .cta-chip{font-size:12px;padding:5px 11px;border-radius:var(--r-full);

@@ -149,28 +149,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-791c32c2/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-791c32c2/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-791c32c2/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-791c32c2/"
         },
         "headline": "原创｜网课受够了",
         "description": "这篇原创由Pꪱāꪭ àꪱ发布，包含 5 张图片，已有 1384 次浏览，内容围绕「网课受够了」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-791c32c2/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-791c32c2/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
         "articleSection": "原创",
         "keywords": "原创, 原创摄影, 原创写真",
         "wordCount": 133,
         "datePublished": "2022-09-04T09:43:32Z",
-        "dateModified": "2022-09-04T09:43:32Z"
+        "dateModified": "2022-09-04T09:43:32Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-791c32c2/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-791c32c2/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51210498_rBAAdmMUYfuALf_QAACwM6Wx9fs642.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51210498_rBAAdmMUYfuALf_QAACwM6Wx9fs642.jpg",
         "encodingFormat": "image/jpeg",
@@ -178,7 +188,7 @@
         "height": 1440,
         "caption": "原创｜网课受够了",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "Pꪱāꪭ àꪱ",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -210,7 +220,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-791c32c2/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-791c32c2/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -222,13 +232,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创｜网课受够了",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-791c32c2/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-791c32c2/"
           }
         ]
       },

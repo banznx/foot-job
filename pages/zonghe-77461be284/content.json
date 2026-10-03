@@ -16,8 +16,13 @@
   "angle": "story",
   "author": "玉卒",
   "published": 1790989769217,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50815641_rBAAdmLFNNiAZDMTAAMi3rtSaiM625.jpg",
+    "images/downloaded_posts_images/50891924_rBAAdmLWnFqAPgTcAALW3M-jqKo793.png",
+    "images/downloaded_posts_images/50832684_rBAAdmLJkU-AWS8OAAFbQnBDeDI329.jpg",
+    "images/downloaded_posts_images/50789643_rBAAdmK-69GAK4tNAANNYwhDTg4997.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989780419,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-77461be284/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-77461be284/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/zonghe-77461be284/"
+          "@id": "https://banznx.github.io/foot-job/pages/zonghe-77461be284/"
         },
         "headline": "心情语录：记录生活片段",
         "description": "分享关于心情语录的图片整理，涵盖生活感悟与情感表达，适合寻找共鸣的读者。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/zonghe-77461be284/",
+        "url": "https://banznx.github.io/foot-job/pages/zonghe-77461be284/",
         "about": {
           "@type": "Thing",
           "name": "综合",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-77461be284/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50815641_rBAAdmLFNNiAZDMTAAMi3rtSaiM625.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50815641_rBAAdmLFNNiAZDMTAAMi3rtSaiM625.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "心情语录：记录生活片段",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50815641_rBAAdmLFNNiAZDMTAAMi3rtSaiM625.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50891924_rBAAdmLWnFqAPgTcAALW3M-jqKo793.png",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50832684_rBAAdmLJkU-AWS8OAAFbQnBDeDI329.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50789643_rBAAdmK-69GAK4tNAANNYwhDTg4997.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/zonghe-77461be284/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/zonghe-77461be284/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "综合",
-            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-zonghe/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "心情语录：记录生活片段",
-            "item": "https://banznx.github.io/foot-job/post/zonghe-77461be284/"
+            "item": "https://banznx.github.io/foot-job/pages/zonghe-77461be284/"
           }
         ]
       },

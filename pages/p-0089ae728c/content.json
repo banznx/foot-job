@@ -16,8 +16,13 @@
   "source_slug": "yuanchuang-89e086bb",
   "author": "玉卒",
   "published": 1791001520783,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51179107_rBAAdmMNvEKAJonGAAHk8viCvJw051.jpg",
+    "images/downloaded_posts_images/51367061_rBAAdmM68zCAJai_AAHIZHEN9lg885.jpg",
+    "images/downloaded_posts_images/50828463_rBAAdmLIWi2ANmrLAAORkrUMiag397.jpg",
+    "images/downloaded_posts_images/50833303_rBAAdmLJqgaALm4vAAMs3B3E8YE668.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1791001526584,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/promo/p-0089ae728c/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-0089ae728c/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/p-0089ae728c/"
+          "@id": "https://banznx.github.io/foot-job/pages/p-0089ae728c/"
         },
         "headline": "图片社区里的原创魅力",
         "description": "探索图片社区中用户自发分享的原创内容，感受真实生活带来的视觉愉悦。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/",
+        "url": "https://banznx.github.io/foot-job/pages/p-0089ae728c/",
         "about": {
           "@type": "Thing",
           "name": "原创",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-0089ae728c/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51179107_rBAAdmMNvEKAJonGAAHk8viCvJw051.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51179107_rBAAdmMNvEKAJonGAAHk8viCvJw051.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "图片社区里的原创魅力",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51179107_rBAAdmMNvEKAJonGAAHk8viCvJw051.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51367061_rBAAdmM68zCAJai_AAHIZHEN9lg885.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50828463_rBAAdmLIWi2ANmrLAAORkrUMiag397.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50833303_rBAAdmLJqgaALm4vAAMs3B3E8YE668.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/promo/p-0089ae728c/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-0089ae728c/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,20 +115,20 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "图片社区里的原创魅力",
-            "item": "https://banznx.github.io/foot-job/post/p-0089ae728c/"
+            "item": "https://banznx.github.io/foot-job/pages/p-0089ae728c/"
           }
         ]
       },
       {
         "@type": "WebSite",
         "@id": "https://banznx.github.io/foot-job/#website",
-        "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/",
+        "url": "https://banznx.github.io/foot-job/",
         "name": "玉卒",
         "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
         "inLanguage": "zh-CN",
@@ -100,7 +140,7 @@
         "@type": "Organization",
         "@id": "https://banznx.github.io/foot-job/#org",
         "name": "玉卒",
-        "url": "https://banznx.github.io/foot-job/promo/p-0089ae728c/"
+        "url": "https://banznx.github.io/foot-job/"
       }
     ]
   },

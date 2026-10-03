@@ -47,28 +47,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/sankeng-488f6611/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/"
+          "@id": "https://banznx.github.io/foot-job/pages/sankeng-488f6611/"
         },
         "headline": "三坑｜啊",
         "description": "这篇三坑由M梓沫发布，包含 1 张图片，已有 1273 次浏览，内容围绕「啊」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/sankeng-488f6611/",
+        "url": "https://banznx.github.io/foot-job/pages/sankeng-488f6611/",
+        "about": {
+          "@type": "Thing",
+          "name": "三坑",
+          "description": "正装JK、水手服、汉服等制服类穿搭"
+        },
         "articleSection": "三坑",
         "keywords": "三坑, 制服穿搭, 水手服",
         "wordCount": 126,
         "datePublished": "2022-07-13T08:02:30Z",
-        "dateModified": "2022-07-13T08:02:30Z"
+        "dateModified": "2022-07-13T08:02:30Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/sankeng-488f6611/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50852963_rBAAdmLOfBaAe8MqAAE_Es5LU9Y937.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50852963_rBAAdmLOfBaAe8MqAAE_Es5LU9Y937.jpg",
         "encodingFormat": "image/jpeg",
@@ -76,7 +86,7 @@
         "height": 1440,
         "caption": "三坑｜啊",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "M梓沫",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -88,7 +98,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/sankeng-488f6611/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/sankeng-488f6611/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -100,13 +110,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "三坑",
-            "item": "https://banznx.github.io/foot-job/tag/sankeng/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-sankeng/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "三坑｜啊",
-            "item": "https://banznx.github.io/foot-job/post/sankeng-488f6611/"
+            "item": "https://banznx.github.io/foot-job/pages/sankeng-488f6611/"
           }
         ]
       },

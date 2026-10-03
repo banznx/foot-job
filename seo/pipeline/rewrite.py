@@ -325,3 +325,84 @@ def _fmt_date(ms):
         return datetime.datetime.fromtimestamp(ms / 1000.0).strftime('%Y年%m月')
     except Exception:
         return '较早'
+
+
+def ensure_keyword(title, keyword, max_len=32):
+    """保证 title 里有核心关键词。
+
+    为什么需要：AI 写标题偏文艺（实测产出「偶遇电梯里的心动瞬间」、
+    「记录生活的快门」这类），读起来好但**搜索里根本没有关键词**，
+    页面等于对搜索引擎隐身。
+
+    策略（保守，不破坏可读性）：
+      - 已含关键词 → 原样返回
+      - 不含且标题偏短 → 「关键词 + 连接词 + 原标题」
+      - 加完超长 → 截断并确保关键词完整保留
+    """
+    if not keyword:
+        return title
+    t = (title or '').strip()
+    if not t:
+        return keyword
+    if keyword in t:
+        return t
+
+    # 标题本身已经很长（说明 AI 写了完整句），只在前面加关键词
+    if len(t) >= 24:
+        merged = '%s | %s' % (keyword, t)
+    else:
+        merged = '%s · %s' % (keyword, t)
+    if len(merged) <= max_len:
+        return merged
+    # 超长则压缩：去掉原标题里与关键词无关的开头修饰
+    tail = t[:max_len - len(keyword) - 3]
+    return ('%s · %s' % (keyword, tail)).rstrip(' ·，,')
+
+
+FAQ_PROMPT = """围绕下面这篇内容，生成 3 组读者可能会问的问题和简短回答。
+
+主题：{keyword}
+内容摘要：
+{summary}
+
+要求：
+1. 问题必须是读者真实会搜的疑问（8-20 字）
+2. 回答 30-60 字，说清要点，不要空话
+3. 用词中性、健康，不得出现低俗、暧昧、擦边或违规暗示的词
+4. 不要编造具体数字、日期或事实
+
+只输出 JSON：{{"faq":[{{"q":"问题1","a":"回答1"}},{{"q":"问题2","a":"回答2"}},{{"q":"问题3","a":"回答3"}}]}}"""
+
+
+def generate_faq(keyword, summary, ai, max_tokens=600):
+    """单独生成 FAQ。
+
+    为什么单独发一次请求而不是靠提示词让正文里带：
+    实测 20 篇里0 篇真的写了问答——正文写作的指令太多
+    （篇幅、语气、禁词、格式），问答这种附加要求会被稀释。
+    拆成独立请求后遵守率明显更高，且不影响正文质量。
+    """
+    if not ai.available:
+        return []
+    try:
+        d = ai.chat_json([
+            {'role': 'system', 'content': '你是内容编辑，只输出 JSON。'},
+            {'role': 'user', 'content': FAQ_PROMPT.format(
+                keyword=keyword or '内容',
+                summary=(summary or '')[:300])},
+        ], max_tokens=max_tokens)
+    except Exception:
+        return []
+    if not isinstance(d, dict):
+        return []
+    out = []
+    for item in (d.get('faq') or []):
+        if not isinstance(item, dict):
+            continue
+        q = (item.get('q') or '').strip()
+        a = (item.get('a') or '').strip()
+        if q and a and 4 <= len(q) <= 40 and 8 <= len(a) <= 200:
+            out.append((q, a))
+        if len(out) >= 3:
+            break
+    return out

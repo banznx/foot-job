@@ -16,8 +16,13 @@
   "angle": "tips",
   "author": "玉卒",
   "published": 1790989950065,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50874568_rBAAdmLS0WWAd5jcAAC9xSIR8FE485.jpg",
+    "images/downloaded_posts_images/51248629_rBAAdmMcnyGAcuwAAAE4cH2Okyk900.jpg",
+    "images/downloaded_posts_images/50857298_rBAAdmLPZvCAeDCJAASCiC4DUbE707.jpg",
+    "images/downloaded_posts_images/50764524_rBAAdmK4YGGAYt1-AAB5IAZdJTM692.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989959964,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-442c96f0bc/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-442c96f0bc/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-442c96f0bc/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-442c96f0bc/"
         },
         "headline": "原创摄影：如何拍摄属于自己的故事",
         "description": "原创摄影的核心在于记录真实的个人视角与生活瞬间，通过独特的构图与用光传递情感。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-442c96f0bc/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-442c96f0bc/",
         "about": {
           "@type": "Thing",
           "name": "原创",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-442c96f0bc/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50874568_rBAAdmLS0WWAd5jcAAC9xSIR8FE485.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50874568_rBAAdmLS0WWAd5jcAAC9xSIR8FE485.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "原创摄影：如何拍摄属于自己的故事",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50874568_rBAAdmLS0WWAd5jcAAC9xSIR8FE485.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51248629_rBAAdmMcnyGAcuwAAAE4cH2Okyk900.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50857298_rBAAdmLPZvCAeDCJAASCiC4DUbE707.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50764524_rBAAdmK4YGGAYt1-AAB5IAZdJTM692.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-442c96f0bc/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-442c96f0bc/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创摄影：如何拍摄属于自己的故事",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-442c96f0bc/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-442c96f0bc/"
           }
         ]
       },

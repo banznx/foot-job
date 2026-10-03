@@ -16,8 +16,13 @@
   "angle": "why",
   "author": "玉卒",
   "published": 1790989831637,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50901593_rBAAdmLYxMWAXazqAAE2fkVaFI8172.jpg",
+    "images/downloaded_posts_images/50945585_rBAAdmLgBXKAcb8fAAFbbbr3HTo369.jpg",
+    "images/downloaded_posts_images/50870543_rBAAdmLSNt2ADN_-AADfOR8Rv5Q307.jpg",
+    "images/downloaded_posts_images/51295046_rBAAdmMomQeAR8nuAALAAXSu1zs957.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989841192,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/meitui-0219234ae2/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/"
+          "@id": "https://banznx.github.io/foot-job/pages/meitui-0219234ae2/"
         },
         "headline": "美腿特写：为什么这类内容受欢迎",
         "description": "这类图片通常通过光影和构图突出腿部线条的流畅感。人们关注此类内容，多源于对肢体美学或健康体态的欣赏。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/",
+        "url": "https://banznx.github.io/foot-job/pages/meitui-0219234ae2/",
         "about": {
           "@type": "Thing",
           "name": "美腿",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/meitui-0219234ae2/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50901593_rBAAdmLYxMWAXazqAAE2fkVaFI8172.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50901593_rBAAdmLYxMWAXazqAAE2fkVaFI8172.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "美腿特写：为什么这类内容受欢迎",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50901593_rBAAdmLYxMWAXazqAAE2fkVaFI8172.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50945585_rBAAdmLgBXKAcb8fAAFbbbr3HTo369.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50870543_rBAAdmLSNt2ADN_-AADfOR8Rv5Q307.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51295046_rBAAdmMomQeAR8nuAALAAXSu1zs957.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/meitui-0219234ae2/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "美腿",
-            "item": "https://banznx.github.io/foot-job/tag/meitui/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-meitui/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "美腿特写：为什么这类内容受欢迎",
-            "item": "https://banznx.github.io/foot-job/post/meitui-0219234ae2/"
+            "item": "https://banznx.github.io/foot-job/pages/meitui-0219234ae2/"
           }
         ]
       },

@@ -1,0 +1,154 @@
+{
+  "seed_id": "promo::rewrite::497505::yuanchuang-a376bfd3",
+  "post_id": null,
+  "slug": "p-95944a27fc",
+  "tag": "原创",
+  "tag_slug": "yuanchuang",
+  "meta_title": "原创摄影整理",
+  "meta_description": "关于原创摄影的内容整理与经验分享。",
+  "tags": [
+    "原创",
+    "原创摄影"
+  ],
+  "body": "这一篇整理关于「原创摄影」的内容。原创这个分类里，日常记录和兴趣分享一直是最常见的内容类型。\n\n把同类内容放在一起看，能更清楚这个主题下大家都在关注什么：常见的场景、固定的记录方式、以及愿意长期坚持这件事的人。\n\n想看更多真实内容，可以从页面下方的入口进入社区。",
+  "promo_mode": "rewrite",
+  "source_slug": "yuanchuang-a376bfd3",
+  "author": "玉卒",
+  "published": 1791018005728,
+  "images": [
+    "images/downloaded_posts_images/51178852_rBAAdmMNsO-Aeai8AADqBngT8FQ697.jpg",
+    "images/downloaded_posts_images/51221745_rBAAdmMW4biANOZhAAEMYvCAYS0120.jpg",
+    "images/downloaded_posts_images/50898544_rBAAdmLX-xeAVhDAAAFdj6uHDZY234.jpg",
+    "images/downloaded_posts_images/51108258_rBAAdmMA2FaAYe1mAADnEa91hDg137.jpg"
+  ],
+  "image_total": 4,
+  "metrics": {},
+  "generated_at": 1791018017578,
+  "by_ai": false,
+  "is_seo_page": true,
+  "is_promo": true,
+  "notice": "本页为主题整理内容，用于快速了解这一类话题；想看社区里的真实帖子，请从下方入口进入。",
+  "notice_short": "主题整理页",
+  "cta_text": "进入社区看真实帖子",
+  "source_post_id": null,
+  "url": "https://banznx.github.io/foot-job/pages/p-95944a27fc/",
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-95944a27fc/#article",
+        "isPartOf": {
+          "@id": "https://banznx.github.io/foot-job/#website"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://banznx.github.io/foot-job/pages/p-95944a27fc/"
+        },
+        "headline": "原创摄影整理",
+        "description": "关于原创摄影的内容整理与经验分享。",
+        "inLanguage": "zh-CN",
+        "url": "https://banznx.github.io/foot-job/pages/p-95944a27fc/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
+        "articleSection": "原创",
+        "keywords": "原创, 原创摄影",
+        "wordCount": 115,
+        "datePublished": "2026-10-03T09:00:05Z",
+        "dateModified": "2026-10-03T09:00:05Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-95944a27fc/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51178852_rBAAdmMNsO-Aeai8AADqBngT8FQ697.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51178852_rBAAdmMNsO-Aeai8AADqBngT8FQ697.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "原创摄影整理",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51178852_rBAAdmMNsO-Aeai8AADqBngT8FQ697.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51221745_rBAAdmMW4biANOZhAAEMYvCAYS0120.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50898544_rBAAdmLX-xeAVhDAAAFdj6uHDZY234.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51108258_rBAAdmMA2FaAYe1mAADnEa91hDg137.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://banznx.github.io/foot-job/pages/p-95944a27fc/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://banznx.github.io/foot-job/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "原创",
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "原创摄影整理",
+            "item": "https://banznx.github.io/foot-job/pages/p-95944a27fc/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://banznx.github.io/foot-job/#website",
+        "url": "https://banznx.github.io/foot-job/pages/p-95944a27fc/",
+        "name": "玉卒",
+        "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
+        "inLanguage": "zh-CN",
+        "publisher": {
+          "@id": "https://banznx.github.io/foot-job/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://banznx.github.io/foot-job/#org",
+        "name": "玉卒",
+        "url": "https://banznx.github.io/foot-job/pages/p-95944a27fc/"
+      }
+    ]
+  },
+  "fingerprint": "6f8116396a62187dd93dd0bb1d73f066",
+  "quality": {
+    "passed": true,
+    "score": 78,
+    "zh_len": 115,
+    "paragraphs": 3,
+    "by_ai": false
+  }
+}

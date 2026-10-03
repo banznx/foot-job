@@ -4,7 +4,7 @@
   "slug": "p-a72960e214",
   "tag": "原创",
   "tag_slug": "yuanchuang",
-  "meta_title": "记录生活的快门：那些被遗忘的随手拍",
+  "meta_title": "摄影 · 记录生活的快门：那些被遗忘的随手拍",
   "meta_description": "生活中的精彩往往藏在不经意的瞬间，快门按下时，不仅是记录画面，更是留住当下的心情。",
   "tags": [
     "摄影",
@@ -16,8 +16,13 @@
   "source_slug": "yuanchuang-90c2b614",
   "author": "玉卒",
   "published": 1791001351733,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50965295_rBAAdmLjpt6AKCT9AAHGA4tGNh4161.jpg",
+    "images/downloaded_posts_images/50904464_rBAAdmLZMP2ARh8DAAGwnG6gu_E767.jpg",
+    "images/downloaded_posts_images/51356353_rBAAdmM4foWAaGvpAACSanM80J0777.jpg",
+    "images/downloaded_posts_images/51233221_rBAAdmMZcRaARG0lAAJRq0Y-zSQ095.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1791001356739,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/promo/p-a72960e214/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-a72960e214/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/p-a72960e214/"
+          "@id": "https://banznx.github.io/foot-job/pages/p-a72960e214/"
         },
-        "headline": "记录生活的快门：那些被遗忘的随手拍",
+        "headline": "摄影 · 记录生活的快门：那些被遗忘的随手拍",
         "description": "生活中的精彩往往藏在不经意的瞬间，快门按下时，不仅是记录画面，更是留住当下的心情。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/promo/p-a72960e214/",
+        "url": "https://banznx.github.io/foot-job/pages/p-a72960e214/",
         "about": {
           "@type": "Thing",
           "name": "原创",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-a72960e214/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50965295_rBAAdmLjpt6AKCT9AAHGA4tGNh4161.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50965295_rBAAdmLjpt6AKCT9AAHGA4tGNh4161.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "摄影 · 记录生活的快门：那些被遗忘的随手拍",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50965295_rBAAdmLjpt6AKCT9AAHGA4tGNh4161.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50904464_rBAAdmLZMP2ARh8DAAGwnG6gu_E767.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51356353_rBAAdmM4foWAaGvpAACSanM80J0777.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51233221_rBAAdmMZcRaARG0lAAJRq0Y-zSQ095.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/promo/p-a72960e214/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-a72960e214/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,20 +115,20 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "记录生活的快门：那些被遗忘的随手拍",
-            "item": "https://banznx.github.io/foot-job/post/p-a72960e214/"
+            "name": "摄影 · 记录生活的快门：那些被遗忘的随手拍",
+            "item": "https://banznx.github.io/foot-job/pages/p-a72960e214/"
           }
         ]
       },
       {
         "@type": "WebSite",
         "@id": "https://banznx.github.io/foot-job/#website",
-        "url": "https://banznx.github.io/foot-job/promo/p-a72960e214/",
+        "url": "https://banznx.github.io/foot-job/",
         "name": "玉卒",
         "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
         "inLanguage": "zh-CN",
@@ -100,7 +140,7 @@
         "@type": "Organization",
         "@id": "https://banznx.github.io/foot-job/#org",
         "name": "玉卒",
-        "url": "https://banznx.github.io/foot-job/promo/p-a72960e214/"
+        "url": "https://banznx.github.io/foot-job/"
       }
     ]
   },

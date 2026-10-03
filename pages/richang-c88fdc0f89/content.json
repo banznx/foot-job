@@ -16,8 +16,13 @@
   "angle": "why",
   "author": "玉卒",
   "published": 1790990130903,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51108575_rBAAdmMA5NqAEVj6AANQj-n9_lc992.jpg",
+    "images/downloaded_posts_images/51368013_rBAAdmM7KnuANO1bAAHs4MaOZlU13.jpeg",
+    "images/downloaded_posts_images/50899702_rBAAdmLYGiiASvzGAAKaDxSpNUc757.jpg",
+    "images/downloaded_posts_images/51097651_rBAAdmL-VxCALmMdAAGe8OphW7I273.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790990142117,
   "by_ai": true,
@@ -32,18 +37,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/richang-c88fdc0f89/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-c88fdc0f89/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/richang-c88fdc0f89/"
+          "@id": "https://banznx.github.io/foot-job/pages/richang-c88fdc0f89/"
         },
         "headline": "为何生活记录能治愈焦虑？",
         "description": "生活记录类内容之所以受欢迎，是因为它们能将抽象的日常转化为具象的视觉证据，帮助用户在快节奏中建立对生活的掌控感与秩序感。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/richang-c88fdc0f89/",
+        "url": "https://banznx.github.io/foot-job/pages/richang-c88fdc0f89/",
         "about": {
           "@type": "Thing",
           "name": "日常",
@@ -61,8 +66,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-c88fdc0f89/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51108575_rBAAdmMA5NqAEVj6AANQj-n9_lc992.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51108575_rBAAdmMA5NqAEVj6AANQj-n9_lc992.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "为何生活记录能治愈焦虑？",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51108575_rBAAdmMA5NqAEVj6AANQj-n9_lc992.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51368013_rBAAdmM7KnuANO1bAAHs4MaOZlU13.jpeg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50899702_rBAAdmLYGiiASvzGAAKaDxSpNUc757.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51097651_rBAAdmL-VxCALmMdAAGe8OphW7I273.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/richang-c88fdc0f89/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-c88fdc0f89/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -74,13 +114,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "日常",
-            "item": "https://banznx.github.io/foot-job/tag/richang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-richang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "为何生活记录能治愈焦虑？",
-            "item": "https://banznx.github.io/foot-job/post/richang-c88fdc0f89/"
+            "item": "https://banznx.github.io/foot-job/pages/richang-c88fdc0f89/"
           }
         ]
       },

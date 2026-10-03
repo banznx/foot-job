@@ -134,10 +134,15 @@ def evaluate(content, source_item, seen_hashes=None, seen_titles=None):
     # 「正文里有多少内容是从源帖元数据里来的」——
     # 如果正文里的信息全部来自元数据而没有任何展开，
     # 说明它没有为读者提供增量价值。
-    src = source_item
+    # 用词重复度只在**篇幅够长**时才有参考价值：
+    # 200 字的文章天然用不到 200 个不同汉字，
+    # 拿同一把尺子量 200 字和 800 字会误判。
+    # 500 字以上才启用这个判据。
     uniq = len(set(re.findall(r'[\u4e00-\u9fa5]', body)))
-    if n and uniq / float(n) < 0.55:
+    if n >= 500 and uniq / float(n) < 0.42:
         reasons.append('用词重复度过高，内容单薄')
+    elif n >= 500 and uniq / float(n) < 0.55:
+        score -= 12
         score -= 25
 
     # 段落数：单段的页面在信息量和体验上都不如多段

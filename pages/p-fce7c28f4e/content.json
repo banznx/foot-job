@@ -4,7 +4,7 @@
   "slug": "p-fce7c28f4e",
   "tag": "原创",
   "tag_slug": "yuanchuang",
-  "meta_title": "偶遇电梯里的心动瞬间",
+  "meta_title": "生活 · 偶遇电梯里的心动瞬间",
   "meta_description": "分享生活中那些不经意的小确幸，捕捉陌生人之间微妙的互动，记录平凡日子里的美好心情。",
   "tags": [
     "生活",
@@ -16,8 +16,13 @@
   "source_slug": "yuanchuang-979b5fb4",
   "author": "玉卒",
   "published": 1791001412773,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51088073_rBAAdmL8c4iAEW8aAADYzUXk9CY093.jpg",
+    "images/downloaded_posts_images/50789071_rBAAdmK-0waAB7ZGAAGHHFfIEdI890.jpg",
+    "images/downloaded_posts_images/50908754_rBAAdmLaK0aAIuH1AACJgCU0tXQ653.jpg",
+    "images/downloaded_posts_images/50779111_rBAAdmK8VsiAJ-4iAACwIcVKGT4711.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1791001416103,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/promo/p-fce7c28f4e/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-fce7c28f4e/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/p-fce7c28f4e/"
+          "@id": "https://banznx.github.io/foot-job/pages/p-fce7c28f4e/"
         },
-        "headline": "偶遇电梯里的心动瞬间",
+        "headline": "生活 · 偶遇电梯里的心动瞬间",
         "description": "分享生活中那些不经意的小确幸，捕捉陌生人之间微妙的互动，记录平凡日子里的美好心情。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/promo/p-fce7c28f4e/",
+        "url": "https://banznx.github.io/foot-job/pages/p-fce7c28f4e/",
         "about": {
           "@type": "Thing",
           "name": "原创",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-fce7c28f4e/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51088073_rBAAdmL8c4iAEW8aAADYzUXk9CY093.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51088073_rBAAdmL8c4iAEW8aAADYzUXk9CY093.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "生活 · 偶遇电梯里的心动瞬间",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51088073_rBAAdmL8c4iAEW8aAADYzUXk9CY093.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50789071_rBAAdmK-0waAB7ZGAAGHHFfIEdI890.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50908754_rBAAdmLaK0aAIuH1AACJgCU0tXQ653.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50779111_rBAAdmK8VsiAJ-4iAACwIcVKGT4711.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/promo/p-fce7c28f4e/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-fce7c28f4e/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,20 +115,20 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "偶遇电梯里的心动瞬间",
-            "item": "https://banznx.github.io/foot-job/post/p-fce7c28f4e/"
+            "name": "生活 · 偶遇电梯里的心动瞬间",
+            "item": "https://banznx.github.io/foot-job/pages/p-fce7c28f4e/"
           }
         ]
       },
       {
         "@type": "WebSite",
         "@id": "https://banznx.github.io/foot-job/#website",
-        "url": "https://banznx.github.io/foot-job/promo/p-fce7c28f4e/",
+        "url": "https://banznx.github.io/foot-job/",
         "name": "玉卒",
         "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
         "inLanguage": "zh-CN",
@@ -100,7 +140,7 @@
         "@type": "Organization",
         "@id": "https://banznx.github.io/foot-job/#org",
         "name": "玉卒",
-        "url": "https://banznx.github.io/foot-job/promo/p-fce7c28f4e/"
+        "url": "https://banznx.github.io/foot-job/"
       }
     ]
   },

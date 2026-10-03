@@ -19,6 +19,7 @@ import os
 import re
 
 from .. import config
+from ..pipeline.assemble import _extract_faq
 
 # 复用站点配色，保持视觉一致（与 index.html 的设计令牌一致）
 CSS = """
@@ -86,6 +87,14 @@ h1{font-size:24px;line-height:1.4;font-weight:700;letter-spacing:-.01em;margin-b
   color:#fff;font-size:15px;font-weight:600}
 .cta-main:active{background:var(--brand-2)}
 .cta-sub{display:block;margin-top:11px;font-size:13px;color:var(--ink-3)}
+/* 常见问题：内容可见才能支撑 FAQPage 结构化数据 */
+.faq{background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:16px 18px;margin:22px 0}
+.faq h2{font-size:15px;margin-bottom:12px;color:var(--ink-2)}
+.faq dl{margin:0}
+.faq dt{font-size:14px;font-weight:600;margin-bottom:5px;line-height:1.6}
+.faq dd{margin:0 0 14px;font-size:13px;color:var(--ink-2);line-height:1.75}
+.faq dd:last-child{margin-bottom:0}
 /* 引流页的多入口：给读者多个点击去处，转化率高于单一入口 */
 .cta-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:13px}
 .cta-chip{font-size:12px;padding:5px 11px;border-radius:var(--r-full);
@@ -226,6 +235,8 @@ def render_post(content, site_url=None, ads=True):
 
     %(adsmid)s
 
+    %(faq)s
+
     %(notice)s
     %(cta)s
     %(links)s
@@ -298,10 +309,15 @@ def render_promo(content, site_url=None, ads=True, cta_extra=None):
         for t in content.get('tags', []))
     notice_html = _notice_html(content, site_url)
     cta_html = _cta_html(content, site_url, extra=cta_extra)
+    # 引流文与主题页一样要展示图片。
+    # 早期版本这里写死了 'gallery': ''，导致 content.json 里有 4 张图、
+    # 页面上却一张都不显示——数据有了但没渲染出来。
+    gallery = _gallery_html(content, site_url)
     return _document(content, {
         'title': title, 'desc': desc, 'url': url, 'brand': brand,
         'tag': tag, 'tag_slug': tag_slug, 'schema': content['schema'],
-        'tagshtml': tags_html, 'gallery': '', 'paras': paras,
+        'tagshtml': tags_html, 'gallery': gallery, 'paras': paras,
+        'faq': _faq_html(content),
         'notice': notice_html, 'cta': cta_html,
         'links': '', 'rel': '', 'is_promo': True,
         'noticeshort': esc(content.get('notice_short', '主题整理页')),
@@ -399,6 +415,8 @@ def _document(content, ctx, site_url):
 
     %(adsmid)s
 
+    %(faq)s
+
     %(notice)s
     %(cta)s
     %(links)s
@@ -433,6 +451,7 @@ def _document(content, ctx, site_url):
         'tagshtml': ctx['tagshtml'], 'ads': ctx['ads'],
         'gallery': ctx['gallery'], 'paras': ctx['paras'],
         'adsmid': ctx['adsmid'], 'notice': ctx['notice'],
+        'faq': ctx.get('faq', ''),
         'cta': ctx['cta'], 'links': ctx['links'], 'rel': ctx['rel'],
         'adsfoot': ctx['adsfoot'],
     }
@@ -499,6 +518,24 @@ def _body_html(body):
     return '\n      '.join(out) or '<p>暂无正文。</p>'
 
 
+def _faq_html(content):
+    """渲染页面可见的问答区块。
+
+    必须可见，不能只有 schema：如果页面上看不到问答，
+    Google 会认为结构化数据是「伪装」，反而可能降权。
+    """
+    # 优先用 content['faq']（单独请求生成，质量更高），
+    # 没有才从正文抽
+    faq = content.get('faq') or _extract_faq(content.get('body', ''))
+    if not faq:
+        return ''
+    rows = []
+    for q, a in faq:
+        rows.append('<dt>%s</dt><dd>%s</dd>' % (esc(q), esc(a)))
+    return ('<section class="faq"><h2>常见问题</h2>'
+            '<dl>%s</dl></section>' % ''.join(rows))
+
+
 def _gallery_html(content, site_url):
     imgs = content.get('images') or []
     if not imgs:
@@ -515,8 +552,15 @@ def _gallery_html(content, site_url):
     extra = content.get('image_total', 0) - len(imgs)
     more = ''
     if extra > 0:
-        more = ('<p style="color:var(--ink-3);font-size:13px">'
-                '另有 %d 张图片，可在社区内查看完整内容。</p>' % extra)
+        # 图片池随机配的图说"还有 N 张"会误导——那些图并没有关联帖子。
+        # 只有当图片确实来自某篇真实帖子时才提示。
+        if content.get('post_id'):
+            more = ('<p style="color:var(--ink-3);font-size:13px">'
+                    '另有 %d 张图片，可在社区内查看完整内容。</p>' % extra)
+        else:
+            more = ('<p style="color:var(--ink-3);font-size:13px">'
+                    '以上图片来自社区用户的分享，'
+                    '想看更多请进入社区浏览。</p>')
     return '<div class="gallery">%s</div>%s' % (''.join(cells), more)
 
 

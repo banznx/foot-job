@@ -31,6 +31,7 @@ from .pipeline import links as links_mod
 from .pipeline import promo as promo_mod
 from .pipeline import quality as q_mod
 from .pipeline import rewrite as rw
+from .render import all_pages as all_pages_render
 from .render import page as page_render
 from .render import sitemap as sitemap_render
 from .render import tag_page as tag_render
@@ -143,6 +144,7 @@ def main(argv=None):
             # 清理僵尸页：slug 算法变更后会留下没人引用的旧路径，
             # 它们会被 sitemap 收进去并指向已删除的页面，形成死链。
             prune_orphans()
+            _write_all_index()
             pages = sitemap_render.collect_pages()
             idx = sitemap_render.build_index_entries()
             sp, n = sitemap_render.build_sitemap(pages, tag_pages=idx)
@@ -257,6 +259,8 @@ def main(argv=None):
         # 它们会被 sitemap 收进去并指向已删除的页面，形成死链。
         prune_orphans()
 
+        _write_all_index()
+
         # ---------- 6. sitemap / robots ----------
         pages = sitemap_render.collect_pages()
         idx = sitemap_render.build_index_entries()
@@ -334,7 +338,16 @@ def run_promo_mode(opts, ai, keywords, items):
 
         try:
             gen = promo_mod.generate(item, ai, keywords)
-            content = promo_mod.assemble(item, gen, config.site_url)
+            # FAQ 单独发一次请求。正文提示词里已经带了 FAQ 要求，
+            # 但实测遵守率是 0/20 —— 指令太多会被稀释。
+            # 拆成独立请求后遵守率明显提升。
+            # FAQ 是可选增强，不是必需项。刚被限流打过的客户端
+            # 再发请求只会继续加重限流，直接跳过。
+            faq = (rw.generate_faq(item['name'],
+                                  gen.get('meta_description', ''), ai)
+                   if (gen.get('by_ai')
+                       and ai.recent_failures() == 0) else [])
+            content = promo_mod.assemble(item, gen, config.site_url, faq=faq)
 
             q = q_mod.evaluate(content, item, {}, [])
             if not q['passed']:
@@ -485,6 +498,23 @@ def build_all_sitemaps():
                                  out_path=os.path.join(
                                      config.ROOT, 'sitemap-promo.xml'))
     return sp, n + len(promo_pages)
+
+
+def _write_all_index():
+    """生成 /pages/ 总索引页。
+
+    GitHub Pages 不会为目录自动生成索引页，
+    没有这一页的话访问 /pages/ 直接 404，
+    爬虫和访客都拿不到全部静态页的入口。
+    """
+    try:
+        path, groups = all_pages_render.write_index()
+        if path:
+            log('总索引 → %s（%d 个页面）' % (
+                os.path.basename(path),
+                sum(len(v) for v in groups.values())))
+    except Exception as e:
+        log('总索引生成失败：%s' % e)
 
 
 def _ensure_css():
@@ -743,7 +773,13 @@ def run_topic_mode(opts, ai, keywords):
     for i, t in enumerate(todo, 1):
         try:
             gen = topic_mod.generate_topic(t, ai)
-            content = topic_mod.assemble_topic(t, gen)
+            # FAQ 单独发一次请求（正文提示词里的要求实测遵守率不高）。
+            # 刚被限流打过的客户端不再发请求，避免加重限流。
+            faq = (rw.generate_faq(t['keyword'],
+                                  gen.get('meta_description', ''), ai)
+                   if (gen.get('by_ai')
+                       and ai.recent_failures() == 0) else [])
+            content = topic_mod.assemble_topic(t, gen, faq=faq)
 
             q = q_mod.evaluate(content, t, {}, [])
             if not q['passed']:

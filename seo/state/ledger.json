@@ -1754,334 +1754,217 @@
       "simhash": "6c38a47d1b829a6b",
       "published_at": 1791015459836,
       "updated_at": 1791015470509
+    },
+    "promo::rewrite::497504::yuanchuang-c8e52d6c": {
+      "slug": "p-fb1548a69d",
+      "url": "https://banznx.github.io/foot-job/pages/p-fb1548a69d/",
+      "fingerprint": "2e8ba2a9e1c82f0179aaa87f68d0f163",
+      "status": "ok",
+      "score": 88,
+      "by_ai": false,
+      "zh_len": 119,
+      "meta_title": "【原创】你会喜欢我嘛整理",
+      "simhash": "98404bc75bb2decf",
+      "published_at": 1791016858149,
+      "updated_at": 1791016929837
+    },
+    "promo::rewrite::497504::yuanchuang-89f10608": {
+      "slug": "p-0e9ecc4ecc",
+      "url": "https://banznx.github.io/foot-job/pages/p-0e9ecc4ecc/",
+      "fingerprint": "993270d96ff693b8c783ada32fae86f4",
+      "status": "ok",
+      "score": 88,
+      "by_ai": false,
+      "zh_len": 118,
+      "meta_title": "【原创】一些个库存整理",
+      "simhash": "10c04bc65bb2d84f",
+      "published_at": 1791016960544,
+      "updated_at": 1791016971149
+    },
+    "promo::rewrite::497504::yuanchuang-29cfaf93": {
+      "slug": "p-2284513396",
+      "url": "https://banznx.github.io/foot-job/pages/p-2284513396/",
+      "fingerprint": "ff8556801df71d873431bbb134058094",
+      "status": "ok",
+      "score": 88,
+      "by_ai": false,
+      "zh_len": 118,
+      "meta_title": "【原创】深夜放毒啊整理",
+      "simhash": "58404bc752b259cf",
+      "published_at": 1791017003922,
+      "updated_at": 1791017014706
+    },
+    "promo::rewrite::497504::yuanchuang-126a4dd9": {
+      "slug": "p-7c47bd09ee",
+      "url": "https://banznx.github.io/foot-job/pages/p-7c47bd09ee/",
+      "fingerprint": "91863896977be3474916b33a35a0d6bf",
+      "status": "ok",
+      "score": 88,
+      "by_ai": false,
+      "zh_len": 119,
+      "meta_title": "【原创】今天好无聊呀整理",
+      "simhash": "88c0ebc45b36dadf",
+      "published_at": 1791017045084,
+      "updated_at": 1791017115736
+    },
+    "promo::rewrite::497504::yuanchuang-000fd28f": {
+      "slug": "p-89209c4931",
+      "url": "https://banznx.github.io/foot-job/pages/p-89209c4931/",
+      "fingerprint": "fef4978f3e7a95d7448f48450a732b91",
+      "status": "ok",
+      "score": 88,
+      "by_ai": false,
+      "zh_len": 120,
+      "meta_title": "【原创】这个夏天要中暑整理",
+      "simhash": "10c04bcc5f32d9cf",
+      "published_at": 1791017413839,
+      "updated_at": 1791017424523
+    },
+    "promo::rewrite::497504::yuanchuang-f3c9f12a": {
+      "slug": "p-79d6dc53c4",
+      "url": "https://banznx.github.io/foot-job/pages/p-79d6dc53c4/",
+      "fingerprint": "1bae176359fc94642915ef36f0831201",
+      "status": "ok",
+      "score": 88,
+      "by_ai": false,
+      "zh_len": 123,
+      "meta_title": "【原创】怎么？我的腿不能见人吗整理",
+      "simhash": "10c0ebc65bb2decf",
+      "published_at": 1791017455742,
+      "updated_at": 1791017522412
+    },
+    "promo::rewrite::497504::yuanchuang-27ce1bdf": {
+      "slug": "p-0a83e335a5",
+      "url": "https://banznx.github.io/foot-job/pages/p-0a83e335a5/",
+      "fingerprint": "75832241777e7f4fe7a74a70b0527344",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 115,
+      "meta_title": "原创摄影整理",
+      "simhash": "d0406bce5a325acf",
+      "published_at": 1791017565130,
+      "updated_at": 1791017575804
+    },
+    "promo::rewrite::497504::sankeng-8a36d92b": {
+      "slug": "p-91b1eff03d",
+      "url": "https://banznx.github.io/foot-job/pages/p-91b1eff03d/",
+      "fingerprint": "dff9d658ed9d2217053c21404d82b37d",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 115,
+      "meta_title": "三坑穿搭整理",
+      "simhash": "d0406a8f5bb2db4f",
+      "published_at": 1791017650903,
+      "updated_at": 1791017662725
+    },
+    "promo::rewrite::497504::yuanchuang-dc6e426d": {
+      "slug": "p-de319b5c8d",
+      "url": "https://banznx.github.io/foot-job/pages/p-de319b5c8d/",
+      "fingerprint": "e23f0ec4231624457262dc0bc2338925",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 115,
+      "meta_title": "原创摄影整理",
+      "simhash": "d0406bce5a325acf",
+      "published_at": 1791017850772,
+      "updated_at": 1791017922684
+    },
+    "promo::rewrite::497505::yuanchuang-a376bfd3": {
+      "slug": "p-95944a27fc",
+      "url": "https://banznx.github.io/foot-job/pages/p-95944a27fc/",
+      "fingerprint": "6f8116396a62187dd93dd0bb1d73f066",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 115,
+      "meta_title": "原创摄影整理",
+      "simhash": "d0406bce5a325acf",
+      "published_at": 1791018005728,
+      "updated_at": 1791018017596
+    },
+    "promo::rewrite::497505::jupai-578daa50": {
+      "slug": "p-0208e6473d",
+      "url": "https://banznx.github.io/foot-job/pages/p-0208e6473d/",
+      "fingerprint": "40b66398e341f5fae593b2a9eba86705",
+      "status": "skipped",
+      "score": 83,
+      "by_ai": true,
+      "zh_len": 507,
+      "meta_title": "举牌文案 · 举牌：生活中的自我表达与情绪宣泄",
+      "simhash": "8b3208d1037c3283",
+      "published_at": 1791018095420,
+      "updated_at": 1791018129041
+    },
+    "promo::rewrite::497505::yuanchuang-a2b7e0fd": {
+      "slug": "p-34dc6e275a",
+      "url": "https://banznx.github.io/foot-job/pages/p-34dc6e275a/",
+      "fingerprint": "d025a80a33bbf5a7f7c2649845ec7189",
+      "status": "ok",
+      "score": 100,
+      "by_ai": true,
+      "zh_len": 450,
+      "meta_title": "原创摄影：记录生活中的真实瞬间",
+      "simhash": "718865ce7ce5229a",
+      "published_at": 1791018339227,
+      "updated_at": 1791018391700
+    },
+    "promo::rewrite::497505::jupai-db388a45": {
+      "slug": "p-48ee0bf6b8",
+      "url": "https://banznx.github.io/foot-job/pages/p-48ee0bf6b8/",
+      "fingerprint": "51a9b252dec270cc4d43a3a15f72ca6a",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 115,
+      "meta_title": "举牌文案整理",
+      "simhash": "40c06bcc5b32584f",
+      "published_at": 1791018473063,
+      "updated_at": 1791018540836
+    },
+    "promo::rewrite::497505::yuanchuang-07884deb": {
+      "slug": "p-771d8c31f5",
+      "url": "https://banznx.github.io/foot-job/pages/p-771d8c31f5/",
+      "fingerprint": "a30922c80a7ffdd94d88fac498f4e6b1",
+      "status": "ok",
+      "score": 100,
+      "by_ai": true,
+      "zh_len": 465,
+      "meta_title": "原创摄影 · 原创分享：记录生活与自我",
+      "simhash": "cd6d7531867c6fa1",
+      "published_at": 1791018610761,
+      "updated_at": 1791018762044
+    },
+    "promo::rewrite::497505::yuanchuang-c2d95caa": {
+      "slug": "p-2f059c32e3",
+      "url": "https://banznx.github.io/foot-job/pages/p-2f059c32e3/",
+      "fingerprint": "760ce3ddbfd6226d9cb4029a1490ebc3",
+      "status": "ok",
+      "score": 78,
+      "by_ai": false,
+      "zh_len": 115,
+      "meta_title": "原创摄影整理",
+      "simhash": "d0406bce5a325acf",
+      "published_at": 1791018982056,
+      "updated_at": 1791019086662
+    },
+    "promo::rewrite::497505::zonghe-f6f55643": {
+      "slug": "p-59e00a4f05",
+      "url": "https://banznx.github.io/foot-job/pages/p-59e00a4f05/",
+      "fingerprint": "8162e37ce449a3dbb80abda3e77a0a8f",
+      "status": "ok",
+      "score": 100,
+      "by_ai": true,
+      "zh_len": 499,
+      "meta_title": "生活记录 · 举牌互动：生活中的趣味社交与内容创作",
+      "simhash": "47ae3b4eb108a068",
+      "published_at": 1791019368969,
+      "updated_at": 1791019473201
     }
   },
   "runs": [
-    {
-      "ts": 1790966483,
-      "duration_s": 8.0,
-      "ai": {
-        "available": false,
-        "model": "glm-4-flash",
-        "call": 0,
-        "fail": 0,
-        "retry": 0,
-        "token_in": 0,
-        "token_out": 0,
-        "cached": 0
-      },
-      "candidates": 30,
-      "new_pages": 30,
-      "quality": {
-        "total": 30,
-        "passed": 30,
-        "rejected": 0,
-        "avg_score": 97.2,
-        "reasons": {}
-      },
-      "tag": "all",
-      "force": false
-    },
-    {
-      "ts": 1790966516,
-      "duration_s": 3.6,
-      "ai": {
-        "available": false,
-        "model": "glm-4-flash",
-        "call": 0,
-        "fail": 0,
-        "retry": 0,
-        "token_in": 0,
-        "token_out": 0,
-        "cached": 0
-      },
-      "candidates": 30,
-      "new_pages": 27,
-      "quality": {
-        "total": 30,
-        "passed": 27,
-        "rejected": 3,
-        "avg_score": 91.2,
-        "reasons": {
-          "正文与已发布内容《yuanchuang-bdaf》近似重复": 1,
-          "标题与已发布内容高度相似": 2
-        }
-      },
-      "tag": "all",
-      "force": false
-    },
-    {
-      "ts": 1790966520,
-      "duration_s": 3.3,
-      "ai": {
-        "available": false,
-        "model": "glm-4-flash",
-        "call": 0,
-        "fail": 0,
-        "retry": 0,
-        "token_in": 0,
-        "token_out": 0,
-        "cached": 0
-      },
-      "candidates": 30,
-      "new_pages": 25,
-      "quality": {
-        "total": 30,
-        "passed": 25,
-        "rejected": 5,
-        "avg_score": 86.7,
-        "reasons": {
-          "正文与已发布内容《yuanchuang-bdaf》近似重复": 1,
-          "标题与已发布内容高度相似": 3,
-          "正文与已发布内容《yuanchuang-f》近似重复": 1
-        }
-      },
-      "tag": "all",
-      "force": false
-    },
-    {
-      "ts": 1790966556,
-      "duration_s": 2.1,
-      "ai": {
-        "available": false,
-        "model": "glm-4-flash",
-        "call": 0,
-        "fail": 0,
-        "retry": 0,
-        "token_in": 0,
-        "token_out": 0,
-        "cached": 0
-      },
-      "candidates": 5,
-      "new_pages": 0,
-      "quality": {
-        "total": 5,
-        "passed": 0,
-        "rejected": 5,
-        "avg_score": 41.0,
-        "reasons": {
-          "正文与已发布内容《yuanchuang-bdaf》近似重复": 1,
-          "标题与已发布内容高度相似": 3,
-          "正文与已发布内容《yuanchuang-f》近似重复": 1
-        }
-      },
-      "tag": "all",
-      "force": false
-    },
-    {
-      "ts": 1790966559,
-      "duration_s": 2.1,
-      "ai": {
-        "available": false,
-        "model": "glm-4-flash",
-        "call": 0,
-        "fail": 0,
-        "retry": 0,
-        "token_in": 0,
-        "token_out": 0,
-        "cached": 0
-      },
-      "candidates": 5,
-      "new_pages": 0,
-      "quality": {
-        "total": 5,
-        "passed": 0,
-        "rejected": 5,
-        "avg_score": 41.0,
-        "reasons": {
-          "正文与已发布内容《yuanchuang-bdaf》近似重复": 1,
-          "标题与已发布内容高度相似": 3,
-          "正文与已发布内容《yuanchuang-f》近似重复": 1
-        }
-      },
-      "tag": "all",
-      "force": false
-    },
-    {
-      "ts": 1790966665,
-      "duration_s": 2.2,
-      "ai": {
-        "available": false,
-        "model": "glm-4.7-flash",
-        "call": 0,
-        "fail": 0,
-        "retry": 0,
-        "rate_limited": 0,
-        "token_in": 0,
-        "token_out": 0
-      },
-      "candidates": 3,
-      "new_pages": 0,
-      "quality": {
-        "total": 3,
-        "passed": 0,
-        "rejected": 3,
-        "avg_score": 41.7,
-        "reasons": {
-          "正文与已发布内容《yuanchuang-bdaf》近似重复": 1,
-          "标题与已发布内容高度相似": 2
-        }
-      },
-      "tag": "all",
-      "force": false
-    },
-    {
-      "ts": 1790989366,
-      "duration_s": 36.6,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 7,
-        "fail": 0,
-        "retry": 3,
-        "rate_limited": 3,
-        "token_in": 2669,
-        "token_out": 1068
-      },
-      "candidates": 3,
-      "new_pages": 3,
-      "quality": {
-        "total": 3,
-        "passed": 3,
-        "rejected": 0,
-        "avg_score": 100.0,
-        "reasons": {}
-      },
-      "tag": "all",
-      "force": true
-    },
-    {
-      "ts": 1790989522,
-      "mode": "topic",
-      "duration_s": 14.7,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 1,
-        "fail": 0,
-        "retry": 2,
-        "rate_limited": 2,
-        "token_in": 570,
-        "token_out": 323
-      },
-      "new_pages": 0,
-      "quality": {}
-    },
-    {
-      "ts": 1790989710,
-      "mode": "topic",
-      "duration_s": 53.7,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 6,
-        "fail": 0,
-        "retry": 0,
-        "rate_limited": 0,
-        "token_in": 2280,
-        "token_out": 1350
-      },
-      "new_pages": 5,
-      "quality": {
-        "total": 5,
-        "passed": 5,
-        "rejected": 0,
-        "avg_score": 89.2,
-        "reasons": {}
-      }
-    },
-    {
-      "ts": 1790989784,
-      "mode": "topic",
-      "duration_s": 19.1,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 5,
-        "fail": 0,
-        "retry": 0,
-        "rate_limited": 0,
-        "token_in": 1954,
-        "token_out": 991
-      },
-      "new_pages": 3,
-      "quality": {
-        "total": 4,
-        "passed": 3,
-        "rejected": 1,
-        "avg_score": 74.0,
-        "reasons": {}
-      }
-    },
-    {
-      "ts": 1790989845,
-      "mode": "topic",
-      "duration_s": 19.1,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 4,
-        "fail": 0,
-        "retry": 2,
-        "rate_limited": 2,
-        "token_in": 1595,
-        "token_out": 936
-      },
-      "new_pages": 3,
-      "quality": {
-        "total": 3,
-        "passed": 3,
-        "rejected": 0,
-        "avg_score": 97.3,
-        "reasons": {}
-      }
-    },
-    {
-      "ts": 1790989879,
-      "mode": "topic",
-      "duration_s": 11.2,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 3,
-        "fail": 0,
-        "retry": 0,
-        "rate_limited": 0,
-        "token_in": 1249,
-        "token_out": 771
-      },
-      "new_pages": 2,
-      "quality": {
-        "total": 2,
-        "passed": 2,
-        "rejected": 0,
-        "avg_score": 91.0,
-        "reasons": {}
-      }
-    },
-    {
-      "ts": 1790989964,
-      "mode": "topic",
-      "duration_s": 17.2,
-      "ai": {
-        "available": true,
-        "model": "glm-4.7-flash",
-        "call": 4,
-        "fail": 0,
-        "retry": 1,
-        "rate_limited": 1,
-        "token_in": 1608,
-        "token_out": 941
-      },
-      "new_pages": 3,
-      "quality": {
-        "total": 3,
-        "passed": 3,
-        "rejected": 0,
-        "avg_score": 90.7,
-        "reasons": {}
-      }
-    },
     {
       "ts": 1790990000,
       "mode": "topic",
@@ -2431,6 +2314,330 @@
         "passed": 1,
         "rejected": 0,
         "avg_score": 70.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017015,
+      "mode": "promo",
+      "duration_s": 23.1,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 6,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 88.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017116,
+      "mode": "promo",
+      "duration_s": 82.7,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 5,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 88.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017425,
+      "mode": "promo",
+      "duration_s": 83.0,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 5,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 88.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017523,
+      "mode": "promo",
+      "duration_s": 78.9,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 5,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 88.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017576,
+      "mode": "promo",
+      "duration_s": 23.4,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 0,
+        "fail": 2,
+        "retry": 4,
+        "rate_limited": 6,
+        "token_in": 0,
+        "token_out": 0
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017664,
+      "mode": "promo",
+      "duration_s": 65.6,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 1,
+        "fail": 1,
+        "retry": 3,
+        "rate_limited": 4,
+        "token_in": 570,
+        "token_out": 324
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791017924,
+      "mode": "promo",
+      "duration_s": 112.8,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 1,
+        "fail": 1,
+        "retry": 3,
+        "rate_limited": 3,
+        "token_in": 570,
+        "token_out": 273
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791018018,
+      "mode": "promo",
+      "duration_s": 52.0,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 1,
+        "fail": 1,
+        "retry": 2,
+        "rate_limited": 3,
+        "token_in": 570,
+        "token_out": 254
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791018130,
+      "mode": "promo",
+      "duration_s": 84.0,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 2,
+        "fail": 0,
+        "retry": 3,
+        "rate_limited": 3,
+        "token_in": 1120,
+        "token_out": 654
+      },
+      "new_pages": 0,
+      "quality": {
+        "total": 1,
+        "passed": 0,
+        "rejected": 1,
+        "avg_score": 83.0,
+        "reasons": {
+          "用词重复度过高，内容单薄": 1
+        }
+      }
+    },
+    {
+      "ts": 1791018392,
+      "mode": "promo",
+      "duration_s": 94.4,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 2,
+        "fail": 0,
+        "retry": 0,
+        "rate_limited": 0,
+        "token_in": 1106,
+        "token_out": 596
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 100.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791018542,
+      "mode": "promo",
+      "duration_s": 128.6,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 1,
+        "fail": 1,
+        "retry": 3,
+        "rate_limited": 3,
+        "token_in": 570,
+        "token_out": 251
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791018763,
+      "mode": "promo",
+      "duration_s": 199.7,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 2,
+        "fail": 0,
+        "retry": 2,
+        "rate_limited": 1,
+        "token_in": 1105,
+        "token_out": 666
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 100.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791019088,
+      "mode": "promo",
+      "duration_s": 221.7,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 1,
+        "fail": 1,
+        "retry": 4,
+        "rate_limited": 3,
+        "token_in": 570,
+        "token_out": 320
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 78.0,
+        "reasons": {}
+      }
+    },
+    {
+      "ts": 1791019474,
+      "mode": "promo",
+      "duration_s": 162.4,
+      "ai": {
+        "available": true,
+        "model": "glm-4.7-flash",
+        "call": 2,
+        "fail": 1,
+        "retry": 2,
+        "rate_limited": 3,
+        "token_in": 1096,
+        "token_out": 638
+      },
+      "new_pages": 1,
+      "quality": {
+        "total": 1,
+        "passed": 1,
+        "rejected": 0,
+        "avg_score": 100.0,
         "reasons": {}
       }
     }

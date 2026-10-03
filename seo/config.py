@@ -50,14 +50,16 @@ AI = {
     'MODEL': os.environ.get('SEO_AI_MODEL', 'glm-4.7-flash'),
     'TIMEOUT': int(os.environ.get('SEO_AI_TIMEOUT', '60')),
     'MAX_RETRY': int(os.environ.get('SEO_AI_MAX_RETRY', '3')),
-    'RETRY_BASE_SLEEP': float(os.environ.get('SEO_AI_RETRY_SLEEP', '2')),
+    # 免费模型的 429 比想象中频繁（实测连发几次就触发），
+    # 基础退避给到 8 秒起步，配合 REQUEST_INTERVAL 才稳。
+    'RETRY_BASE_SLEEP': float(os.environ.get('SEO_AI_RETRY_SLEEP', '8')),
     'TEMPERATURE': 0.7,
     'MAX_TOKENS': 1600,
     # GLM-4.7-Flash 免费版**只允许 1 条并发**，
     # 并发发请求会收到 429。所以并发固定 1，
     # 并且每次请求之间留一点间隔，避免踩到速率限制的边缘。
     'CONCURRENCY': 1,
-    'REQUEST_INTERVAL': float(os.environ.get('SEO_AI_INTERVAL', '1.2')),
+    'REQUEST_INTERVAL': float(os.environ.get('SEO_AI_INTERVAL', '4')),
     # 混合思考模型必须显式关掉思考。
     # 实测：开启时 599/600 个 token 被 reasoning 吃掉，正文一个字都没输出
     #（finish_reason=length、content 为空串）；
@@ -105,6 +107,9 @@ PIPELINE = {
     'MAX_IMG_PER_PAGE': 8,
     # 单篇最多几个站内链接（引导进站）
     'MAX_CTA_LINKS': 6,
+    # 从社区图片池随机取几张配图。
+    # 4 张是平衡点：太少页面显得空，多了拖慢加载（图片是最大的流量成本）。
+    'PROMO_IMG_COUNT': int(os.environ.get('SEO_PROMO_IMG', '4')),
     # 引流文章的 slug 前缀。**目录与其他单页相同**，
     # 靠 slug 前缀区分类型，这样 URL 保持统一的 /pages/<slug>/ 形式。
     'PROMO_SLUG_PREFIX': 'p-',

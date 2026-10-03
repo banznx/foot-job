@@ -15,8 +15,13 @@
   "source_slug": "jupai-548896ea",
   "author": "玉卒",
   "published": 1791015038941,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51290307_rBAAdmMnTCyAeywmAAEkZl5gL44260.jpg",
+    "images/downloaded_posts_images/50839950_rBAAdmLLbLeAQnfHAAHMOyDWlJs461.jpg",
+    "images/downloaded_posts_images/50845564_rBAAdmLM6BKABcTrAAVX-Y4YmX8673.jpg",
+    "images/downloaded_posts_images/51069281_rBAAdmL4zliADjerAALmiqvmbsg545.png"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1791015105450,
   "by_ai": false,
@@ -61,6 +66,41 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-540242a864/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51290307_rBAAdmMnTCyAeywmAAEkZl5gL44260.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51290307_rBAAdmMnTCyAeywmAAEkZl5gL44260.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "【举牌】有些人吃火锅吃到一半整理",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51290307_rBAAdmMnTCyAeywmAAEkZl5gL44260.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50839950_rBAAdmLLbLeAQnfHAAHMOyDWlJs461.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50845564_rBAAdmLM6BKABcTrAAVX-Y4YmX8673.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51069281_rBAAdmL4zliADjerAALmiqvmbsg545.png",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://banznx.github.io/foot-job/pages/p-540242a864/#breadcrumb",
         "itemListElement": [
@@ -87,7 +127,7 @@
       {
         "@type": "WebSite",
         "@id": "https://banznx.github.io/foot-job/#website",
-        "url": "https://banznx.github.io/foot-job/pages/p-540242a864/",
+        "url": "https://banznx.github.io/foot-job/",
         "name": "玉卒",
         "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
         "inLanguage": "zh-CN",
@@ -99,7 +139,7 @@
         "@type": "Organization",
         "@id": "https://banznx.github.io/foot-job/#org",
         "name": "玉卒",
-        "url": "https://banznx.github.io/foot-job/pages/p-540242a864/"
+        "url": "https://banznx.github.io/foot-job/"
       }
     ]
   },

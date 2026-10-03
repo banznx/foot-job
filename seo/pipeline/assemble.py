@@ -13,6 +13,7 @@ schema 用 JSON-LD 而不是 Microdata：Google 已明确支持且更易维护�
 """
 
 import hashlib
+import re
 import time
 
 from .. import config
@@ -32,7 +33,7 @@ def _get(item, key, default=None):
     return getattr(item, key, default)
 
 
-def build_schema(item, content, site_url):
+def build_schema(item, content, site_url, faq=None):
     """产出 JSON-LD 结构化数据。
 
     节点构成：
@@ -93,7 +94,12 @@ def build_schema(item, content, site_url):
 
     # 只声明前 8 张：Google 展示的图数量有限，
     # 全量塞进去只会让 structured data 臃肿且无额外收益。
-    imgs = [im for im in (_get(item, 'images') or [])][:8]
+    #
+    # 从 content 取而不是从 item 取：关键词页与引流文用的是「伪item」
+    # （刻意不携带真实帖子的图片字段），图片只存在 content 里。
+    # 早前从 item 取导致这些页面的 ImageObject 全部缺失，
+    # 图片白白浪费了被 Google Images 收录的机会。
+    imgs = [im for im in (content.get('images') or [])][:8]
     if imgs:
         graph.append({
             '@type': 'ImageObject',
@@ -144,72 +150,88 @@ def build_schema(item, content, site_url):
         'url': site_url('/'),
     })
 
+    # FAQPage：从正文里抽问答对。
+    # 为什么值得做：Google 的"其他人还问了"直接读 FAQPage 结构化数据，
+    # 命中的话能多占一个位置。这是文本内容页少有的、能靠结构化
+    # 直接换来展示位的手段。
+    # 优先用外部传入的 FAQ（generate_faq 单独请求生成的），
+    # 没有才从正文里抽。正文抽取作为兜底。
+    faq = faq or _extract_faq(content.get('body', ''))
+    if faq:
+        graph.append({
+            '@type': 'FAQPage',
+            '@id': url + '#faq',
+            'mainEntity': [{
+                '@type': 'Question',
+                'name': q,
+                'acceptedAnswer': {'@type': 'Answer', 'text': a},
+            } for q, a in faq],
+        })
+
     return {'@context': 'https://schema.org', '@graph': graph}
 
 
-def assemble(item, ai, keywords_for_tag=None, index=None, pool=None,
-             site_url=None, build_links=True, allowed_slugs=None):
-    """把五个阶段的产物合成一条完整的结构化内容。
+def _extract_faq(body, limit=4):
+    """从正文里识别问答对。
 
-    allowed_slugs: 允许被内链指向的已生成页面 slug 集合。
-    传None 时内链会被清空 —— 宁可没有内链，也不要链到 404。
+    识别两种写法（AI 生成内容里都常见）：
+      1. 显式问答：「问：xxx  答：yyy」/「Q: / A:」
+      2. 设问句：以问号结尾的短句，后面跟一段回答
+
+    识别不到就返回空列表，不硬造 ——
+    Google 会惩罚「schema 声明了 FAQ 但页面里没有对应问答」的情况，
+    那种情况比不做 FAQ 更糟。
     """
-    site_url = site_url or config.site_url
-    tag = (item.tags or ['综合'])[0]
-    kws = keywords_for_tag or []
+    faq = []
 
-    # 阶段 2：标题与描述
-    meta = rw.generate_meta(item, ai, kws)
+    # 写法 1：显式问答。段落内的换行也算分隔，所以用[\s\S]而不是 .
+    pattern = (r'(?:问|Q|问题)\s*[:：]\s*(.{4,60}?)\s*[）)]?\s*'
+               r'(?:答|A|回答|答案)\s*[:：]\s*(.{10,300}?)'
+               r'(?=\n\s*\n|\n\s*(?:问|Q|问题)\s*[:：]|$)')
+    for m in re.finditer(pattern, body, re.S):
+        q, a = m.group(1).strip(), m.group(2).strip()
+        q = re.sub(r'\s+', ' ', q)
+        a = re.sub(r'\s+', ' ', a)
+        if q and a:
+            faq.append((q, a))
+    if faq:
+        return faq[:limit]
 
-    # 阶段 3：正文改写扩写
-    body_res = rw.rewrite_body(item, ai, kws)
-    body = body_res['body']
+    # 写法 2：设问句 + 下一段
+    paras = [p.strip() for p in body.split('\n\n') if p.strip()]
+    for i, p in enumerate(paras[:-1]):
+        if p.endswith(('？', '?')) and 6 <= len(p) <= 50 and paras[i + 1]:
+            faq.append((re.sub(r'\s+', ' ', p.rstrip('？?')),
+                        re.sub(r'\s+', ' ', paras[i + 1])[:280]))
+            if len(faq) >= limit:
+                break
+    return faq[:limit]
 
-    slug = rw.make_slug(item)
 
-    content = {
-        'seed_id': item.seed_id,
-        'post_id': item.meta.get('post_id'),
-        'slug': slug,
-        'tag': tag,
-        'tag_slug': config.TAG_SLUGS.get(tag, 'zonghe'),
-        'meta_title': meta['meta_title'],
-        'meta_description': meta['meta_description'],
-        'tags': meta['tags'] or [tag],
-        'body': body,
-        'author': item.meta.get('author') or '社区用户',
-        'published': item.published,
-        'images': (item.images or [])[:config.PIPELINE['MAX_IMG_PER_PAGE']],
-        'image_total': item.meta.get('image_count', len(item.images or [])),
-        'metrics': item.metrics,
-        'generated_at': int(time.time() * 1000),
-        'by_ai': bool(meta.get('by_ai') and body_res.get('by_ai')),
-        # === SEO 页身份标记（与真实帖子解耦的关键）===
-        # 这些字段让页面、schema、页脚都能明确声明
-        # 「这是主题整理页，不是某篇真实帖子的镜像」
-        'is_seo_page': True,
-        'notice': config.CONTENT_KIND['NOTICE'],
-        'notice_short': config.CONTENT_KIND['NOTICE_SHORT'],
-        'cta_text': config.CONTENT_KIND['CTA_TEXT'],
-        'source_post_id': item.meta.get('post_id'),
-    }
+def _iso(ms):
+    """毫秒时间戳 -> ISO 8601（schema 要求这个格式）。"""
+    if not ms:
+        return None
+    import datetime
+    try:
+        return datetime.datetime.utcfromtimestamp(
+            ms / 1000.0).strftime('%Y-%m-%dT%H:%M:%SZ')
+    except Exception:
+        return None
 
-    # 阶段 4：内部链接
-    if build_links and index and pool and allowed_slugs:
-        content['internal_links'] = links_mod.suggest_links(
-            item, pool, index, allowed_slugs=allowed_slugs)
-        content['related'] = links_mod.cluster_related(
-            item, pool, index, allowed_slugs=allowed_slugs)
-    else:
-        content['internal_links'] = []
-        content['related'] = []
 
-    # 阶段 5：结构化数据
-    content['schema'] = build_schema(item, content, site_url)
-    content['url'] = config.page_url(slug)
-    content['fingerprint'] = fingerprint(item, content)
+def _zh_len(text):
+    """中文字数：汉字按 1 个字算，英文按词算。
 
-    return content
+    为什么不用 len()：len() 把标点和空白也算进去，
+    wordCount 会虚高，Google 判定内容长度时会被误导。
+    """
+    import re as _re
+    if not text:
+        return 0
+    cjk = len(_re.findall(r'[\u4e00-\u9fa5]', text))
+    words = len(_re.findall(r'[a-zA-Z]+', text))
+    return cjk + words
 
 
 def fingerprint(item, content):
@@ -220,27 +242,7 @@ def fingerprint(item, content):
     也避免 Actions 每次都触发 Pages 重新构建）。
     """
     meta = _get(item, 'meta') or {}
-    src = '%s|%s' % (_get(item, 'seed_id'),
-                     (meta or {}).get('hit', 0))
+    src = '%s|%s' % (_get(item, 'seed_id'), meta.get('hit', 0))
     gen = '%s|%s|%s' % (content['meta_title'], content['meta_description'],
                         content['body'])
     return hashlib.md5((src + '|' + gen).encode('utf-8')).hexdigest()
-
-
-def _iso(ms):
-    try:
-        import datetime
-        return datetime.datetime.utcfromtimestamp(ms / 1000.0).strftime(
-            '%Y-%m-%dT%H:%M:%SZ')
-    except Exception:
-        return None
-
-
-def _zh_len(text):
-    """中文字数：汉字按 1 个字算，英文按词算，避免 wordCount 虚高。"""
-    import re
-    if not text:
-        return 0
-    cjk = len(re.findall(r'[\u4e00-\u9fa5]', text))
-    words = len(re.findall(r'[a-zA-Z]+', text))
-    return cjk + words

@@ -4,7 +4,7 @@
   "slug": "p-49a869569b",
   "tag": "综合",
   "tag_slug": "zonghe",
-  "meta_title": "社区里的温馨告白",
+  "meta_title": "生活分享 · 社区里的温馨告白",
   "meta_description": "在社区里，我们总能看到各种各样真诚的求助与分享。本期主题聚焦于一位寻找伴侣的普通网友，记录下她勇敢表达心声的过程。",
   "tags": [
     "生活分享",
@@ -16,8 +16,13 @@
   "source_slug": "zonghe-49050e51",
   "author": "玉卒",
   "published": 1791001344609,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50805830_rBAAdmLCq_uAUB3fAAO8RCpubfI393.jpg",
+    "images/downloaded_posts_images/50836043_rBAAdmLKh9eAbpnnAARothS9mBE526.jpg",
+    "images/downloaded_posts_images/51009815_rBAAdmLsDEOASgWzAAE2pmVCySQ584.jpg",
+    "images/downloaded_posts_images/50984239_rBAAdmLnEC-AAPi9AADTRhsrVyU180.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1791001347846,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/promo/p-49a869569b/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-49a869569b/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/p-49a869569b/"
+          "@id": "https://banznx.github.io/foot-job/pages/p-49a869569b/"
         },
-        "headline": "社区里的温馨告白",
+        "headline": "生活分享 · 社区里的温馨告白",
         "description": "在社区里，我们总能看到各种各样真诚的求助与分享。本期主题聚焦于一位寻找伴侣的普通网友，记录下她勇敢表达心声的过程。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/promo/p-49a869569b/",
+        "url": "https://banznx.github.io/foot-job/pages/p-49a869569b/",
         "about": {
           "@type": "Thing",
           "name": "综合",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-49a869569b/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50805830_rBAAdmLCq_uAUB3fAAO8RCpubfI393.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50805830_rBAAdmLCq_uAUB3fAAO8RCpubfI393.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "生活分享 · 社区里的温馨告白",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50805830_rBAAdmLCq_uAUB3fAAO8RCpubfI393.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50836043_rBAAdmLKh9eAbpnnAARothS9mBE526.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51009815_rBAAdmLsDEOASgWzAAE2pmVCySQ584.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50984239_rBAAdmLnEC-AAPi9AADTRhsrVyU180.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/promo/p-49a869569b/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-49a869569b/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,20 +115,20 @@
             "@type": "ListItem",
             "position": 2,
             "name": "综合",
-            "item": "https://banznx.github.io/foot-job/tag/zonghe/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-zonghe/"
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "社区里的温馨告白",
-            "item": "https://banznx.github.io/foot-job/post/p-49a869569b/"
+            "name": "生活分享 · 社区里的温馨告白",
+            "item": "https://banznx.github.io/foot-job/pages/p-49a869569b/"
           }
         ]
       },
       {
         "@type": "WebSite",
         "@id": "https://banznx.github.io/foot-job/#website",
-        "url": "https://banznx.github.io/foot-job/promo/p-49a869569b/",
+        "url": "https://banznx.github.io/foot-job/",
         "name": "玉卒",
         "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
         "inLanguage": "zh-CN",
@@ -100,7 +140,7 @@
         "@type": "Organization",
         "@id": "https://banznx.github.io/foot-job/#org",
         "name": "玉卒",
-        "url": "https://banznx.github.io/foot-job/promo/p-49a869569b/"
+        "url": "https://banznx.github.io/foot-job/"
       }
     ]
   },

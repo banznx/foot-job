@@ -16,8 +16,13 @@
   "source_slug": "jupai-b185b8f1",
   "author": "玉卒",
   "published": 1791001402280,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51059258_rBAAdmL2i8OAVzmTAADYift7rX4040.jpg",
+    "images/downloaded_posts_images/51307788_rBAAdmMsYZaAeILDAAF4Ucff_qo864.jpg",
+    "images/downloaded_posts_images/50975784_rBAAdmLlSnCAVaJpAADu8P6vEUg074.jpg",
+    "images/downloaded_posts_images/51332852_rBAAdmMy9uqAbBObAACnt5iROhk795.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1791001406299,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/promo/p-e6b5f85ea3/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-e6b5f85ea3/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/p-e6b5f85ea3/"
+          "@id": "https://banznx.github.io/foot-job/pages/p-e6b5f85ea3/"
         },
         "headline": "举牌文化：用文字记录生活",
         "description": "举牌是一种流行的表达方式，人们通过自定义文字牌分享心情或寻找物品，让日常瞬间变得更有仪式感。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/promo/p-e6b5f85ea3/",
+        "url": "https://banznx.github.io/foot-job/pages/p-e6b5f85ea3/",
         "about": {
           "@type": "Thing",
           "name": "举牌",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/p-e6b5f85ea3/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51059258_rBAAdmL2i8OAVzmTAADYift7rX4040.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51059258_rBAAdmL2i8OAVzmTAADYift7rX4040.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "举牌文化：用文字记录生活",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51059258_rBAAdmL2i8OAVzmTAADYift7rX4040.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51307788_rBAAdmMsYZaAeILDAAF4Ucff_qo864.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50975784_rBAAdmLlSnCAVaJpAADu8P6vEUg074.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51332852_rBAAdmMy9uqAbBObAACnt5iROhk795.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/promo/p-e6b5f85ea3/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/p-e6b5f85ea3/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,20 +115,20 @@
             "@type": "ListItem",
             "position": 2,
             "name": "举牌",
-            "item": "https://banznx.github.io/foot-job/tag/jupai/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-jupai/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "举牌文化：用文字记录生活",
-            "item": "https://banznx.github.io/foot-job/post/p-e6b5f85ea3/"
+            "item": "https://banznx.github.io/foot-job/pages/p-e6b5f85ea3/"
           }
         ]
       },
       {
         "@type": "WebSite",
         "@id": "https://banznx.github.io/foot-job/#website",
-        "url": "https://banznx.github.io/foot-job/promo/p-e6b5f85ea3/",
+        "url": "https://banznx.github.io/foot-job/",
         "name": "玉卒",
         "description": "玉卒 —— 按推荐、最新、热门浏览的社区图片内容",
         "inLanguage": "zh-CN",
@@ -100,7 +140,7 @@
         "@type": "Organization",
         "@id": "https://banznx.github.io/foot-job/#org",
         "name": "玉卒",
-        "url": "https://banznx.github.io/foot-job/promo/p-e6b5f85ea3/"
+        "url": "https://banznx.github.io/foot-job/"
       }
     ]
   },

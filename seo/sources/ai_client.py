@@ -31,12 +31,26 @@ class AiClient(object):
         self.stats = {'call': 0, 'fail': 0, 'retry': 0, 'rate_limited': 0,
                       'token_in': 0, 'token_out': 0}
         self._last_call = 0.0
+        self._fails = []
 
     @property
     def available(self):
         return bool(self.cfg.get('API_KEY'))
 
     # ---------------------------------------------------------
+    def recent_failures(self, window=300):
+        """最近 window 秒内的失败次数。
+
+        用来判断「是不是限流还没恢复」。
+        连续失败说明再等也没用，不如直接走降级 ——
+        与其卡在这里重试 3 次然后降级，不如立刻降级。
+        """
+        now = time.time()
+        return len([t for t in self._fails if now - t < window])
+
+    def _note_fail(self):
+        self._fails.append(time.time())
+
     def _throttle(self):
         """串行节流。
 
@@ -132,6 +146,7 @@ class AiClient(object):
             except urllib.error.HTTPError as e:
                 code = e.code
                 last_err = 'HTTP %d %s' % (code, e.reason)
+                self._note_fail()
                 if code == 429:
                     self.stats['rate_limited'] += 1
                     # 免费模型 1 并发，很容易触发。退避加倍。
@@ -144,6 +159,7 @@ class AiClient(object):
                     wait = self.cfg['RETRY_BASE_SLEEP'] * (2 ** attempt)
             except Exception as e:
                 last_err = str(e)
+                self._note_fail()
                 wait = self.cfg['RETRY_BASE_SLEEP'] * (2 ** attempt)
 
             if attempt < retries - 1:

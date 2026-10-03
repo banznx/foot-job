@@ -146,28 +146,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a9dd8a71/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a9dd8a71/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a9dd8a71/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a9dd8a71/"
         },
         "headline": "原创｜今天是甜妹",
         "description": "这篇原创由雪の小屋发布，包含 2 张图片，已有 1025 次浏览，内容围绕「今天是甜妹」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-a9dd8a71/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-a9dd8a71/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
         "articleSection": "原创",
         "keywords": "原创, 原创摄影, 原创写真",
         "wordCount": 143,
         "datePublished": "2022-07-10T15:47:39Z",
-        "dateModified": "2022-07-10T15:47:39Z"
+        "dateModified": "2022-07-10T15:47:39Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a9dd8a71/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a9dd8a71/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50838969_rBAAdmLK9JmAYe4lAAE9NMCyT6A408.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50838969_rBAAdmLK9JmAYe4lAAE9NMCyT6A408.jpg",
         "encodingFormat": "image/jpeg",
@@ -175,7 +185,7 @@
         "height": 1440,
         "caption": "原创｜今天是甜妹",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "雪の小屋",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -192,7 +202,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a9dd8a71/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a9dd8a71/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -204,13 +214,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创｜今天是甜妹",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-a9dd8a71/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-a9dd8a71/"
           }
         ]
       },

@@ -17,8 +17,13 @@
   "angle": "beginner",
   "author": "玉卒",
   "published": 1790989682669,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/50805333_rBAAdmLCjHOAc1sSAAFjL1qILrY276.jpg",
+    "images/downloaded_posts_images/50882106_rBAAdmLUoGKANlofAADb7cfnGNg402.jpg",
+    "images/downloaded_posts_images/50836043_rBAAdmLKh9KAGKwNAACoLsNoUkI636.jpg",
+    "images/downloaded_posts_images/50965295_rBAAdmLjpt6AKCT9AAHGA4tGNh4161.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790989700152,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-d52452f2a8/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/"
+          "@id": "https://banznx.github.io/foot-job/pages/richang-d52452f2a8/"
         },
         "headline": "生活随手拍主题指南",
         "description": "生活随手拍聚焦于记录日常中的美好瞬间，适合新手快速上手，捕捉生活点滴。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/",
+        "url": "https://banznx.github.io/foot-job/pages/richang-d52452f2a8/",
         "about": {
           "@type": "Thing",
           "name": "日常",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-d52452f2a8/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50805333_rBAAdmLCjHOAc1sSAAFjL1qILrY276.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50805333_rBAAdmLCjHOAc1sSAAFjL1qILrY276.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "生活随手拍主题指南",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50805333_rBAAdmLCjHOAc1sSAAFjL1qILrY276.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50882106_rBAAdmLUoGKANlofAADb7cfnGNg402.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50836043_rBAAdmLKh9KAGKwNAACoLsNoUkI636.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50965295_rBAAdmLjpt6AKCT9AAHGA4tGNh4161.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/richang-d52452f2a8/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,13 +115,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "日常",
-            "item": "https://banznx.github.io/foot-job/tag/richang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-richang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "生活随手拍主题指南",
-            "item": "https://banznx.github.io/foot-job/post/richang-d52452f2a8/"
+            "item": "https://banznx.github.io/foot-job/pages/richang-d52452f2a8/"
           }
         ]
       },

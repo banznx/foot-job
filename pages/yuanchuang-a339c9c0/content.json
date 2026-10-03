@@ -152,28 +152,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a339c9c0/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a339c9c0/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a339c9c0/"
+          "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a339c9c0/"
         },
         "headline": "原创｜呐呐",
         "description": "这篇原创由江户川西西发布，包含 9 张图片，已有 2285 次浏览，内容围绕「呐呐」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/yuanchuang-a339c9c0/",
+        "url": "https://banznx.github.io/foot-job/pages/yuanchuang-a339c9c0/",
+        "about": {
+          "@type": "Thing",
+          "name": "原创",
+          "description": "用户自己拍摄或自己整理的原创照片内容"
+        },
         "articleSection": "原创",
         "keywords": "原创, 原创摄影, 原创写真",
         "wordCount": 134,
         "datePublished": "2022-07-01T15:13:18Z",
-        "dateModified": "2022-07-01T15:13:18Z"
+        "dateModified": "2022-07-01T15:13:18Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a339c9c0/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a339c9c0/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50790659_rBAAdmK_C6uAADO6AAEQ_Tz4xKs223.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50790659_rBAAdmK_C6uAADO6AAEQ_Tz4xKs223.jpg",
         "encodingFormat": "image/jpeg",
@@ -181,7 +191,7 @@
         "height": 1440,
         "caption": "原创｜呐呐",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "江户川西西",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -228,7 +238,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/yuanchuang-a339c9c0/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/yuanchuang-a339c9c0/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -240,13 +250,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "原创",
-            "item": "https://banznx.github.io/foot-job/tag/yuanchuang/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-yuanchuang/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "原创｜呐呐",
-            "item": "https://banznx.github.io/foot-job/post/yuanchuang-a339c9c0/"
+            "item": "https://banznx.github.io/foot-job/pages/yuanchuang-a339c9c0/"
           }
         ]
       },

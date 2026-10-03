@@ -17,8 +17,13 @@
   "angle": "beginner",
   "author": "玉卒",
   "published": 1790990114451,
-  "images": [],
-  "image_total": 0,
+  "images": [
+    "images/downloaded_posts_images/51095887_rBAAdmL-E7iAHTTjAAHBXpd8WRI037.jpg",
+    "images/downloaded_posts_images/50846292_rBAAdmLNDBqAO_ghAATAk7vm5fE848.png",
+    "images/downloaded_posts_images/50835301_rBAAdmLKZFCAAz3cAATEiGLP_vA736.jpg",
+    "images/downloaded_posts_images/50954103_rBAAdmLhfAWATDFXAAFj1jYcUZw607.jpg"
+  ],
+  "image_total": 4,
   "metrics": {},
   "generated_at": 1790990118714,
   "by_ai": true,
@@ -33,18 +38,18 @@
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://banznx.github.io/foot-job/post/jupai-88af0c36fc/#article",
+        "@id": "https://banznx.github.io/foot-job/pages/jupai-88af0c36fc/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/jupai-88af0c36fc/"
+          "@id": "https://banznx.github.io/foot-job/pages/jupai-88af0c36fc/"
         },
         "headline": "举牌文案入门指南",
         "description": "介绍举牌照片的定义、常见场景及实用拍摄建议，帮助新手快速掌握这一表达形式。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/jupai-88af0c36fc/",
+        "url": "https://banznx.github.io/foot-job/pages/jupai-88af0c36fc/",
         "about": {
           "@type": "Thing",
           "name": "举牌",
@@ -62,8 +67,43 @@
         }
       },
       {
+        "@type": "ImageObject",
+        "@id": "https://banznx.github.io/foot-job/pages/jupai-88af0c36fc/#gallery",
+        "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51095887_rBAAdmL-E7iAHTTjAAHBXpd8WRI037.jpg",
+        "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51095887_rBAAdmL-E7iAHTTjAAHBXpd8WRI037.jpg",
+        "encodingFormat": "image/jpeg",
+        "width": 1080,
+        "height": 1440,
+        "caption": "举牌文案入门指南",
+        "license": "https://banznx.github.io/foot-job/",
+        "creditText": "玉卒",
+        "acquireLicensePage": "https://banznx.github.io/foot-job/",
+        "associatedMedia": [
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51095887_rBAAdmL-E7iAHTTjAAHBXpd8WRI037.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50846292_rBAAdmLNDBqAO_ghAATAk7vm5fE848.png",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50835301_rBAAdmLKZFCAAz3cAATEiGLP_vA736.jpg",
+            "encodingFormat": "image/jpeg"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50954103_rBAAdmLhfAWATDFXAAFj1jYcUZw607.jpg",
+            "encodingFormat": "image/jpeg"
+          }
+        ]
+      },
+      {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/jupai-88af0c36fc/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/jupai-88af0c36fc/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -75,13 +115,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "举牌",
-            "item": "https://banznx.github.io/foot-job/tag/jupai/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-jupai/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "举牌文案入门指南",
-            "item": "https://banznx.github.io/foot-job/post/jupai-88af0c36fc/"
+            "item": "https://banznx.github.io/foot-job/pages/jupai-88af0c36fc/"
           }
         ]
       },

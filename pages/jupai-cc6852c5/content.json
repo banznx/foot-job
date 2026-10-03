@@ -76,28 +76,38 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": "https://banznx.github.io/foot-job/post/jupai-cc6852c5/#post",
+        "@type": "Article",
+        "@id": "https://banznx.github.io/foot-job/pages/jupai-cc6852c5/#article",
         "isPartOf": {
           "@id": "https://banznx.github.io/foot-job/#website"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://banznx.github.io/foot-job/post/jupai-cc6852c5/"
+          "@id": "https://banznx.github.io/foot-job/pages/jupai-cc6852c5/"
         },
         "headline": "举牌｜凌晨好啊",
         "description": "这篇举牌由啊九妹妹发布，包含 2 张图片，已有 1759 次浏览，内容围绕「凌晨好啊」展开。",
         "inLanguage": "zh-CN",
-        "url": "https://banznx.github.io/foot-job/post/jupai-cc6852c5/",
+        "url": "https://banznx.github.io/foot-job/pages/jupai-cc6852c5/",
+        "about": {
+          "@type": "Thing",
+          "name": "举牌",
+          "description": "网友举着自定义文字牌的照片，通常是打卡、宣言、求助、情绪表达"
+        },
         "articleSection": "举牌",
         "keywords": "举牌, 举牌照片, 举牌文案",
         "wordCount": 151,
         "datePublished": "2022-06-28T17:59:42Z",
-        "dateModified": "2022-06-28T17:59:42Z"
+        "dateModified": "2022-06-28T17:59:42Z",
+        "author": {
+          "@type": "Organization",
+          "name": "玉卒",
+          "url": "https://banznx.github.io/foot-job/"
+        }
       },
       {
         "@type": "ImageObject",
-        "@id": "https://banznx.github.io/foot-job/post/jupai-cc6852c5/#gallery",
+        "@id": "https://banznx.github.io/foot-job/pages/jupai-cc6852c5/#gallery",
         "contentUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50775695_rBAAdmK7QY2AaWUIAAKKPpEUuIw048.jpg",
         "thumbnailUrl": "https://banznx.github.io/foot-job/images/downloaded_posts_images/50775695_rBAAdmK7QY2AaWUIAAKKPpEUuIw048.jpg",
         "encodingFormat": "image/jpeg",
@@ -105,7 +115,7 @@
         "height": 1440,
         "caption": "举牌｜凌晨好啊",
         "license": "https://banznx.github.io/foot-job/",
-        "creditText": "啊九妹妹",
+        "creditText": "玉卒",
         "acquireLicensePage": "https://banznx.github.io/foot-job/",
         "associatedMedia": [
           {
@@ -122,7 +132,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://banznx.github.io/foot-job/post/jupai-cc6852c5/#breadcrumb",
+        "@id": "https://banznx.github.io/foot-job/pages/jupai-cc6852c5/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -134,13 +144,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "举牌",
-            "item": "https://banznx.github.io/foot-job/tag/jupai/"
+            "item": "https://banznx.github.io/foot-job/pages/tag-jupai/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "举牌｜凌晨好啊",
-            "item": "https://banznx.github.io/foot-job/post/jupai-cc6852c5/"
+            "item": "https://banznx.github.io/foot-job/pages/jupai-cc6852c5/"
           }
         ]
       },
