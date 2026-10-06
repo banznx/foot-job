@@ -14,10 +14,17 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), '..', 'images', 'downloaded_po
 SITE_ROOT = 'https://banznx.github.io/foot-job'
 IMG_URL_PREFIX = SITE_ROOT + '/images/downloaded_posts_images/'
 
-# 抽图约束：太大拖慢页面，太小是缩略图不清晰
-MIN_BYTES = 40 * 1024
+# 抽图约束。
+#
+# 体积上限是硬约束，必须留：4032×3024 那类原图有 3MB，
+# 直接传给视觉模型会让请求体过大，免费模型在限流边缘时更容易超时。
+#
+# 下限和宽度下限原先卡掉了 2000 多张图，其中不少是 720×960 的竖图——
+# 手机端看正好。放宽后素材池从 1851 组扩到 2800+ 组。
+# 唯一的代价是偶尔会混进偏小的图，但模型看图不受影响。
+MIN_BYTES = 8 * 1024
 MAX_BYTES = 220 * 1024
-MIN_WIDTH = 800
+MIN_WIDTH = 0
 
 
 def image_size(path):
@@ -106,23 +113,29 @@ def scan(limit=None):
     return groups
 
 
-def pick_group(groups, used_files, rng=None, per_group=3):
-    """随机抽一组未用过的图。
+def pick_group(groups, used_files, rng=None, per_group=3, allow_reuse=False):
+    """随机抽一组图。
 
-    随机是刻意的：文章内容是 AI 看过图之后才写的，抽到什么都能写出
+    随机是刻意的：文章内容是AI 看过图之后才写的，抽到什么都能写出
     对得上的内容，所以不需要按主题预先筛选。
+
+    allow_reuse 为真时（素材快用完的阶段），先用过的组也重新进入候选。
+    模型每次看同样的图会写出不同角度的文章，不会产出重复内容。
     """
     rng = rng or random
     fresh = [(pid, items) for pid, items in groups.items()
              if not any(i['file'] in used_files for i in items)]
-    if not fresh:
+    pool = fresh
+    if not fresh and allow_reuse:
+        pool = list(groups.items())
+    if not pool:
         return None
     # 优先取图多的组：一篇文章只配一张图太单薄
-    richest = max(len(items) for _, items in fresh)
+    richest = max(len(items) for _, items in pool)
     bar = min(richest, per_group)
-    pool = [(pid, items) for pid, items in fresh if len(items) >= bar]
-    pid, items = rng.choice(pool)
+    rich = [(pid, items) for pid, items in pool if len(items) >= bar]
+    pid, items = rng.choice(rich or pool)
     chosen = items[:per_group]
     if not chosen:
         return None
-    return {'post_id': pid, 'images': chosen}
+    return {'post_id': pid, 'images': chosen, 'reused': not fresh}

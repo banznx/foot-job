@@ -280,12 +280,21 @@ def main():
     used_files = set(ledger['used_files'])
     made = 0
     degraded = 0
+    reused = 0
     for i in range(args.batch):
+        # 素材用完后自动进入复用模式，而不是直接停工。
+        # 同一组图反复看，模型每次会写出不同角度的文章。
         group = imglib.pick_group(groups, used_files, rng=rng)
         if not group:
-            print('素材抽完了')
-            break
-        print('第 %d 篇：图组 %s（%d 张）' % (i + 1, group['post_id'], len(group['images'])))
+            group = imglib.pick_group(groups, used_files, rng=rng, allow_reuse=True)
+            if not group:
+                print('没有任何图片素材，退出')
+                break
+            group['reused'] = True
+            reused += 1
+            print('素材已用完，转入复用模式')
+        tag = '（复用）' if group.get('reused') else ''
+        print('第 %d 篇：图组 %s%s（%d 张）' % (i + 1, group['post_id'], tag, len(group['images'])))
         if args.dry_run:
             for im in group['images']:
                 print('   ', im['file'], '%dx%d' % (im['w'], im['h']))
@@ -328,6 +337,8 @@ def main():
 
     if degraded:
         print('注意：本次跳过 %d 篇降级内容，已写入 %d 篇' % (degraded, made))
+    if reused:
+        print('注意：素材已全部用完，本轮 %d 篇基于复用的图组' % reused)
 
     pages = rebuild_index(ledger)
     print('索引已重建，共 %d 页，累计 %d 篇' % (pages, len(ledger['posts'])))
