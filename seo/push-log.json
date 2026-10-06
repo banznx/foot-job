@@ -1,0 +1,21 @@
+{
+  "updatedAt": "2026-10-06T13:53:08.135456+00:00",
+  "urlCount": 11,
+  "results": {
+    "indexnow": {
+      "success": true,
+      "status": 200,
+      "endpoint": "https://api.indexnow.org/indexnow"
+    },
+    "bing": {
+      "success": false,
+      "skipped": true,
+      "reason": "未配置 BING_API_KEY"
+    },
+    "baidu": {
+      "success": false,
+      "skipped": true,
+      "reason": "未配置 BAIDU_TOKEN"
+    }
+  }
+}
