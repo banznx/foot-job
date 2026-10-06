@@ -1,9 +1,9 @@
 name: SEO Blog
 
-# 每天北京 03:17 跑一批；改动脚本或手动触发也会跑
+# 每半小时跑一批，每批 1 篇；改动脚本或手动触发也会跑
 on:
   schedule:
-    - cron: '17 19 * * *'
+    - cron: '7,37 * * * *'
   push:
     branches: [main]
     paths:
@@ -13,7 +13,7 @@ on:
     inputs:
       batch:
         description: '本次生成篇数'
-        default: '20'
+        default: '1'
         required: false
 
 permissions:
@@ -74,7 +74,16 @@ jobs:
             exit 0
           fi
           git commit -m "chore(seo): 记录接口诊断"
-          git push
+          for i in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main && git push; then
+              echo "诊断日志已提交"
+              exit 0
+            fi
+            git rebase --abort || true
+            sleep $((i * 10))
+          done
+          echo "诊断日志推送失败，等下一轮"
 
       - name: 提交
         if: success() && steps.check.outputs.skip != 'true'
@@ -86,6 +95,22 @@ jobs:
             echo "没有变更，跳过提交"
             exit 0
           fi
-          git commit -m "chore(seo): 新增分享内容 $(date -u '+%Y-%m-%d')"
-          git pull --rebase origin main
-          git push
+          git commit -m "chore(seo): 新增分享内容 $(date -u '+%Y-%m-%d %H:%M')"
+
+          # 每半小时一次意味着每天 48 次提交，跟人手动推送撞车是常态。
+          # 冲突时退避重试，别让一次 rebase 失败白跑一轮生成。
+          for i in 1 2 3 4; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push; then
+                echo "第 $i 次推送成功"
+                exit 0
+              fi
+            else
+              echo "第 $i 次 rebase 冲突，中止 rebase 后重来"
+              git rebase --abort || true
+            fi
+            sleep $((i * 10))
+          done
+          echo "重试 4 次仍未推送成功，放弃（下一轮定时任务会继续）"
+          exit 0
