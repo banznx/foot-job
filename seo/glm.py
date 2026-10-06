@@ -22,10 +22,30 @@ TEXT_MODEL = 'glm-4.7-flash'
 
 TIMEOUT = 120
 RETRIES = 3
+DIAG = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api-log.json')
 
 
 def has_key():
     return bool(os.environ.get('BIGMODEL_API_KEY'))
+
+
+def diag(msg):
+    """把接口失败原因记进文件。
+
+    Actions 的运行日志在网页上才看得到，写进文件才能跟着提交回仓库，
+    否则一次失败只能靠猜——上一轮就是靠猜，猜了两天。
+    """
+    try:
+        with open(DIAG, encoding='utf-8') as f:
+            items = json.load(f)
+    except (OSError, ValueError):
+        items = []
+    items.append({'t': time.strftime('%Y-%m-%d %H:%M:%S'), 'msg': str(msg)[:400]})
+    try:
+        with open(DIAG, 'w', encoding='utf-8') as f:
+            json.dump(items[-30:], f, ensure_ascii=False, indent=2)
+    except OSError:
+        pass
 
 
 def _post(payload):
@@ -55,21 +75,25 @@ def chat(model, messages, temperature=0.85, thinking=None, retries=RETRIES):
             if content:
                 return content.strip()
             last = '返回内容为空'
+            diag('%s 返回内容为空：%s' % (model, str(data)[:200]))
         except urllib.error.HTTPError as e:
             body = ''
             try:
-                body = e.read().decode('utf-8', 'ignore')[:200]
+                body = e.read().decode('utf-8', 'ignore')[:300]
             except Exception:
                 pass
             last = 'HTTP %s %s' % (e.code, body)
+            diag('%s 第%d次 HTTP %s：%s' % (model, attempt, e.code, body))
             # 4xx 一般不是限流，重试也没用
             if e.code < 500 and e.code != 429:
                 break
         except Exception as e:
             last = str(e)
+            diag('%s 第%d次 异常：%s' % (model, attempt, e))
         if attempt < retries:
             time.sleep(4 * attempt)
     print('  [glm] %s 失败：%s' % (model, last))
+    diag('%s 彻底失败：%s' % (model, last))
     return None
 
 

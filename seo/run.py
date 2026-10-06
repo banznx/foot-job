@@ -257,6 +257,8 @@ def main():
     rng = random.Random(args.seed)
     ledger = load_ledger()
     print('账本已有 %d 篇' % len(ledger['posts']))
+    glm.diag('开始运行：请求 %d 篇，key %s'
+             % (args.batch, '已配置' if glm.has_key() else '缺失'))
 
     groups = imglib.scan()
     if not groups:
