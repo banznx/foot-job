@@ -17,11 +17,20 @@ import urllib.request
 
 API_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions'
 
-VISION_MODELS = ['glm-4.6v-flash', 'glm-4.1v-thinking-flash', 'glm-4v-flash']
-TEXT_MODEL = 'glm-4.7-flash'
+# 模型顺序按实测可用性排：诊断日志里 4.6v 和 4.7 连续 429，
+# 而 4v-flash 与 4.1v-thinking-flash 一次就过了。所以把稳的放前面，
+# 抢限流名额，别把宝贵的重试次数浪费在刚被限流的模型上。
+VISION_MODELS = ['glm-4v-flash', 'glm-4.6v-flash', 'glm-4.1v-thinking-flash']
+# 写长文只有 flash 系够用，4.7 限流就退到 4.5（同样是免费的长输出模型）
+TEXT_MODELS = ['glm-4.7-flash', 'glm-4.5-flash']
 
 TIMEOUT = 120
 RETRIES = 3
+
+# 限流退避用。免费模型在高峰期会连续 429，4 秒 8 秒根本不够用，
+# 第一次诊断就是死在这上面：每次 429 只隔几秒重试，全是白撞。
+BACKOFF_429 = (20, 45)
+BACKOFF_OTHER = (4, 8)
 DIAG = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api-log.json')
 
 
@@ -68,6 +77,7 @@ def chat(model, messages, temperature=0.85, thinking=None, retries=RETRIES):
         payload['thinking'] = thinking
 
     last = ''
+    wait = BACKOFF_OTHER
     for attempt in range(1, retries + 1):
         try:
             data = _post(payload)
@@ -84,14 +94,18 @@ def chat(model, messages, temperature=0.85, thinking=None, retries=RETRIES):
                 pass
             last = 'HTTP %s %s' % (e.code, body)
             diag('%s 第%d次 HTTP %s：%s' % (model, attempt, e.code, body))
-            # 4xx 一般不是限流，重试也没用
-            if e.code < 500 and e.code != 429:
-                break
+            if e.code == 429:
+                # 限流要等够久，等 4 秒再撞只是白撞
+                wait = BACKOFF_429
+            elif e.code < 500:
+                break  # 鉴权、参数这类错误重试没用
         except Exception as e:
             last = str(e)
             diag('%s 第%d次 异常：%s' % (model, attempt, e))
         if attempt < retries:
-            time.sleep(4 * attempt)
+            nap = wait[min(attempt - 1, len(wait) - 1)]
+            print('  [glm] %s 第%d次失败，等 %d 秒再试' % (model, attempt, nap))
+            time.sleep(nap)
     print('  [glm] %s 失败：%s' % (model, last))
     diag('%s 彻底失败：%s' % (model, last))
     return None
@@ -159,12 +173,17 @@ def write(desc, topic, keywords):
         '[CONTENT]\n正文 HTML\n[/CONTENT]'
     ) % (desc, topic, keywords)
 
-    return chat(
-        TEXT_MODEL,
-        [{'role': 'user', 'content': prompt}],
-        temperature=0.85,
-        thinking={'type': 'disabled'},
-    )
+    # 4.7 限流就退到 4.5，两个都是免费的长输出模型
+    for model in TEXT_MODELS:
+        raw = chat(
+            model,
+            [{'role': 'user', 'content': prompt}],
+            temperature=0.85,
+            thinking={'type': 'disabled'} if model == TEXT_MODELS[0] else None,
+        )
+        if raw:
+            return raw
+    return None
 
 
 def parse_blocks(raw):

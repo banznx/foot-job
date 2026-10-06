@@ -123,15 +123,22 @@ def is_complete(body, min_chars=1000):
     return bool(TAIL_OK.search(body))
 
 
-def fallback_article(group, idx):
-    """无 API key 时的降级内容：结构完整、图文对得上，只是文字平一些。"""
-    mood = FALLBACK_MOODS[idx % len(FALLBACK_MOODS)]
-    topic = FALLBACK_TOPICS[idx % len(FALLBACK_TOPICS)]
+def fallback_article(group, idx, seen=None):
+    """降级内容：结构完整、图文对得上，只是文字平一些。
+
+    seen 是看图成功但写文失败时的素材描述。这种情况下标题、描述、开头段
+    都用模型真实看图得出的内容，只有中段是模板——比纯随机词强得多。
+    """
+    mood = (seen or {}).get('mood') or FALLBACK_MOODS[idx % len(FALLBACK_MOODS)]
+    topic = (seen or {}).get('topic') or FALLBACK_TOPICS[idx % len(FALLBACK_TOPICS)]
+    desc = (seen or {}).get('desc') or ''
     title = '%s · %s的一组记录' % (topic, mood)
+    opening = ('<p>%s</p>' % desc) if desc else (
+        '<p>翻到这组图的时候，第一感觉是%s。没有刻意摆姿势，'
+        '画面里的东西都处在各自该在的位置上，看着很舒服。</p>' % mood)
     body = (
         '<h2>这组图的氛围</h2>'
-        '<p>翻到这组图的时候，第一感觉是%s。没有刻意摆姿势，'
-        '画面里的东西都处在各自该在的位置上，看着很舒服。</p>'
+        + opening +
         '<p>色调偏自然，没有过度修饰的痕迹，这种处理方式反而是最耐看的。'
         '放一段时间再回头看，也不会觉得过时。</p>'
         '<h2>拍摄上的几个细节</h2>'
@@ -148,10 +155,11 @@ def fallback_article(group, idx):
         '<h2>小结</h2>'
         '<p>好的一组图不需要多复杂的技巧，把光线、构图和状态这三件事'
         '处理妥当，就已经赢过大半。挑个时间，自己也去拍一组试试。</p>'
-    ) % mood
+    )
+    summary = desc[:110] if desc else '整体氛围%s，记录了社区里一组真实的日常影像。' % mood
     return {
         'title': title,
-        'description': '%s，整体氛围%s，记录了社区里一组真实的日常影像。' % (topic, mood),
+        'description': summary,
         'keywords': [mood, '日常记录', '社区分享'],
         'body': body,
         'category': mood,
@@ -165,6 +173,7 @@ def make_post(group, idx, ledger):
     urls = [i['url'] for i in imgs]
 
     article = None
+    seen = None
     if glm.has_key():
         seen = glm.look(urls)
         if seen:
@@ -194,8 +203,11 @@ def make_post(group, idx, ledger):
                             article['title'] = p2.get('title') or article['title']
 
     if article is None:
-        print('  走模板降级（未配置 API key 或接口不可用）')
-        article = fallback_article(group, idx)
+        if seen:
+            print('  看图成功但写文受限，用真实看图结果拼一篇')
+        else:
+            print('  走模板降级（未配置 API key 或接口不可用）')
+        article = fallback_article(group, idx, seen)
 
     # slug 由代码定，不让模型碰 —— 模型给 slug 有四分之一的几率是废的
     slug = 'p-%s' % group['post_id']
