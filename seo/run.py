@@ -293,6 +293,16 @@ def main():
             continue
 
         post = make_post(group, i, ledger)
+
+        # 降级内容一律不落盘、不入账本。模板拼出来的薄内容一旦提交上去，
+        # 会被搜索引擎当成正常页面抓走，反而拉低整站质量分——比不产出更糟。
+        if post['degraded']:
+            degraded += 1
+            print('   -> 跳过 %s（%d 字，接口没返回可用正文）'
+                  % (post['slug'], post['words']))
+            # 这批图退回候选池，留给下次接口正常时再用
+            continue
+
         os.makedirs(POSTS_DIR, exist_ok=True)
         # 内链只指向已经生成的页面，避免死链
         related = [p for p in reversed(ledger['posts']) if p['slug'] != post['slug']][:4]
@@ -305,18 +315,19 @@ def main():
         used_files.update(post['files'])
         save_ledger(ledger)
         made += 1
-        degraded += 1 if post['degraded'] else 0
-        print('   -> %s（%d 字%s）' % (post['slug'], post['words'], '，降级' if post['degraded'] else ''))
+        print('   -> %s（%d 字）' % (post['slug'], post['words']))
         if glm.has_key():
             time.sleep(2)  # 免费模型只有 1 并发，慢一点更稳
 
     if not made:
+        if degraded:
+            # 降级的已经在上面逐篇跳过了，这里只是说明本次白跑
+            sys.exit('配了 BIGMODEL_API_KEY 但 %d 篇全部走了降级，接口不可用，本次不提交' % degraded)
+        print('没有产出新文章')
         return
 
-    # 配了 key 却一篇都没写成，说明接口有问题。这时候提交上去的会是一批
-    # 模板拼出来的薄内容，宁可让任务失败让人看见，也别静默污染站点。
-    if glm.has_key() and degraded == made:
-        sys.exit('配了 BIGMODEL_API_KEY 但全部走了降级，接口不可用，本次不提交')
+    if degraded:
+        print('注意：本次跳过 %d 篇降级内容，已写入 %d 篇' % (degraded, made))
 
     pages = rebuild_index(ledger)
     print('索引已重建，共 %d 页，累计 %d 篇' % (pages, len(ledger['posts'])))
