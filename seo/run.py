@@ -240,7 +240,7 @@ def rebuild_index(ledger):
     os.makedirs(PAGE_DIR, exist_ok=True)
     for page in range(1, total_pages + 1):
         chunk = posts[(page - 1) * PAGE_SIZE:page * PAGE_SIZE]
-        html_text = render.render_index(chunk, page, total_pages)
+        html_text = render.render_index(chunk, page, total_pages, len(posts))
         target = BLOG_INDEX if page == 1 else os.path.join(PAGE_DIR, '%d.html' % page)
         with open(target, 'w', encoding='utf-8') as f:
             f.write(html_text)
@@ -255,7 +255,7 @@ def rebuild_index(ledger):
                 pass
 
     with open(SITEMAP, 'w', encoding='utf-8') as f:
-        f.write(render.render_sitemap(posts))
+        f.write(render.render_sitemap(posts, total_pages))
     return total_pages
 
 

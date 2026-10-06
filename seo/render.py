@@ -158,25 +158,33 @@ def _topbar(back_href=None, back_text=None):
     ) % (SITE_NAME, back)
 
 
-def _head(title, description, url, extra=''):
+def _head(title, description, url, extra='', image=''):
+    # 图片站的图片本身就是内容主力，noimageindex 会让整站失去图片搜索入口。
+    # 社区图已经过占位图过滤（build_data.py 剔除了 171 张违规提示图），
+    # 页面里的图都是正常内容，值得被索引。
+    og_image = ''
+    twitter_image = ''
+    if image:
+        og_image = '<meta property="og:image" content="%s">\n' % esc(image)
+        twitter_image = ('<meta name="twitter:image" content="%s">\n' % esc(image))
     return (
         '<meta charset="UTF-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">\n'
         '<title>%s</title>\n'
         '<meta name="description" content="%s">\n'
-        # noimageindex 让图片能被正常抓取渲染，但不进图片搜索。
-        # 用 robots.txt 屏蔽图片目录会让页面渲染不全，反而影响收录判断。
-        '<meta name="robots" content="index, follow, noimageindex">\n'
+        '<meta name="robots" content="index, follow">\n'
         '<link rel="canonical" href="%s">\n'
         '<meta property="og:type" content="%s">\n'
         '<meta property="og:title" content="%s">\n'
         '<meta property="og:description" content="%s">\n'
         '<meta property="og:url" content="%s">\n'
         '<meta property="og:site_name" content="%s">\n'
+        '%s%s'
         '<meta name="twitter:card" content="summary_large_image">\n'
         '<link rel="icon" href="%s">\n%s'
     ) % (esc(title), esc(description), esc(url),
-         extra or 'website', esc(title), esc(description), esc(url), SITE_NAME, FAVICON, '')
+         extra or 'website', esc(title), esc(description), esc(url), SITE_NAME,
+         og_image, twitter_image, FAVICON, '')
 
 
 def _ld_article(post, url):
@@ -249,7 +257,8 @@ def render_post(post, related):
         '<a class="cta-btn" href="%s">打开%s</a></div>\n'
         '</main>\n<footer>© %s</footer>\n</body>\n</html>\n'
     ) % (
-        _head(post['title'] + ' · ' + SITE_NAME, post['description'], url, 'article'),
+        _head(post['title'] + ' · ' + SITE_NAME, post['description'], url, 'article',
+              post.get('image') or ''),
         ld, THEME_CSS,
         _topbar(SITE_URL + '/blog/', '全部分享'),
         esc(SITE_URL), SITE_NAME, esc(SITE_URL),
@@ -261,7 +270,7 @@ def render_post(post, related):
     )
 
 
-def render_index(posts, page, total_pages):
+def render_index(posts, page, total_pages, total_count=0):
     cards = []
     for p in posts:
         thumb = ''
@@ -292,8 +301,11 @@ def render_index(posts, page, total_pages):
     title = '%s 社区分享' % SITE_NAME + (' 第%d页' % page if page > 1 else '')
     desc = '%s 是一个图片分享社区，这里持续更新社区里的分享内容。' % SITE_NAME
     url = SITE_URL + '/blog/' if page == 1 else '%s/blog/page/%d.html' % (SITE_URL, page)
-    # 分页页不参与索引，权重集中到文章页
-    robots = '' if page == 1 else '<meta name="robots" content="noindex, follow">\n'
+    # 分页页用自引用 canonical，不再 noindex。
+    # 早先的做法是 noindex + 不进 sitemap，但列表页本身内容很薄，
+    # 全部权重压在这一页反而抓不到后面那些有实际内容的文章页。
+    # 现在每页都可索引，各自 canonical 指向自己。
+    total_posts = total_count if total_count else len(posts)
 
     return (
         '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n%s%s<style>%s</style>\n</head>\n<body>\n'
@@ -304,21 +316,31 @@ def render_index(posts, page, total_pages):
         '<a class="cta-btn" href="%s">打开%s</a></div>\n'
         '</main>\n<footer>© %s</footer>\n</body>\n</html>\n'
     ) % (
-        _head(title, desc, url) + robots, '', THEME_CSS,
+        _head(title, desc, url, 'website', (posts[0].get('image') if posts else '') or ''),
+        '', THEME_CSS,
         _topbar(SITE_URL + '/'),
-        esc(title), len(posts), ''.join(cards), pager,
+        esc(title), total_posts, ''.join(cards), pager,
         SITE_NAME, esc(APP_URL), SITE_NAME, SITE_NAME,
     )
 
 
-def render_sitemap(posts):
+def render_sitemap(posts, total_pages=1):
     rest = ''.join(
         '  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq>'
         '<priority>0.8</priority></url>\n' % (esc(post_url(p['slug'])), esc(p['date']))
         for p in posts
     )
+    # 分页页也进 sitemap。它们各自 self-canonical，能被直接抓到，
+    # 不必只靠上一页的翻页链接层层传递权重。
+    newest = posts[0]['date'] if posts else ''
+    pages = ''.join(
+        '  <url><loc>%s/blog/page/%d.html</loc><lastmod>%s</lastmod>'
+        '<changefreq>weekly</changefreq><priority>0.6</priority></url>\n'
+        % (SITE_URL, n, esc(newest))
+        for n in range(2, total_pages + 1)
+    )
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             '  <url><loc>%s/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>\n'
             '  <url><loc>%s/blog/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>\n'
-            '%s</urlset>\n' % (SITE_URL, SITE_URL, rest))
+            '%s%s</urlset>\n' % (SITE_URL, SITE_URL, pages, rest))
