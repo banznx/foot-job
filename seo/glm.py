@@ -11,6 +11,7 @@
 """
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
@@ -142,11 +143,17 @@ def look(image_urls):
     for url in image_urls:
         content.append({'type': 'image_url', 'image_url': {'url': url}})
 
-    # 一级降级：视觉模型之间轮换
+    # 一级降级：视觉模型之间轮换。
+    # 注意解析失败也要换模型：模型返回了内容但没按标记格式输出时，
+    # 以前这里直接返回 None，等于一次空转就被判全盘失败。
     for model in VISION_MODELS:
         raw = chat(model, [{'role': 'user', 'content': content}], temperature=0.7)
-        if raw:
-            return parse_blocks(raw)
+        if not raw:
+            continue
+        parsed = parse_blocks(raw, '看图 %s' % model)
+        if parsed.get('desc'):
+            return parsed
+        diag('%s 看图返回了内容但没解析出字段，换下一个模型' % model)
     return None
 
 
@@ -181,17 +188,43 @@ def write(desc, topic, keywords):
             temperature=0.85,
             thinking={'type': 'disabled'} if model == TEXT_MODELS[0] else None,
         )
-        if raw:
+        if not raw:
+            continue
+        parsed = parse_blocks(raw, '写文 %s' % model)
+        if parsed.get('content'):
             return raw
+        diag('%s 写文返回了内容但没解析出正文，换下一个模型' % model)
     return None
 
 
-def parse_blocks(raw):
-    """按 [TAG]...[/TAG] 提取字段，模型偶尔不守格式，所以逐级兜底。"""
+def parse_blocks(raw, where=''):
+    """按 [TAG]...[/TAG] 提取字段。
+
+    模型不守格式是常态，所以这里逐级兜底：先找标准标记，再试大小写与
+    空格变体，最后对 CONTENT 做宽松提取。解析不出来会记日志——
+    这条静默路径曾经让两轮排查完全扑空，接口明明返回了内容，
+    却因为少了 [DESC] 标记而被当成失败。
+    """
     out = {}
     for tag in ('DESC', 'MOOD', 'TOPIC', 'KEYWORDS', 'TITLE', 'DESCRIPTION', 'CONTENT'):
-        start = raw.find('[%s]' % tag)
-        end = raw.find('[/%s]' % tag)
-        if start != -1 and end != -1 and end > start:
-            out[tag.lower()] = raw[start + len(tag) + 2:end].strip()
-    return out or None
+        for pattern in ('[%s]', '[ %s ]', '[%s]'):
+            start = raw.find(pattern % tag)
+            if start == -1:
+                continue
+            for close in ('[/%s]' % tag, '[/ %s ]' % tag):
+                end = raw.find(close, start)
+                if end != -1 and end > start:
+                    out[tag.lower()] = raw[start + len(pattern % tag):end].strip()
+                    break
+            if tag.lower() in out:
+                break
+
+    # 宽松提取：没有标记但明显是 HTML 正文，整段当正文用
+    if 'content' not in out and re.search(r'<(h2|p|ul|ol)\b', raw, re.I):
+        body = re.sub(r'\[/?[A-Z_]{2,20}\]', '', raw).strip()
+        out['content'] = body
+        diag('%s 没有 CONTENT 标记，按整段正文兜底' % where)
+
+    if not out:
+        diag('%s 解析不出任何字段，返回前 300 字：%s' % (where, raw[:300]))
+    return out

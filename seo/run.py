@@ -182,7 +182,7 @@ def make_post(group, idx, ledger):
             kws = seen.get('keywords', '')
             raw = glm.write(desc, topic, kws)
             if raw:
-                parsed = glm.parse_blocks(raw) or {}
+                parsed = glm.parse_blocks(raw, '写文结果')
                 article = {
                     'title': parsed.get('title') or topic or '社区分享',
                     'description': parsed.get('description', ''),
@@ -196,7 +196,7 @@ def make_post(group, idx, ledger):
                     print('  结尾不完整，重写一次')
                     raw = glm.write(desc, topic, kws)
                     if raw:
-                        p2 = glm.parse_blocks(raw) or {}
+                        p2 = glm.parse_blocks(raw, '写文重试')
                         body2 = clean_body(p2.get('content', ''))
                         if len(body2) > len(article['body']):
                             article['body'] = body2
