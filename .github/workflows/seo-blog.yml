@@ -61,6 +61,21 @@ jobs:
           BING_API_KEY: ${{ secrets.BING_API_KEY }}
         run: python seo/push.py
 
+      - name: 提交诊断日志
+        # 无论成败都要落盘。生成失败时下面的提交步骤不会执行，
+        # 而失败原因恰恰只存在于这个日志里，不提交就等于没法排查。
+        if: always() && steps.check.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add seo/api-log.json
+          if git diff --staged --quiet; then
+            echo "诊断日志无变化"
+            exit 0
+          fi
+          git commit -m "chore(seo): 记录接口诊断"
+          git push
+
       - name: 提交
         if: success() && steps.check.outputs.skip != 'true'
         run: |
