@@ -3137,6 +3137,20 @@
         "室内",
         "楼梯"
       ]
+    },
+    {
+      "slug": "p-51178852",
+      "title": "当图片被禁止：我的亲身经历",
+      "description": "分享一次图片被禁止访问的经历，分析常见违规原因，给出可操作建议避免类似问题。",
+      "category": "警告",
+      "date": "2026-11-26",
+      "words": 2068,
+      "image": "https://banznx.github.io/foot-job/images/downloaded_posts_images/51178852_rBAAdmMNsO2AIkp6AAHv-wBfaNk107.jpg",
+      "keywords": [
+        "警告",
+        "禁止",
+        "违规"
+      ]
     }
   ],
   "used_files": [
@@ -4006,6 +4020,9 @@
     "51082069_rBAAdmL7KgiAW-RQAAP4QVzBtK0521.jpg",
     "50920216_rBAAdmLb-e-AQ2uwAADuxGmfi3M776.jpg",
     "50920216_rBAAdmLb-fCAe2XVAAD7vsErxm8746.jpg",
-    "50920216_rBAAdmLb-e2ADrQ_AAD9OQoScZs011.jpg"
+    "50920216_rBAAdmLb-e2ADrQ_AAD9OQoScZs011.jpg",
+    "51178852_rBAAdmMNsO2AIkp6AAHv-wBfaNk107.jpg",
+    "51178852_rBAAdmMNsPGALOCmAAChT9dbSBE926.jpg",
+    "51178852_rBAAdmMNsO-Aeai8AADqBngT8FQ697.jpg"
   ]
 }
